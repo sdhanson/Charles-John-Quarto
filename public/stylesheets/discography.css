@@ -3,3 +3,33 @@
     max-width: 97%;
     padding-left: 3%;
 }
+
+.photo-container .row div a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.photo-container .row div a:hover img {
+    opacity: 0.75;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.photo {
+    justify-content: center;
+    height: 250px;
+    position: relative;
+}
+
+.photo img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+}
+
+h6 {
+    font-size: 11px;
+    color: gray;
+    padding: 0 !important;
+    margin: 0;
+}

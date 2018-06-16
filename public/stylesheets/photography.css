@@ -1,0 +1,50 @@
+.modal-full {
+    min-width: 100%;
+    margin: 0;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.modal-header {
+    border: none;
+    padding-right: 5%;
+}
+
+.modal-header span {
+    font-size: 2.5rem;
+}
+
+.image-container {
+    width: 500px;
+    height: 500px;
+}
+
+.image-container img {
+    margin-top: 7%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    background-size: 100%, 100%;
+}
+
+.carousel-control-next-icon:after
+{
+    content: '>';
+    font-size: 55px;
+    color: black;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: black;
+}
+

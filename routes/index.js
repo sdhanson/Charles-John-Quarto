@@ -23,6 +23,24 @@ app.get('/discography', function(req, res) {
     res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
+app.get('/photography', function(req, res) {
+
+    var title = 'Photo Gallery';
+    var subtitle = '';
+    var link = '';
+    var image = '/images/mountain.jpg';
+    res.render('photography', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
+app.get('/about', function(req, res) {
+
+    var title = 'Charles John Quarto';
+    var subtitle = 'The Life and Work';
+    var link = '';
+    var image = '/images/mountain.jpg';
+    res.render('about', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
 
 /* GET about page */
 // app.get('/about', function(req, res) {

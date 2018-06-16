@@ -7,24 +7,15 @@ a {
   color: #00B7FF;
 }
 
+a, a:active, a:visited, a:focus {
+  outline: none;
+}
+
+a:active {
+  opacity: 0.5;
+}
+
 html {
   font-size: 1rem;
 }
 
-/*@media only screen and (min-width: 576px) {*/
-  /*html {*/
-    /*font-size: 1.2rem;*/
-  /*}*/
-/*}*/
-
-/*@media only screen and (min-width: 768px)  {*/
-  /*html {*/
-    /*font-size: 1.4rem;*/
-  /*}*/
-/*}*/
-
-/*@media only screen and (min-width: 992px) {*/
-  /*html {*/
-    /*font-size: 1rem;*/
-  /*}*/
-/*}*/
