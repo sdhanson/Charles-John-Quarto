@@ -41,6 +41,15 @@ app.get('/about', function(req, res) {
     res.render('about', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
+app.get('/written-works', function(req, res) {
+
+    var title = 'Written Works';
+    var subtitle = 'Poetry and Lyrics. ';
+    var link = 'Shop Now.';
+    var image = '/images/water.jpg';
+    res.render('written-works', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
 
 /* GET about page */
 // app.get('/about', function(req, res) {
