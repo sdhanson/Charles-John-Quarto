@@ -1,0 +1,133 @@
+a {
+    color: gainsboro;
+}
+
+a:hover {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+@media (min-width: 992px) {
+    .header {
+        width: 99%;
+        max-height: 98%;
+    }
+
+    .header-image {
+        padding-top: 1%;
+        padding-left: 1%;
+    }
+
+    .header-title {
+        font-size: 3.75rem;
+    }
+
+    .header-subtitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-x:hidden;
+}
+
+.header-image {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.header-text {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    margin-top: 20%;
+}
+
+.header-nav {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.header-title {
+    padding-left: 1%;
+    padding-right: 1%;
+    align-self: center;
+}
+
+.header-subtitle {
+    color: gainsboro;
+    align-self: center;
+}
+
+.header-button {
+    color: white;
+    border: 1px solid white;
+}
+
+.header-dropdown-menu {
+    border-radius: 0;
+}
+
+.header-dropdown-item {
+    font-size: 0.8rem;
+    padding-left: 10px;
+}
+
+.navbar {
+    z-index: 100;
+}
+
+.navbar .navbar-brand {
+    font-size: 25px !important;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    margin-right: 15px;
+}
+
+.navbar-nav li.active a {
+    color: black !important;
+}
+
+.navbar-nav li a:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/*ON CLICK OF THE HAMBURGER MAKE THE BACKGROUND OPACITY LOWER*/
