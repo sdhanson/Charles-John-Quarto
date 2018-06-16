@@ -48,6 +48,15 @@ app.get('/written-works', function(req, res) {
     var link = 'Shop Now.';
     var image = '/images/water.jpg';
     res.render('written-works', {subtitle: subtitle, title: title, link: link, image: image});
+})
+
+app.get('/contact', function(req, res) {
+
+    var title = 'Contact';
+    var subtitle = 'Submit Your Message.';
+    var link = '';
+    var image = '/images/water.jpg';
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
 
