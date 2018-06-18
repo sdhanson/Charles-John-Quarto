@@ -1,11 +1,10 @@
 var express = require('express');
-var app = express();
-// var router = express.Router();
+// var app = express();
+var router = express.Router();
 
-app.set('view engine', 'ejs');
 
 /* GET home page. */
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
 
     var title = 'Charles John Quarto: Songwriter-Poet';
     var subtitle = 'New Collection Out. ';
@@ -14,7 +13,7 @@ app.get('/', function(req, res) {
     res.render('index', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/discography', function(req, res) {
+router.get('/discography', function(req, res) {
 
     var title = 'Discography';
     var subtitle = '';
@@ -23,7 +22,7 @@ app.get('/discography', function(req, res) {
     res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/photography', function(req, res) {
+router.get('/photography', function(req, res) {
 
     var title = 'Photo Gallery';
     var subtitle = '';
@@ -32,7 +31,7 @@ app.get('/photography', function(req, res) {
     res.render('photography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/about', function(req, res) {
+router.get('/about', function(req, res) {
 
     var title = 'Charles John Quarto';
     var subtitle = 'The Life and Work';
@@ -41,16 +40,16 @@ app.get('/about', function(req, res) {
     res.render('about', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/written-works', function(req, res) {
+router.get('/written-works', function(req, res) {
 
     var title = 'Written Works';
     var subtitle = 'Poetry and Lyrics. ';
     var link = 'Shop Now.';
     var image = '/images/water.jpg';
     res.render('written-works', {subtitle: subtitle, title: title, link: link, image: image});
-})
+});
 
-app.get('/contact', function(req, res) {
+router.get('/contact', function(req, res) {
 
     var title = 'Contact';
     var subtitle = 'Submit Your Message.';
@@ -59,7 +58,7 @@ app.get('/contact', function(req, res) {
     res.render('contact', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/poem', function(req, res) {
+router.get('/poem', function(req, res) {
 
     var title = 'Poem';
     var subtitle = '';
@@ -68,7 +67,7 @@ app.get('/poem', function(req, res) {
     res.render('poem', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-app.get('/shop', function(req, res) {
+router.get('/shop', function(req, res) {
 
     var title = 'Shop All Works';
     var subtitle = '';
@@ -83,4 +82,4 @@ app.get('/shop', function(req, res) {
 //   res.render('about');
 // });
 
-module.exports = app;
+module.exports = router;

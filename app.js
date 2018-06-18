@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +23,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// MONGOOSE MODEL
+mongoose.connect('mongodb://localhost/cqj');
+app.use(bodyParser.urlencoded({extended: true}));
+
+var poemSchema = new mongoose.Schema({
+    title: String,
+    image: String,
+    body: String,
+    created: {type: Date, default: Date.now}
+});
+
+var Poem = mongoose.model("Poem", poemSchema);
+// MONGOOSE MODEL END
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
