@@ -3,5 +3,41 @@
     color: rgba(0, 0, 0, 0.75);
 }
 
+.text-right-link {
+     float: right;
+ }
 
+.text-center-link {
+    padding-left: 40%;
+}
+
+@media (min-width: 992px) {
+    .media div a {
+        font-size: 2rem;
+    }
+
+    .media div h5 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .media div a {
+        font-size: 1rem;
+    }
+
+    .media div h5 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .media div a {
+        font-size: 1rem;
+    }
+
+    .media div h5 {
+        font-size: 1.5rem;
+    }
+}
 

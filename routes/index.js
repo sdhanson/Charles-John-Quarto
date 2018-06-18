@@ -19,7 +19,7 @@ app.get('/discography', function(req, res) {
     var title = 'Discography';
     var subtitle = '';
     var link = '';
-    var image = '/images/mountain.jpg';
+    var image = '/images/rocks.jpeg';
     res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
@@ -28,7 +28,7 @@ app.get('/photography', function(req, res) {
     var title = 'Photo Gallery';
     var subtitle = '';
     var link = '';
-    var image = '/images/mountain.jpg';
+    var image = '/images/rivers.jpeg';
     res.render('photography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
@@ -37,7 +37,7 @@ app.get('/about', function(req, res) {
     var title = 'Charles John Quarto';
     var subtitle = 'The Life and Work';
     var link = '';
-    var image = '/images/mountain.jpg';
+    var image = '/images/ripple.jpeg';
     res.render('about', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
@@ -55,8 +55,17 @@ app.get('/contact', function(req, res) {
     var title = 'Contact';
     var subtitle = 'Submit Your Message.';
     var link = '';
-    var image = '/images/water.jpg';
+    var image = '/images/tree.jpeg';
     res.render('contact', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
+app.get('/poem', function(req, res) {
+
+    var title = 'Poem';
+    var subtitle = '';
+    var link = '';
+    var image = '/images/tree.jpeg';
+    res.render('poem', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
 
