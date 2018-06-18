@@ -63,3 +63,16 @@ iframe {
     display: block;
     margin: auto;
 }
+
+.track {
+    font-size: 2rem;
+}
+
+.track-info {
+    font-size: 1.1rem;
+}
+
+.track-container {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}

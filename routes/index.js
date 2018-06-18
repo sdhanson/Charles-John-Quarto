@@ -68,6 +68,15 @@ app.get('/poem', function(req, res) {
     res.render('poem', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
+app.get('/shop', function(req, res) {
+
+    var title = 'Shop All Works';
+    var subtitle = '';
+    var link = '';
+    var image = '/images/blake.jpeg';
+    res.render('shop', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
 
 /* GET about page */
 // app.get('/about', function(req, res) {

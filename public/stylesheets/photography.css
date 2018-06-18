@@ -31,3 +31,10 @@
     color: black;
 }
 
+@media (max-width: 768px) {
+    .carousel-item {
+        padding-top: 20%;
+    }
+}
+
+
