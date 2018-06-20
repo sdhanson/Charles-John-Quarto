@@ -15,6 +15,7 @@
             <path value="file://$PROJECT_DIR$/routes" />
             <path value="file://$PROJECT_DIR$/views" />
             <path value="file://$PROJECT_DIR$/views/partials" />
+            <path value="file://$PROJECT_DIR$/models" />
           </resourceRoots>
         </entryData>
       </entry>
