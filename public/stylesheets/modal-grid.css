@@ -1,0 +1,53 @@
+/* NEEDED FOR PHOTOGRAPHY TOO SO INCLUDE THERE */
+.modal-full {
+    min-width: 100%;
+    margin: 0;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.modal-full .modal-content-special {
+    min-height: 100vh;
+    max-height: none;
+}
+
+.modal-header {
+    border: none;
+    padding-right: 5%;
+}
+
+.modal-header span {
+    font-size: 2.5rem;
+}
+
+.photo-container {
+    margin-top: 5%;
+    max-width: 97%;
+    padding-left: 3%;
+}
+
+.photo-container .row div a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.photo-container .row div a:hover img {
+    opacity: 0.75;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.photo {
+    justify-content: center;
+    height: 250px;
+    position: relative;
+}
+
+.photo img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+}
