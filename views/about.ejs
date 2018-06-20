@@ -1,16 +1,31 @@
 <% include partials/header.ejs %>
 <% include partials/overlay.ejs %>
 
+<!--Closes tags from overlay-->
 </div>
 </div>
 
+<!--Image on top of container up to media-->
+<div class="mt-4 container d-block d-md-none">
+    <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
+</div>
+<!--End image container-->
+
+
+<!--Media container (Bootstrap 4: Groups image and body)-->
 <div class="media mt-5">
-    <div class="container col-md-4 mr-2">
+
+    <!--Image container-->
+    <div class="container d-none d-md-block col-md-4">
         <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
     </div>
+    <!--End image container-->
 
+    <!--Body container-->
     <div class="mr-5 pr-2 col-md-8 media-body">
-        <div>
+
+        <!--Container for the body to create padding-->
+        <div class="container">
             <p>
                 <strong>Charles John Quarto</strong> is a mystic spiritual master, healer, psychic, poet, songwriter, philosopher, ally and advisor, on all matters vast. He began his performing career as a poet in Greenwich Village (his
                 birthplace) in 1968. He performed on the David Frost Show, the Museum of Modern Art, New York
@@ -79,9 +94,11 @@
                 music and poetry use as building blocks in the construction of peace.
             </p>
 
+            <!--Paragraph for dropdown links-->
             <p>
                 Currently Charles John is releasing <em>The Rainbow Over Time,</em> a 30-song CD compendium of his co-written songs. He also has a new book of poems, simply entitled <em>Poems</em>.
 
+            <!--Dropdown button for artist collaborators list-->
             <div>
                 <button class="button btn btn-md btn-outline-dark rounded-0 dropdown-toggle" data-toggle="collapse" data-target="#demo">People who have recorded his music </button>
                 <div id="demo" class="collapse mt-2 pt-2">
@@ -141,11 +158,15 @@
                     <div>Melanie</div>
                 </div>
             </div>
+            <!--End dropdown button-->
 
             <p></p>
 
+            <!--Dropdown button for metaphysical teachings list-->
             <div>
-                <button class="button btn btn-md btn-outline-dark rounded-0 dropdown-toggle" data-toggle="collapse" data-target="#demo1">Charles John is available for teaching of poetry and song lyric. His metaphysical teachings include:  </button>
+                <button class="button btn btn-md btn-outline-dark rounded-0 dropdown-toggle" data-toggle="collapse" data-target="#demo1">
+                    Charles John is available for teaching of poetry and song lyric. His metaphysical teachings include:
+                </button>
                 <div id="demo1" class="collapse mt-2 pt-2">
                     <div>Meditation</div>
                     <div>Manifestations</div>
@@ -166,7 +187,9 @@
                     <div>And hundreds of other topics</div>
                 </div>
             </div>
+            <!--End dropdown button-->
             </p>
+            <!--End paragraph for dropdown links-->
 
             <p>
                 Charles John’s instruction comes through the Archangel Michael in ways unexpected and transcendent.
@@ -189,8 +212,13 @@
 
             <p>
                 Charles John has written every day for a half century.
-            </p></div>
+            </p>
+
+        </div>
+        <!--End inner body container-->
+    </div>
+    <!--End outer body container-->
 </div>
-</div>
+<!--End media container-->
 
 <% include partials/footer.ejs %>

@@ -1,12 +1,4 @@
-a {
-    color: gainsboro;
-}
-
-a:hover {
-    color: cornflowerblue;
-    text-decoration: none;
-}
-
+/* HEADER STYLING */
 @media (min-width: 992px) {
     .header {
         width: 99%;
@@ -108,7 +100,10 @@ a:hover {
     font-size: 0.8rem;
     padding-left: 10px;
 }
+/* ***** END HEADER ***** */
 
+
+/* NAVBAR STYLING */
 .navbar {
     z-index: 100;
 }
@@ -129,6 +124,32 @@ a:hover {
 .navbar-nav li a:hover {
     color: rgba(255, 255, 255, 0.75) !important;
 }
+/* ********* END NAVBAR ************ */
 
 
-/*ON CLICK OF THE HAMBURGER MAKE THE BACKGROUND OPACITY LOWER*/
+/* FOOTER STYLING */
+.footer {
+    /*border-top: 1px solid gainsboro;*/
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.75rem;
+    }
+}
+/* ** END FOOTER ** */
+
+
+/* GENERAL LINK STYLING */
+a {
+    color: gainsboro;
+}
+
+a:hover {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+/* *** END GENERAL LINK *** */

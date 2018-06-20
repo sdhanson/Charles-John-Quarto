@@ -1,10 +1,4 @@
-h6 {
-    font-size: 11px;
-    color: gray;
-    padding: 0 !important;
-    margin: 0;
-}
-
+/* ALBUM POP UP STYLING */
 iframe {
     display: block;
     margin: auto;
@@ -22,3 +16,4 @@ iframe {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+/* ***** END ALBUM POP UP ***** */

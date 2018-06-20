@@ -1,4 +1,4 @@
-/* NEEDED FOR PHOTOGRAPHY TOO SO INCLUDE THERE */
+/* MODAL STYLING */
 .modal-full {
     min-width: 100%;
     margin: 0;
@@ -28,7 +28,9 @@
     max-width: 97%;
     padding-left: 3%;
 }
+/* ****** END MODAL ****** */
 
+/* PHOTO GRID STYLING */
 .photo-container .row div a {
     color: black;
     font-size: 1.5rem;
@@ -51,3 +53,4 @@
     max-width: 100%;
     display: flex;
 }
+/* *****END PHOTO GRID ****** */

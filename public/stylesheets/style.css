@@ -3,6 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+html {
+  font-size: 1rem;
+}
+
+/* LINK STYLING */
 a {
   color: #00B7FF;
 }
@@ -14,20 +20,14 @@ a, a:active, a:visited, a:focus {
 a:active {
   opacity: 0.5;
 }
+/* ***** END LINK ***** */
 
-html {
-  font-size: 1rem;
-}
 
-.footer {
-  /*border-top: 1px solid gainsboro;*/
-  margin-top: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+/* GENERAL FONT STYLING */
+h6 {
+  font-size: 11px;
+  color: gray;
+  padding: 0 !important;
+  margin: 0;
 }
-
-@media (max-width: 768px) {
-  .footer {
-    font-size: 0.75rem;
-  }
-}
+/* *** END GENERAL FONT *** */

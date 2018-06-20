@@ -1,5 +1,6 @@
+/* CAROUSEL STYLING */
 
-
+/* images within the carousel */
 .image-container {
     width: 500px;
     height: 500px;
@@ -10,7 +11,9 @@
     max-height: 100%;
     max-width: 100%;
 }
+/* ************************** */
 
+/* carousel view */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     height: 100px;
@@ -36,5 +39,6 @@
         padding-top: 20%;
     }
 }
-
+/* ************************ */
+/* ***** END CAROUSEL ***** */
 
