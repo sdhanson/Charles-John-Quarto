@@ -3,7 +3,10 @@
 <link rel='stylesheet' href='/stylesheets/modal-grid.css' />
 <link rel='stylesheet' href='/stylesheets/pop-up.css' />
 
+<!--Dropdown buttons that overlay the header image-->
+<!--MAYBE COMBINE TO A PARTIAL WITH WRITTEN-WORKS-->
 <div class="row justify-content-center">
+    <!--Category dropdown-->
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -12,6 +15,9 @@
             <a class="dropdown-item header-dropdown-item" href="#">Singles</a>
         </div>
     </div>
+    <!--End category dropdown-->
+
+    <!--Decade dropdown-->
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -20,19 +26,32 @@
             <a class="dropdown-item header-dropdown-item" href="#">1990s</a>
         </div>
     </div>
+    <!--End decade dropdown-->
 </div>
+<!--End dropdown buttons-->
+
+<!--Closing tags from overlay-->
 </div>
 </div>
 
+<!--Photo grid for album covers - triggers modal-->
 <div class="photo-container">
+    <!--Row: all in one row-->
     <div class="row">
+        <!--Image + Title container-->
         <div class="col-md-4 col-sm-6 my-3">
+            <!--Link to toggle modal-->
             <a data-toggle="modal" href="#myModal">
+                <!--Image-->
                 <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
+                <!--Title-->
                 <p> Album </p>
+                <!--Sub information-->
                 <h6>Year, Cowriters</h6>
             </a>
+            <!--End link-->
         </div>
+        <!--End image + title container-->
         <div class="col-md-4 col-sm-6 my-3">
             <a href="">
                 <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
@@ -64,38 +83,63 @@
             </a>
         </div>
     </div>
+    <!--End row-->
 </div>
+<!--End photo container-->
 
 <!-- Modal -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-full" role="document">
         <div class="modal-content modal-content-special">
+            <!--Modal header-->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
+            <!--End modal header-->
+
+            <!--Modal body-->
             <div class="modal-body p-4" id="result">
+
+                <!--Container for image above text on small-->
                 <div class="mt-4 container d-block d-sm-none">
                     <div class="container col-6">
                         <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
                     </div>
                 </div>
+                <!--End small display-->
+
+                <!--Media container-->
                 <div class="media mt-5">
+                    <!--Image container for small and up-->
                     <div class="container col-6 d-none d-sm-block">
                         <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
                     </div>
+                    <!--End image container-->
 
+                    <!--Title and description-->
                     <div class="media-body mx-5 align-self-center">
                         <h5 class="mt-0">Media heading</h5>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                     </div>
+                    <!--End title and description-->
                 </div>
+                <!--End media container-->
+
+                <!--Spotify link-->
                 <div class="mt-5 align-self-center">
                     <iframe src="https://open.spotify.com/embed?uri=spotify:album:3Q149ZH46Z0f3oDR7vlDYV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
+                <!--End spotify-->
+
+                <!--Tracklist-->
                 <div class="track-container col-4 offset-4 mt-5 mb-2">
+                    <!--Title-->
                     <div class="d-flex justify-content-center track pt-2">Tracklist</div>
+                    <!--End title-->
+
+                    <!--Container for song list and length-->
                     <div class="pb-3">
                         <div>
                             <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
@@ -110,10 +154,14 @@
                             <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
                         </div>
                     </div>
+                    <!--End song list container-->
                 </div>
+                <!--End tracklist-->
             </div>
+            <!--End modal body-->
         </div>
     </div>
 </div>
+<!--End modal-->
 
 <% include partials/footer.ejs %>

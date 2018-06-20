@@ -1,9 +1,12 @@
 <% include partials/header.ejs %>
 <% include partials/overlay.ejs %>
 
+<!--Closing tags from overlay-->
 </div>
 </div>
+<!--End closing tags-->
 
+<!--Container for contact info shown above media on xs to small-->
 <div class="mt-4 container d-block d-sm-none">
     <h3>Contact Info</h3>
     <br>
@@ -16,23 +19,38 @@
         615-352-8480
     </div>
 </div>
+<!--End container for above contact info-->
 
+<!--Media container for contact form (Bootstrap 4: Group text and form)-->
 <div class="media mt-5">
+    <!--Container for contact info shown from small to xl-->
     <div class="ml-5 container d-none d-sm-block col-2">
+        <!--Title-->
         <h3>Contact Info</h3>
+        <!--End title-->
         <br>
+
+        <!--Address-->
         <div>
             Charles John Quarto<br>P.O. Box 120535<br>
             Nashville, TN 37212
         </div>
+        <!--End address-->
+
+        <!--Phone number-->
         <div>
             <br>
             615-352-8480
         </div>
+        <!--End phone number-->
     </div>
+    <!--End container for contact info-->
 
+    <!--Form container/media body-->
     <div class="ml-2 mr-5 media-body">
+        <!--Form-->
         <form>
+            <!--First row - first and last name-->
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="firstName">First Name *</label>
@@ -43,27 +61,45 @@
                     <input type="text" class="form-control" id="lastName" placeholder="Last Name">
                 </div>
             </div>
+            <!--End first row-->
+            <!--Second row - Phone number, subject, and message-->
             <div class="form-row">
+                <!--Phone number-->
                 <div class="form-group col-md-12">
                     <label for="phoneNumber">Phone Number *</label>
                     <input type="tel" class="form-control" id="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                 </div>
+                <!--End phone number-->
+
+                <!--Subject-->
                 <div class="form-group col-md-12">
                     <label for="subject">Subject *</label>
-                    <input type="text*" class="form-control" id="subject" required>
+                    <input type="text" class="form-control" id="subject" required>
                 </div>
+                <!--End subject-->
+
+                <!--Message-->
                 <div class="form-group col-12">
                     <label for="message">Message *</label>
                     <br>
                     <textarea class="w-100" id="message" name="message" placeholder=" " rows="5" required></textarea>
                 </div>
+                <!--End message-->
             </div>
+            <!--End second row-->
+
+            <!--Submit button-->
             <div class="form-group col-md-12">
                 <button class="button-submit btn btn-md btn-outline-dark rounded-0" type="submit">Submit</button>
             </div>
+            <!--End submit button-->
+
         </form>
+        <!--End form-->
     </div>
+    <!--End form container-->
 </div>
+<!--End media-->
 
 
 

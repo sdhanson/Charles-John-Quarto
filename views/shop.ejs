@@ -4,7 +4,10 @@
 <link rel='stylesheet' href='/stylesheets/carousel.css' />
 <link rel='stylesheet' href='/stylesheets/home.css' />
 
+<!--Dropdown buttons that overlay the header image-->
+<!--MAYBE COMBINE TO A PARTIAL WITH WRITTEN-WORKS-->
 <div class="row justify-content-center">
+    <!--Category dropdown-->
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -15,19 +18,26 @@
             <a class="dropdown-item header-dropdown-item" href="#">Poems</a>
         </div>
     </div>
+    <!--End category dropdown-->
+</div>
+<!--End dropdown buttons-->
+
+<!--Closing tags from overlay-->
+</div>
 </div>
 
-</div>
-</div>
-
+<!--Photo container-->
 <div class="photo-container">
+    <!--Row-->
     <div class="row">
+        <!--Photo + title-->
         <div class="photo col-md-4 col-sm-6 my-5">
             <a href="#">
                 <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
                 <p>Name of collection/link</p>
             </a>
         </div>
+        <!--End photo + title-->
         <div class="photo col-md-4 col-sm-6 my-5">
             <a href="#">
                 <img class="my-1 img-fluid" src="images/water.jpg" alt="image">
@@ -59,10 +69,10 @@
                 <p>Name of collection/link</p>
             </a>
         </div>
-
-
     </div>
+    <!--End row-->
 </div>
+<!--End photo container-->
 
 
 <% include partials/footer.ejs %>

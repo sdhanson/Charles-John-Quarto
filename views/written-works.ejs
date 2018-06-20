@@ -1,7 +1,9 @@
 <% include partials/header.ejs %>
 <% include partials/overlay.ejs %>
 
+<!--Dropdown buttons that overlay the header image-->
 <div class="row justify-content-center">
+    <!--Category dropdown-->
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -9,6 +11,9 @@
             <a class="dropdown-item header-dropdown-item" href="#">Lyrics</a>
         </div>
     </div>
+    <!--End category dropdown-->
+
+    <!--Decade dropdown-->
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -17,20 +22,31 @@
             <a class="dropdown-item header-dropdown-item" href="#">1990s</a>
         </div>
     </div>
+    <!--End decade dropdown-->
 </div>
+<!--End dropdown buttons-->
+
+<!--Closing tags from overlay-->
 </div>
 </div>
 
+<!--Display for written works-->
+<!--Media container for a written work photo, title, and description-->
 <div class="media mt-5">
+    <!--Image-->
     <div class="container ml-3 col-2 align-self-center">
         <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
     </div>
+    <!--End image-->
 
+    <!--Body - title and description-->
     <div class="my-4 media-body align-self-center">
         <h5 class="mt-0">Media heading</h5>
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
     </div>
+    <!--End body-->
 </div>
+<!--End media container-->
 
 <div class="media mt-5">
     <div class="container ml-3 col-2 align-self-center">
@@ -53,5 +69,6 @@
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
     </div>
 </div>
+<!--End written works display-->
 
 <% include partials/footer.ejs %>
