@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var CollectionSchema = new Schema(
+var BookSchema = new Schema(
     {
         title: {type: String, required: true},
         date: {type: Date, required: true},
@@ -15,11 +15,11 @@ var CollectionSchema = new Schema(
 );
 
 // Virtual for poem's URL
-CollectionSchema
+BookSchema
     .virtual('url')
     .get(function () {
-        return '/written-work/collection/' + this._id;
+        return '/written-work/book/' + this._id;
     });
 
 //Export model
-module.exports = mongoose.model('Collection', CollectionSchema);
+module.exports = mongoose.model('Book', BookSchema);

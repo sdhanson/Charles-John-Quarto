@@ -4,12 +4,12 @@ var router = express.Router();
 // Require controller modules.
 var poem_controller = require('../controllers/poemController');
 var song_controller = require('../controllers/songController');
-var collection_controller = require('../controllers/collectionController');
+var book_controller = require('../controllers/bookController');
 
 /// COLLECTION ROUTES ///
 
 // GET catalog home page.
-router.get('/written-work', collection_controller.index);
+router.get('/written-work', book_controller.index);
 
 // // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 // router.get('/book/create', book_controller.book_create_get);
@@ -30,10 +30,10 @@ router.get('/written-work', collection_controller.index);
 // router.post('/book/:id/update', book_controller.book_update_post);
 
 // GET request for one Book.
-router.get('/collection/:id', collection_controller.collection_detail);
+router.get('/book/:id', book_controller.book_detail);
 
 // GET request for list of all Book items.
-router.get('/collections', collection_controller.collection_list);
+router.get('/books', book_controller.book_list);
 
 /// POEM ROUTES ///
 
