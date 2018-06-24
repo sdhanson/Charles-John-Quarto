@@ -3,21 +3,35 @@ var Photo = require('../models/photo');
 var async = require('async');
 
 exports.index = function(req, res) {
-    async.parallel({
-        photo_count: function(callback) {
-            Photo.count({}, callback); // Pass an empty object as match condition to find all documents of this collection
-        },
-        photo_guide: function(callback) {
-            Photo.find({}, callback);
-        },
-    }, function(err, results) {
-        if (err) { return next(err); }
-        var title = 'Photo Gallery';
-        var subtitle = '';
-        var link = '';
-        var image = '/images/rivers.jpeg';
-        res.render('photography', { title: title, error: err, data: results, subtitle: subtitle, link: link, image: image });
+
+    Photo.find({}, function(err, allPhotos){
+        if(err){
+            console.log(err);
+        } else {
+            var title = 'Photo Gallery';
+            var subtitle = '';
+            var link = '';
+            var image = '/images/rivers.jpeg';
+            res.render('photography', {
+                title: title,
+                error: err,
+                photos: allPhotos,
+                subtitle: subtitle,
+                link: link,
+                image: image
+            });
+        }
     });
+
+    // async.parallel({
+    //     // photo_count: function(callback) {
+    //     //     Photo.count({}, callback); // Pass an empty object as match condition to find all documents of this collection
+    //     // },
+    //     photo_guide: function(callback) {
+    //         Photo.find({}, callback);
+    //     },
+    // }, function(err, results) {
+
 };
 
 //

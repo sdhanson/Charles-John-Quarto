@@ -8,40 +8,43 @@
 </div>
 
 <div class="photo-container">
+    <!--HAVE TO CHANGE SOME OF THE JPG TO JPEG AND MAKE SURE ONLY ONE OF THE PHOTO IS BEING SHOWN-->
     <div class="row">
         <!--foreach photo in the data create a column like so with the image link set to the image-->
-        <!--add stuff to the database to test-->
+        <% photos.forEach(function(photo) { %>
         <div class="photo col-md-4 col-sm-6 my-3">
             <a data-toggle="modal" href="#myModal">
-                <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
+                <img class="my-1 img-fluid" src="<%= photo.image %>" alt="image">
             </a>
         </div>
-        <div class="photo col-md-4 col-sm-6 my-3">
-            <a data-toggle="modal" href="#myModal">
-                <img class="my-1 img-fluid" src="images/water.jpg" alt="image">
-            </a>
-        </div>
-        <div class="photo col-md-4 col-sm-6 my-3">
-            <a data-toggle="modal" href="#myModal">
-                <img class="img-fluid my-1" src="images/book.jpg" alt="image">
-            </a>
-        </div>
+        <% }); %>
 
-        <div class="photo col-md-4 col-sm-6 my-3">
-            <a data-toggle="modal" href="#myModal">
-                <img class="img-fluid my-1" src="images/music.jpg" alt="image">
-            </a>
-        </div>
-        <div class="photo col-md-4 col-sm-6 my-3">
-            <a data-toggle="modal" href="#myModal">
-                <img class="img-fluid my-1" src="images/book.jpg" alt="image">
-            </a>
-        </div>
-        <div class="photo col-md-4 col-sm-6 my-3">
-            <a data-toggle="modal" href="#myModal">
-                <img class="img-fluid my-1" src="images/contacts.jpg" alt="image">
-            </a>
-        </div>
+        <!--<div class="photo col-md-4 col-sm-6 my-3">-->
+            <!--<a data-toggle="modal" href="#myModal">-->
+                <!--<img class="my-1 img-fluid" src="images/water.jpg" alt="image">-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="photo col-md-4 col-sm-6 my-3">-->
+            <!--<a data-toggle="modal" href="#myModal">-->
+                <!--<img class="img-fluid my-1" src="images/book.jpg" alt="image">-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="photo col-md-4 col-sm-6 my-3">-->
+            <!--<a data-toggle="modal" href="#myModal">-->
+                <!--<img class="img-fluid my-1" src="images/music.jpg" alt="image">-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="photo col-md-4 col-sm-6 my-3">-->
+            <!--<a data-toggle="modal" href="#myModal">-->
+                <!--<img class="img-fluid my-1" src="images/book.jpg" alt="image">-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="photo col-md-4 col-sm-6 my-3">-->
+            <!--<a data-toggle="modal" href="#myModal">-->
+                <!--<img class="img-fluid my-1" src="images/contacts.jpg" alt="image">-->
+            <!--</a>-->
+        <!--</div>-->
 
 
     </div>
