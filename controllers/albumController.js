@@ -1,5 +1,9 @@
 var Album = require('../models/album');
 
+exports.index = function(req, res) {
+    res.send('NOT IMPLEMENTED: Album Home Page');
+};
+
 // Display list of all Authors.
 exports.album_list = function(req, res) {
     res.send('NOT IMPLEMENTED: Album list');

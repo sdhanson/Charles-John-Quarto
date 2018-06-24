@@ -1,5 +1,9 @@
 var Photo = require('../models/photo');
 
+exports.index = function(req, res) {
+    res.send('NOT IMPLEMENTED: Photography Home Page');
+};
+
 
 // Display list of all photos.
 exports.photo_list = function(req, res) {
