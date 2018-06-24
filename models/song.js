@@ -18,7 +18,7 @@ var SongSchema = new Schema(
 SongSchema
     .virtual('url')
     .get(function () {
-        return '/written-work/song/' + this._id;
+        return '/written-works/song/' + this._id;
     });
 
 //Export model

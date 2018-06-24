@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var PhotoSchema = new Schema(
     {
         title: {type: String, required: true},
-        Photographer: {type: String},
+        photographer: {type: String},
         image: {type: String, required: true},
         date: {type: Date, required: true},
         description: {type: String},

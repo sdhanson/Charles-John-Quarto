@@ -7,9 +7,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var photographyRouter = require('./routes/photography');
+var photographyRouter = require('./routes/photo');
 var musicRouter = require('./routes/music');
-var writtenworkRouter = require('./routes/written-work');
+var writtenworkRouter = require('./routes/writing');
 
 
 var app = express();
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/photography', photographyRouter);
+app.use('/photo', photographyRouter);
 app.use('/music', musicRouter);
 app.use('/written-work', writtenworkRouter);
 //

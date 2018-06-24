@@ -8,7 +8,7 @@ var PoemSchema = new Schema(
         image: {type: String, default: '/images/mountain.jpg', required: true},
         date: {type: Date, required: true},
         body: {type: String, required: true},
-        collection: {type: Schema.ObjectId, ref: 'Collection'}
+        book: {type: Schema.ObjectId, ref: 'Book'}
 }
 );
 
@@ -16,7 +16,7 @@ var PoemSchema = new Schema(
 PoemSchema
     .virtual('url')
     .get(function () {
-        return '/written-work/poem/' + this._id;
+        return '/written-works/poem/' + this._id;
     });
 
 //Export model

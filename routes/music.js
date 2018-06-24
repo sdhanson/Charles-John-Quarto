@@ -7,7 +7,7 @@ var song_controller = require('../controllers/songController');
 /// COLLECTION ROUTES ///
 
 // GET catalog home page.
-router.get('/discography', album_controller.index);
+router.get('/', album_controller.index);
 
 // // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 // router.get('/book/create', book_controller.book_create_get);
