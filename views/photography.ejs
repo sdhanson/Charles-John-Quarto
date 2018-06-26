@@ -20,13 +20,16 @@
                 <div class="photo-overlay">
                     <div class="photo-overlay-text">
                         <% if (photo.title) { %>
-                        <div> <%= photo.title %> </div>
+                        <div class="title"> <%= photo.title %> </div>
                         <% } %>
                         <% if (photo.photographer) { %>
-                        <div> <%= photo.photographer %>  </div>
+                        <div class="photographer"> <%= photo.photographer %>  </div>
                         <% } %>
                         <% if (photo.location) { %>
-                        <div> <%= photo.location %>  </div>
+                        <div class="location"> <%= photo.location %>  </div>
+                        <% } %>
+                        <% if (photo.description) { %>
+                        <div class="description d-none"> <%= photo.description %> </div>
                         <% } %>
                     </div>
                 </div>
@@ -66,8 +69,10 @@
 
                     <!--Title and description-->
                     <div class="media-body mx-5 align-self-center">
-                        <h5 class="mt-0">Media heading</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <h2 class="title"></h2>
+                        <div class="location"></div>
+                        <div class="photographer"></div>
+                        <div class="description"></div>
                     </div>
                     <!--End title and description-->
                 </div>
