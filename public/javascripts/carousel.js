@@ -5,6 +5,5 @@ $(".photo-link").click(function() {
     $(".media-body div.location").text($(this).find(".photo-overlay .photo-overlay-text .location").text());
     $(".media-body div.photographer").text($(this).find(".photo-overlay .photo-overlay-text .photographer").text());
     $(".media-body div.description").text($(this).find(".photo-overlay .photo-overlay-text .description").text());
-
 });
 

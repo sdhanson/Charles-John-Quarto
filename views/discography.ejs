@@ -2,6 +2,7 @@
 <% include partials/overlay.ejs %>
 <link rel='stylesheet' href='/stylesheets/modal-grid.css' />
 <link rel='stylesheet' href='/stylesheets/pop-up.css' />
+<link rel='stylesheet' href='/stylesheets/carousel.css' />
 
 <!--Dropdown buttons that overlay the header image-->
 <!--MAYBE COMBINE TO A PARTIAL WITH WRITTEN-WORKS-->
@@ -38,50 +39,33 @@
 <div class="photo-container">
     <!--Row: all in one row-->
     <div class="row">
+        <% results.album_list.forEach(function(album) { %>
         <!--Image + Title container-->
         <div class="col-md-4 col-sm-6 my-3">
             <!--Link to toggle modal-->
             <a data-toggle="modal" href="#myModal">
                 <!--Image-->
-                <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
+                <% if (album.image) { %>
+                <img class="my-1 img-fluid" src=<%=album.image%> alt="image">
+                <% } %>
                 <!--Title-->
-                <p> Album </p>
+                <% if (album.title) { %>
+                <p class="title"> <%= album.title %> </p>
+                <% } %>
                 <!--Sub information-->
-                <h6>Year, Cowriters</h6>
+                <h6>
+                    <% if (album.year) { %>
+                    <%= album.year %>,
+                    <% } %>
+                    <% if (album.artist) { album.artist.forEach(function(artist) { %>
+                         <%= artist %>
+                    <% })} %>
+                </h6>
             </a>
             <!--End link-->
         </div>
         <!--End image + title container-->
-        <div class="col-md-4 col-sm-6 my-3">
-            <a href="">
-                <img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">
-                <p> Album </p>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 my-3">
-            <a href="">
-                <img class="img-fluid my-1" src="images/mountain.jpg" alt="image">
-                <p> Album </p>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 my-3">
-            <a href="">
-                <img class="img-fluid my-1" src="images/mountain.jpg" alt="image">
-                <p> Album </p>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 my-3">
-            <a href="">
-                <img class="img-fluid my-1" src="images/mountain.jpg" alt="image">
-                <p> Album </p>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-6 my-3">
-            <a href="">
-                <img class="img-fluid my-1" src="images/mountain.jpg" alt="image">
-                <p> Album </p>
-            </a>
-        </div>
+        <% }); %>
     </div>
     <!--End row-->
 </div>

@@ -36,25 +36,6 @@ app.use('/users', usersRouter);
 app.use('/photo', photographyRouter);
 app.use('/music', musicRouter);
 app.use('/written-work', writtenworkRouter);
-//
-// // MONGOOSE MODEL
-// mongoose.connect('mongodb://localhost/cqj');
-// app.use(bodyParser.urlencoded({extended: true}));
-//
-// var poemSchema = new mongoose.Schema({
-//     title: String,
-//     image: String,
-//     body: String,
-//     created: {type: Date, default: Date.now}
-// });
-//
-// var Poem = mongoose.model("Poem", poemSchema);
-// // MONGOOSE MODEL END
-//
-// // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
 
 // error handler
 app.use(function(err, req, res, next) {

@@ -1,7 +1,37 @@
 var Album = require('../models/album');
+var Song = require('../models/song');
+
+var async = require('async');
+
+// PROBABLY RENAME THIS PAGE TO MUSIC INDEX
 
 exports.index = function(req, res) {
-    res.send('NOT IMPLEMENTED: Album Home Page');
+    // WANT TO FIND ALL ALBUMS AND ALL SONGS
+    async.parallel({
+        album_list: function(callback){
+            Album.find({}, callback)
+        },
+        song_list: function(callback) {
+            Song.find({}, callback)
+        },
+    }, function(err, results){
+        if(err){
+            console.log(err);
+        } else {
+            var title = 'Discography';
+            var subtitle = '';
+            var link = '';
+            var image = '/images/rocks.jpeg';
+            res.render('discography', {
+                title: title,
+                error: err,
+                results: results,
+                subtitle: subtitle,
+                link: link,
+                image: image
+            });
+        }
+    });
 };
 
 // Display list of all Authors.

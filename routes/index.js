@@ -14,21 +14,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/discography', function(req, res) {
-
-    var title = 'Discography';
-    var subtitle = '';
-    var link = '';
-    var image = '/images/rocks.jpeg';
-    // res.redirect('/music');
-    res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
+    res.redirect('/music');
+    // res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
 router.get('/photography', function(req, res) {
-
-    var title = 'Photo Gallery';
-    var subtitle = '';
-    var link = '';
-    var image = '/images/rivers.jpeg';
     res.redirect('/photo');
     // res.render('photography', {subtitle: subtitle, title: title, link: link, image: image});
 });
