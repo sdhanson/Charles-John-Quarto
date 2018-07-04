@@ -8,7 +8,6 @@ var BookSchema = new Schema(
         author: {type: String, default: 'Charles John Quarto', required: true},
         poems: {type: Array, default: [], required: true},
         image: {type: String},
-        length: {type: Number},
         description: {type: String, required: true}, // analogous to body - might want array ??
         link: {type: String}
     }

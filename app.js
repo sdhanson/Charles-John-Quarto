@@ -31,12 +31,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/photo', photographyRouter);
 app.use('/music', musicRouter);
-app.use('/written-work', writtenworkRouter);
+app.use('/writing', writtenworkRouter);
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -44,8 +52,12 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
+    var title = 'Error';
+    var subtitle = 'The page you are looking for cannot be found!';
+    var link = 'Head back to safety.';
+    var image = '/images/storm.jpeg';
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
 module.exports = app;

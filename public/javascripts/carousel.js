@@ -20,6 +20,6 @@ $(".album-link").click(function() {
     $(".media-body a.link").text('Shop');
     $(".media-body a.spotify").text('Spotify');
 
-    $(".track-container div.songs").append($(".photo-overlay .photo-overlay-text .songs").html());
+    $(".track-container div.songs").html($(this).find(".photo-overlay .photo-overlay-text .songs .length").html());
     $(".media-body div.description").text($(this).find(".photo-overlay .photo-overlay-text .description").text());
 });

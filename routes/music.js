@@ -2,63 +2,33 @@ var express = require('express');
 var router = express.Router();
 
 // Require controller modules.
-var album_controller = require('../controllers/albumController');
-var song_controller = require('../controllers/songController');
+var music_controller = require('../controllers/musicController');
 
-router.get('/category/:specifier', album_controller.category);
-router.get('/decade/:specifier', album_controller.decade);
+// GET all albums
+router.get('/Song', music_controller.songs);
+
+// GET all songs
+router.get('/Album', music_controller.albums);
+
+// GET music with category specifier
+router.get('/category/:specifier', music_controller.category);
+
+// GET music with decade specifier
+router.get('/decade/:specifier', music_controller.decade);
 
 // GET catalog home page.
-router.get('/', album_controller.index);
-
-// // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
-// router.get('/book/create', book_controller.book_create_get);
-//
-// // POST request for creating Book.
-// router.post('/book/create', book_controller.book_create_post);
-//
-// // GET request to delete Book.
-// router.get('/book/:id/delete', book_controller.book_delete_get);
-//
-// // POST request to delete Book.
-// router.post('/book/:id/delete', book_controller.book_delete_post);
-//
-// // GET request to update Book.
-// router.get('/book/:id/update', book_controller.book_update_get);
-//
-// // POST request to update Book.
-// router.post('/book/:id/update', book_controller.book_update_post);
+router.get('/', music_controller.index);
 
 // GET request for one Book.
-router.get('/album/:id', album_controller.album_detail);
+router.get('/album/:id', music_controller.album_detail);
 
-// GET request for list of all Book items.
-router.get('/albums', album_controller.album_list);
+// GET request for list of all Album items.
+router.get('/albums', music_controller.album_list);
 
-/// SONG ROUTES ///
-
-// // GET request for creating a Genre. NOTE This must come before route that displays Genre (uses id).
-// router.get('/genre/create', genre_controller.genre_create_get);
+// // GET request for one Genre.
+// router.get('/song/:id', song_controller.song_detail);
 //
-// //POST request for creating Genre.
-// router.post('/genre/create', genre_controller.genre_create_post);
-//
-// // GET request to delete Genre.
-// router.get('/genre/:id/delete', genre_controller.genre_delete_get);
-//
-// // POST request to delete Genre.
-// router.post('/genre/:id/delete', genre_controller.genre_delete_post);
-//
-// // GET request to update Genre.
-// router.get('/genre/:id/update', genre_controller.genre_update_get);
-//
-// // POST request to update Genre.
-// router.post('/genre/:id/update', genre_controller.genre_update_post);
-
-// GET request for one Genre.
-router.get('/song/:id', song_controller.song_detail);
-
-// GET request for list of all Genre.
-router.get('/songs', song_controller.song_list);
+// // GET request for list of all Genre.
+// router.get('/songs', song_controller.song_list);
 
 module.exports = router;

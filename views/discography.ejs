@@ -11,10 +11,10 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="/discography/Song">All Songs</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/Album">All Albums</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/Collaboration">Collaborations</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/Single">Singles</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/category/Song">All Songs</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/category/Album">All Albums</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/category/Collaboration">Collaborations</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/category/Single">Singles</a>
             <a class="dropdown-item header-dropdown-item" href="/discography">All</a>
         </div>
     </div>
@@ -24,12 +24,12 @@
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <a class="dropdown-item header-dropdown-item" href="/discography/1960s">1960s</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/1970s">1970s</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/1980s">1980s</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/1990s">1990s</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/2000s">2000s</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/Present">Present</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/1960s">1960s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/1970s">1970s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/1980s">1980s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/1990s">1990s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/2000s">2000s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/decade/Present">Present</a>
         </div>
     </div>
     <!--End decade dropdown-->
@@ -51,7 +51,9 @@
                 <a class="album-link" data-toggle="modal" href="#myModal">
                     <!--Image-->
                     <% if (album.image) { var image = "/" + album.image %>
-                    <img class="my-1 img-fluid" src=<%=image%> alt="image">
+                        <img class="my-1 img-fluid" src="<%=image%>" alt="image">
+                    <% } else { %>
+                        <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
                     <% } %>
                     <!--Title-->
                     <div class="photo-overlay">
@@ -83,11 +85,16 @@
 
                             <!--CHECK IF THIS EVEN WORKS-->
                             <div class="songs d-none">
-                                <% if (album.songs) { album.songs.forEach(function(song) { %>
-                                <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
-                                <% })} else {  %>
-                                <span> No songs </span>
-                                <% } %>
+                                <div class="length">
+                                    <% if (album.songs) { album.songs.forEach(function(song) { %>
+                                        <% if (song.length) {%>
+                                            <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
+                                            <% } else {  %>
+                                            <span> No songs </span>
+                                    <% } })} else {  %>
+                                    <span class="track-info"> No songs </span>
+                                    <% } %>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,10 +103,10 @@
                 <!--Sub information-->
                 <div class="tags">
                     <% if (album.category) { %>
-                    <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=album.category%>" role="button"><%= album.category %></a>
+                    <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/category/<%=album.category%>" role="button"><%= album.category %></a>
                     <% } %>
                     <% if (album.decade) { %>
-                    <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=album.decade%>" role="button"><%= album.decade %></a>
+                    <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/decade/<%=album.decade%>" role="button"><%= album.decade %></a>
                     <% } %>
                 </div>
             </div>
@@ -114,7 +121,9 @@
             <a class="album-link" data-toggle="modal" href="#myModal">
                 <!--Image-->
                 <% if (song.image) { var image = "/" + song.image %>
-                <img class="my-1 img-fluid" src=<%=image%> alt="image">
+                    <img class="my-1 img-fluid" src="<%=image%>" alt="image">
+                <%  } else { %>
+                    <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
                 <% } %>
                 <!--Title-->
                 <div class="photo-overlay">
@@ -147,11 +156,14 @@
 
                         <!--CHECK IF THIS EVEN WORKS-->
                         <div class="songs d-none">
-                            <% if (song.length) {%>
-                            <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
-                            <% } else {  %>
-                            <span> No songs </span>
-                            <% } %>
+                            <div class="length">
+                                <% if (song.length) {%>
+                                <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
+                                <% } else {  %>
+                                <span> No songs </span>
+                                <% } %>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -174,10 +186,10 @@
             -->
             <div class="tags">
                 <% if (song.category) { %>
-                <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=song.category%>" role="button"><%= song.category %></a>
+                <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/category/<%=song.category%>" role="button"><%= song.category %></a>
                 <% } %>
                 <% if (song.decade) { %>
-                <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=song.decade%>" role="button"><%= song.decade %></a>
+                <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/decade/<%=song.decade%>" role="button"><%= song.decade %></a>
                 <% } %>
             </div>
         </div>

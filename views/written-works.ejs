@@ -7,8 +7,9 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="#">Poetry</a>
-            <a class="dropdown-item header-dropdown-item" href="#">Lyrics</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/work/collections">Collections</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/work/poems">Poems</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/work/songs">Lyrics</a>
         </div>
     </div>
     <!--End category dropdown-->
@@ -17,9 +18,12 @@
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <a class="dropdown-item header-dropdown-item" href="#">1970s</a>
-            <a class="dropdown-item header-dropdown-item" href="#">1980s</a>
-            <a class="dropdown-item header-dropdown-item" href="#">1990s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1960s">1960s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1970s">1970s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1980s">1980s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1990s">1990s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/2000s">2000s</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/Present">Present</a>
         </div>
     </div>
     <!--End decade dropdown-->
@@ -32,43 +36,101 @@
 
 <!--Display for written works-->
 <!--Media container for a written work photo, title, and description-->
+<!--BOOKS-->
+<% results.book_list.forEach(function(book) { %>
+    <div class="media mt-5">
+        <!--Image-->
+        <div class="container ml-3 col-2 align-self-center">
+            <% if (book.image) { var image = "/" + book.image %>
+            <img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">
+            <% } else { %>
+            <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
+            <% } %>
+        </div>
+        <!--End image-->
+
+        <!--Body - title and description-->
+        <div class="my-4 media-body align-self-center">
+            <% if (book.title) { %>
+                <h5 class="mt-0><%= book.title %></h5>
+            <% } %>
+            <% if (book.description) { %>
+                <%= book.description.substring(0, 100) %> "..."
+            <% } %>
+            <p>
+                <a href=<%=song.url%>> View
+                </a>
+            </p>
+        </div>
+        <!--End body-->
+    </div>
+<% }); %>
+<!--End media container-->
+
+<!--POEMS-->
+<% results.poem_list.forEach(function(poem) { %>
 <div class="media mt-5">
     <!--Image-->
     <div class="container ml-3 col-2 align-self-center">
-        <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
+        <% if (poem.image) { var image = "/" + poem.image %>
+        <img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">
+        <% } else { %>
+        <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
+        <% } %>
     </div>
     <!--End image-->
 
     <!--Body - title and description-->
     <div class="my-4 media-body align-self-center">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        <% if (poem.title) { %>
+        <h5 class="mt-0"><%= poem.title %></h5>
+        <% } %>
+        <% if (poem.description) { %>
+        <%= poem.description.substring(0, 100) %> "..."
+        <% } %>
+        <p>
+            <a href=<%=poem.url%>> View
+            </a>
+        </p>
     </div>
     <!--End body-->
 </div>
+<% }); %>
 <!--End media container-->
 
-<div class="media mt-5">
-    <div class="container ml-3 col-2 align-self-center">
-        <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
-    </div>
-
-    <div class="my-4 media-body">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-</div>
+<!--SONGS-->
+<% results.song_list.forEach(function(song) { %>
 
 <div class="media mt-5">
+    <!--Image-->
     <div class="container ml-3 col-2 align-self-center">
-        <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
+        <% if (song.image) { var image = "/" + song.image %>
+        <img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">
+        <% } else { %>
+        <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
+        <% } %>
     </div>
+    <!--End image-->
 
-    <div class="my-4 media-body">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    <!--Body - title and description-->
+    <div class="m-4 media-body align-self-center">
+        <% if (song.title) { %>
+        <h5 class="mt-0"><%= song.title %></h5>
+        <% } %>
+        <% if (song.description) { %>
+        <%= song.description.substring(0, 200) %> ...
+        <% } %>
+        <p>
+            <a href=<%=song.url%>> View
+            </a>
+        </p>
     </div>
+    <!--End body-->
 </div>
+
+<% }); %>
+<!--End media container-->
+
 <!--End written works display-->
 
 <% include partials/footer.ejs %>
