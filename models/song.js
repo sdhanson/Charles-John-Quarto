@@ -4,13 +4,18 @@ var Schema = mongoose.Schema;
 var SongSchema = new Schema(
     {
         title: {type: String, required: true},
-        date: {type: Date, required: true},
+        decade: {type: String, enum: ['1960', '1970', '1980', '1990', '2000', 'Present'], required: true},
         artist: {type: Array, default: ['Charles John Quarto'], required: true}, // analogous to author
+        category: {type: String, default: 'Song', enum: ['Song', 'Collaboration', 'Single'], required: true},
+        image: {type: String, required: true},
+        description: {type: String, required: true},
         producers: {type: Array},
-        album: {type: Schema.ObjectId, ref: 'Album'},
-        image: {type: String},
-        length: {type: Number},
-        lyrics: {type: String, required: true} // analogous to body - might want array ??
+        //album: {type: Schema.ObjectId, ref: 'Album'},
+        album: {type: String, ref: 'Album'},
+        link: {type: String},
+        length: {type: String},
+        lyrics: {type: String}, // analogous to body - might want array ??
+        spotify_uri: {type: String}
     }
 );
 

@@ -31,3 +31,12 @@ h6 {
   margin: 0;
 }
 /* *** END GENERAL FONT *** */
+
+
+/* STYLING FOR THE ABOUT DROP DOWN */
+.about-text {
+  margin-top: 10px;
+  margin-left: 2px;
+  font-weight: 300;
+}
+/* ** END DROP DOWN STYLING ** */

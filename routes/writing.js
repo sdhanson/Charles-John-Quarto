@@ -30,10 +30,10 @@ router.get('/', book_controller.index);
 // router.post('/book/:id/update', book_controller.book_update_post);
 
 // GET request for one Book.
-router.get('/book/:id', book_controller.book_detail);
-
-// GET request for list of all Book items.
-router.get('/books', book_controller.book_list);
+// router.get('/book/:id', book_controller.book_detail);
+//
+// // GET request for list of all Book items.
+// router.get('/books', book_controller.book_list);
 
 /// POEM ROUTES ///
 
@@ -56,10 +56,10 @@ router.get('/books', book_controller.book_list);
 // router.post('/author/:id/update', author_controller.author_update_post);
 
 // GET request for one Author.
-router.get('/poem/:id', poem_controller.poem_detail);
-
-// GET request for list of all Authors.
-router.get('/poems', poem_controller.poem_list);
+// router.get('/poem/:id', poem_controller.poem_detail);
+//
+// // GET request for list of all Authors.
+// router.get('/poems', poem_controller.poem_list);
 
 /// SONG ROUTES ///
 
@@ -81,10 +81,10 @@ router.get('/poems', poem_controller.poem_list);
 // // POST request to update Genre.
 // router.post('/genre/:id/update', genre_controller.genre_update_post);
 
-// GET request for one Genre.
-router.get('/song/:id', song_controller.song_detail);
-
-// GET request for list of all Genre.
-router.get('/songs', song_controller.song_list);
+// // GET request for one Genre.
+// router.get('/song/:id', song_controller.song_detail);
+//
+// // GET request for list of all Genre.
+// router.get('/songs', song_controller.song_list);
 
 module.exports = router;

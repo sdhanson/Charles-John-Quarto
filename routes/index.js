@@ -13,6 +13,16 @@ router.get('/', function(req, res) {
     res.render('index', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
+router.get('/discography/:specifier', function(req, res) {
+    if(req.params.specifier == "Album" || req.params.specifier == "Collaboration" || req.params.specifier == "Song" || req.params.specifier == "Single") {
+        res.redirect('/music/category/' + req.params.specifier);
+    } else if(req.params.specifier == "1960s" || req.params.specifier == "1970s" || req.params.specifier == "1980s" || req.params.specifier == "1990s" || req.params.specifier == "2000s" || req.params.specifier == "Present") {
+        res.redirect('/music/decade/' + req.params.specifier);
+    }
+
+    // res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
+});
+
 router.get('/discography', function(req, res) {
     res.redirect('/music');
     // res.render('discography', {subtitle: subtitle, title: title, link: link, image: image});
@@ -33,6 +43,7 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/written-works', function(req, res) {
+    // res.redirect('/writing');
 
     var title = 'Written Works';
     var subtitle = 'Poetry and Lyrics. ';

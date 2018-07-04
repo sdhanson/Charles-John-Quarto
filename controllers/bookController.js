@@ -1,4 +1,38 @@
 var Book = require('../models/book');
+var Poem = require('../models/poem')
+
+var async = require('async');
+
+// PROBABLY RENAME THIS PAGE TO MUSIC INDEX
+
+exports.index = function(req, res) {
+    // WANT TO FIND ALL ALBUMS AND ALL SONGS
+    async.parallel({
+        book_list: function(callback){
+            Book.find({}, callback)
+        },
+        poem_list: function(callback) {
+            Poem.find({}, callback)
+        },
+    }, function(err, results){
+        if(err){
+            console.log(err);
+        } else {
+            var title = 'Written Works';
+            var subtitle = 'Poetry and Lyrics. ';
+            var link = 'Shop Now.';
+            var image = '/images/water.jpg';
+            res.render('written-works', {
+                title: title,
+                error: err,
+                results: results,
+                subtitle: subtitle,
+                link: link,
+                image: image
+            });
+        }
+    });
+};
 
 exports.index = function(req, res) {
     res.send('NOT IMPLEMENTED: Written Works Home Page');

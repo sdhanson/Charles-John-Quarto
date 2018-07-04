@@ -55,25 +55,31 @@ function photoCreate(title, image, date, photographer, description, location, cb
 function createPhotos(cb) {
     async.parallel([
             function(callback) {
-                photoCreate('Water', 'images/water.jpg', '1973-06-06', false, false, false, callback);
+                photoCreate('Water', 'images/water.jpg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Mountain', 'images/mountain.jpg', '1973-06-06', false, false, false, callback);
+                photoCreate('Mountain', 'images/mountain.jpg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Book', 'images/book.jpg', '1973-06-06', false, false, false, callback);
+                photoCreate('Book', 'images/book.jpg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Camera', 'images/camera.jpg', '1973-06-06', false, false, false, callback);
+                photoCreate('Camera', 'images/camera.jpg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Ripple', 'images/ripple.jpeg', '1973-06-06', false, false, false, callback);
+                photoCreate('Ripple', 'images/ripple.jpeg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Tree', 'images/tree.jpeg', '1973-06-06', false, false, false, callback);
+                photoCreate('Tree', 'images/tree.jpeg', '2018-06-25', false, false, false, callback);
             },
             function(callback) {
-                photoCreate('Forests', 'images/forests.jpeg', '1973-06-06', false, false, false, callback);
+                photoCreate('Forests', 'images/forests.jpeg', '2018-06-25', false, false, false, callback);
+            },
+            function(callback) {
+                photoCreate('Headshot', 'images/headshot.jpg', '2018-06-25', 'Mary Beth Cysewski ', false, 'Radnor Lake State Park', callback);
+            },
+            function(callback) {
+                photoCreate('Back', 'images/back.jpg', '2018-06-25', 'Mary Beth Cysewski ', false, 'Radnor Lake State Park', callback);
             },
 
         ],

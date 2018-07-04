@@ -4,7 +4,9 @@ var router = express.Router();
 // Require controller modules.
 var album_controller = require('../controllers/albumController');
 var song_controller = require('../controllers/songController');
-/// COLLECTION ROUTES ///
+
+router.get('/category/:specifier', album_controller.category);
+router.get('/decade/:specifier', album_controller.decade);
 
 // GET catalog home page.
 router.get('/', album_controller.index);

@@ -66,9 +66,12 @@
     transition: .5s ease;
 }
 
-.photo:hover .photo-overlay {
+.photo:hover .photo-overlay,
+.album-photo:hover .photo-overlay {
     opacity: 1;
 }
+
+
 
 .photo-overlay-text {
     color: whitesmoke;
@@ -81,4 +84,12 @@
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
+
+
+.album-photo div a.btn-sm {
+    font-size: 11px;
+    color: white;
+    opacity: 0.75;
+}
+
 /* *****END PHOTO GRID ****** */

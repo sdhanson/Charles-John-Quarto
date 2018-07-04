@@ -11,9 +11,11 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="#">Studio Album</a>
-            <a class="dropdown-item header-dropdown-item" href="#">Collaboration</a>
-            <a class="dropdown-item header-dropdown-item" href="#">Singles</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/Song">All Songs</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/Album">All Albums</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/Collaboration">Collaborations</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/Single">Singles</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography">All</a>
         </div>
     </div>
     <!--End category dropdown-->
@@ -22,9 +24,12 @@
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <a class="dropdown-item header-dropdown-item" href="#">1970s</a>
-            <a class="dropdown-item header-dropdown-item" href="#">1980s</a>
-            <a class="dropdown-item header-dropdown-item" href="#">1990s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/1960s">1960s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/1970s">1970s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/1980s">1980s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/1990s">1990s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/2000s">2000s</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/Present">Present</a>
         </div>
     </div>
     <!--End decade dropdown-->
@@ -41,29 +46,142 @@
     <div class="row">
         <% results.album_list.forEach(function(album) { %>
         <!--Image + Title container-->
-        <div class="col-md-4 col-sm-6 my-3">
+            <div class="album-photo col-md-4 col-sm-6 my-3">
+                <!--Link to toggle modal-->
+                <a class="album-link" data-toggle="modal" href="#myModal">
+                    <!--Image-->
+                    <% if (album.image) { var image = "/" + album.image %>
+                    <img class="my-1 img-fluid" src=<%=image%> alt="image">
+                    <% } %>
+                    <!--Title-->
+                    <div class="photo-overlay">
+                        <div class="photo-overlay-text">
+                            <% if (album.title) { %>
+                            <div class="title"> <%= album.title %> </div>
+                            <% } %>
+                            <!--MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND-->
+                            <!--MORE-->
+                            <div class="artists">
+                                <% if (album.artist) { album.artist.forEach(function(artist) { %>
+                                    <%= artist %>
+                                <% })} %>
+                            </div>
+
+                            <% if (album.spotify) { %>
+                            <div class="spotify d-none"> <%= album.spotify %> </div>
+                            <% } %>
+
+                            <% if (album.description) { %>
+                            <div class="description d-none"> <%= album.description %> </div>
+                            <% } %>
+
+                            <% if (album.link) { %>
+                            <div class="link d-none"> <%= album.link %> </div>
+                            <% } %>
+
+                            <!--Container for song list and length-->
+
+                            <!--CHECK IF THIS EVEN WORKS-->
+                            <div class="songs d-none">
+                                <% if (album.songs) { album.songs.forEach(function(song) { %>
+                                <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
+                                <% })} else {  %>
+                                <span> No songs </span>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!--End link-->
+                <!--Sub information-->
+                <div class="tags">
+                    <% if (album.category) { %>
+                    <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=album.category%>" role="button"><%= album.category %></a>
+                    <% } %>
+                    <% if (album.decade) { %>
+                    <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=album.decade%>" role="button"><%= album.decade %></a>
+                    <% } %>
+                </div>
+            </div>
+
+        <!--End image + title container-->
+        <% }); %>
+
+        <% results.song_list.forEach(function(song) { %>
+        <!--Image + Title container-->
+        <div class="album-photo col-md-4 col-sm-6 my-3">
             <!--Link to toggle modal-->
-            <a data-toggle="modal" href="#myModal">
+            <a class="album-link" data-toggle="modal" href="#myModal">
                 <!--Image-->
-                <% if (album.image) { %>
-                <img class="my-1 img-fluid" src=<%=album.image%> alt="image">
+                <% if (song.image) { var image = "/" + song.image %>
+                <img class="my-1 img-fluid" src=<%=image%> alt="image">
                 <% } %>
                 <!--Title-->
-                <% if (album.title) { %>
-                <p class="title"> <%= album.title %> </p>
-                <% } %>
-                <!--Sub information-->
-                <h6>
-                    <% if (album.year) { %>
-                    <%= album.year %>,
-                    <% } %>
-                    <% if (album.artist) { album.artist.forEach(function(artist) { %>
-                         <%= artist %>
-                    <% })} %>
-                </h6>
+                <div class="photo-overlay">
+                    <div class="photo-overlay-text">
+                        <% if (song.title) { %>
+                        <div class="title"> <%= song.title %> </div>
+                        <% } %>
+                        <!--MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND-->
+                        <!--MORE-->
+                        <div class="artists">
+                            <% if (song.artist) { song.artist.forEach(function(artist) { %>
+                            <%= artist %>
+                            <% })} %>
+                        </div>
+
+                        <% if (song.spotify) { %>
+                        <div class="spotify d-none"> <%= song.spotify %> </div>
+                        <% } %>
+
+                        <!--MAKE SURE TO SET LINK AS GLOBAL AND NOT /MUSIC/CATEGORY-->
+                        <% if (song.description) { %>
+                        <div class="description d-none"> <%= song.description %> </div>
+                        <% } %>
+
+                        <% if (song.link) { %>
+                        <div class="link d-none"> <%= song.link %> </div>
+                        <% } %>
+
+                        <!--Container for song list and length-->
+
+                        <!--CHECK IF THIS EVEN WORKS-->
+                        <div class="songs d-none">
+                            <% if (song.length) {%>
+                            <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
+                            <% } else {  %>
+                            <span> No songs </span>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
             </a>
             <!--End link-->
+            <!--Sub information-->
+            <!--MAKE THE BUTTONS ACTUALLY GO TO THE PLACE THEY SHOULD DEPENDING ON THE CATEGORY
+            okay, so for the category and decade want a render page that on click send the path /discography/:specifier
+            and then can redirect to this with a true or false thing and if album is true then then include that,
+            basically for each list in the results just render with that
+
+            DUH DUH DUH DUH JUST POPULATE THE ALBUMS WITH THE THING SELECTED AND ONLY NEED A TRUE OR FALSE FOR
+            SONGS VS ALBUMS BC REST IS SPECIFIC TO THAT DUH DUH DUH
+
+            CAN I CREATE A MAJOR LIST THAT JUST INCLUDES ALL THE DATA FOR RESULTS.WHOLE_LIST.FOREACH ELEMENT??
+
+            SEEMS LIKE A REASONABLE THING TO ASK FROM THIS MF PLATFORM
+
+
+            -->
+            <div class="tags">
+                <% if (song.category) { %>
+                <a class="btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=song.category%>" role="button"><%= song.category %></a>
+                <% } %>
+                <% if (song.decade) { %>
+                <a class="tag btn btn-dark rounded-2 tag btn-sm" href="/discography/<%=song.decade%>" role="button"><%= song.decade %></a>
+                <% } %>
+            </div>
         </div>
+
         <!--End image + title container-->
         <% }); %>
     </div>
@@ -88,33 +206,36 @@
 
                 <!--Container for image above text on small-->
                 <div class="mt-4 container d-block d-sm-none">
-                    <div class="container col-6">
-                        <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
+                    <div class="modal-top-container container col-6">
+                        <img class="img-fluid" src="" alt="Generic placeholder image">
                     </div>
                 </div>
                 <!--End small display-->
 
                 <!--Media container-->
-                <div class="media mt-5">
+                <div class="media mt-3">
                     <!--Image container for small and up-->
-                    <div class="container col-6 d-none d-sm-block">
-                        <img class="img-fluid" src="images/mountain.jpg" alt="Generic placeholder image">
+                    <div class="modal-container container col-6 d-none d-sm-block">
+                        <img class="img-fluid" src="" alt="Generic placeholder image">
                     </div>
                     <!--End image container-->
 
                     <!--Title and description-->
                     <div class="media-body mx-5 align-self-center">
-                        <h5 class="mt-0">Media heading</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <h5 class="mt-0 title"></h5>
+                        <div class="description"></div>
+                        <a class="mt-3 mr-2 link btn btn-outline-dark rounded-0 tag btn-sm" href="" role="button"></a>
+                        <a class="mt-3 spotify btn btn-outline-dark rounded-0 tag btn-sm" href="" role="button"></a>
+
                     </div>
                     <!--End title and description-->
                 </div>
                 <!--End media container-->
 
-                <!--Spotify link-->
-                <div class="mt-5 align-self-center">
-                    <iframe src="https://open.spotify.com/embed?uri=spotify:album:3Q149ZH46Z0f3oDR7vlDYV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </div>
+                <!--&lt;!&ndash;Spotify link&ndash;&gt;-->
+                <!--<div class="mt-5 align-self-center">-->
+                    <!--<iframe class="spotify" src="https://open.spotify.com/embed?uri=spotify:album:3Q149ZH46Z0f3oDR7vlDYV" width="600" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>-->
+                <!--</div>-->
                 <!--End spotify-->
 
                 <!--Tracklist-->
@@ -124,19 +245,7 @@
                     <!--End title-->
 
                     <!--Container for song list and length-->
-                    <div class="pb-3">
-                        <div>
-                            <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
-                        </div>
-                        <div>
-                            <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
-                        </div>
-                        <div>
-                            <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
-                        </div>
-                        <div>
-                            <span class="track-info">SONG TITLE</span><span class="track-info float-right">LENGTH</span>
-                        </div>
+                    <div class="pb-3 songs">
                     </div>
                     <!--End song list container-->
                 </div>
@@ -147,5 +256,8 @@
     </div>
 </div>
 <!--End modal-->
+
+
+<script type="text/javascript" src="/javascripts/carousel.js"></script>
 
 <% include partials/footer.ejs %>
