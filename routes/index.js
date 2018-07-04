@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 
 
 router.get('/discography/decade/:specifier', function(req, res, next) {
-    if(req.params.specifier === "1960s" || req.params.specifier === "1970s" || req.params.specifier === "1980s" || req.params.specifier === "1990s" || req.params.specifier === "2000s" || req.params.specifier === "Present") {
+    if(req.params.specifier === "1960" || req.params.specifier === "1970" || req.params.specifier === "1980" || req.params.specifier === "1990" || req.params.specifier === "2000" || req.params.specifier === "Present") {
         res.redirect('/music/decade/' + req.params.specifier);
     } else {
         var err = new Error('Not Found');
@@ -54,7 +54,7 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/written-works/decade/:specifier', function(req, res) {
-    if(req.params.specifier == "1960s" || req.params.specifier == "1970s" || req.params.specifier == "1980s" || req.params.specifier == "1990s" || req.params.specifier == "2000s" || req.params.specifier == "Present") {
+    if(req.params.specifier == "1960" || req.params.specifier == "1970" || req.params.specifier == "1980" || req.params.specifier == "1990" || req.params.specifier == "2000" || req.params.specifier == "Present") {
         res.redirect('/writing/decade/' + req.params.specifier);
     }  else{
         var err = new Error('Not Found');
