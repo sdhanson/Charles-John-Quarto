@@ -7,9 +7,10 @@
 }
 
 .image-container img {
-    margin-top: 7%;
+    margin-top: 0%;
     max-height: 100%;
     max-width: 100%;
+    float: right;
 }
 /* ************************** */
 
@@ -41,4 +42,15 @@
 }
 /* ************************ */
 /* ***** END CAROUSEL ***** */
+
+a.disc-button {
+    background-color: lightgray;
+    border-color: lightgray;
+}
+
+/*button.close {*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+/*}*/
+
 

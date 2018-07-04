@@ -15,7 +15,7 @@ exports.index = function(req, res, next) {
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({})
+            Song.find({lyrics: true})
             .exec(callback)
         }
     }, function(err, results){
@@ -82,7 +82,7 @@ exports.songs = function(req, res, next) {
                 .exec(callback)
         },
         song_list: function(callback){
-            Song.find({})
+            Song.find({lyrics: true})
                 .exec(callback)
         },
     }, function(err, results){
@@ -262,7 +262,7 @@ exports.single_collection = function(req, res, next) {
         var subtitle = '';
         var link = '';
         var image = '/images/water.jpg';
-        res.render('poem', {
+        res.render('collection', {
             title: title,
             error: err,
             results: results,

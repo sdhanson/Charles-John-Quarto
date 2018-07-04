@@ -148,8 +148,13 @@ a {
     color: gainsboro;
 }
 
-a:hover {
+a:hover, a.in-line-link:hover {
     color: cornflowerblue;
     text-decoration: none;
+}
+
+a.in-line-link {
+    /*color: gainsboro;*/
+    color: #7ebcd6;
 }
 /* *** END GENERAL LINK *** */

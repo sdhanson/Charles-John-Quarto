@@ -19,14 +19,14 @@
                 <img class="my-1 img-fluid" src="<%= photo.image %>" alt="image">
                 <div class="photo-overlay">
                     <div class="photo-overlay-text">
-                        <% if (photo.title) { %>
-                        <div class="title"> <%= photo.title %> </div>
-                        <% } %>
                         <% if (photo.photographer) { %>
-                        <div class="photographer"> <%= photo.photographer %>  </div>
+                        <div class="title"> Photography by <%= photo.photographer %> </div>
+                        <% } %>
+                        <% if (photo.title) { %>
+                        <div class="photographer"><%= photo.title %>  </div>
                         <% } %>
                         <% if (photo.location) { %>
-                        <div class="location"> <%= photo.location %>  </div>
+                        <div class="location d-none"> <%= photo.location %>  </div>
                         <% } %>
                         <% if (photo.description) { %>
                         <div class="description d-none"> <%= photo.description %> </div>
@@ -36,7 +36,6 @@
             </a>
         </div>
         <% }); %>
-
     </div>
 </div>
 
@@ -62,7 +61,7 @@
                 <!--Media container-->
                 <div class="media mt-5">
                     <!--Image container for small and up-->
-                    <div class="container modal-container col-6 d-none d-sm-block">
+                    <div class="container modal-container image-container col-6 d-none d-sm-block">
                         <img class="img-fluid" src="" alt="Generic placeholder image">
                     </div>
                     <!--End image container-->

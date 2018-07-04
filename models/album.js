@@ -7,9 +7,9 @@ var AlbumSchema = new Schema(
         decade: {type: String, enum: ['1960', '1970', '1980', '1990', '2000', 'Present'], required: true},
         artist: {type: Array, default: ['Charles John Quarto'], required: true}, // analogous to author
         category: {type: String, default: 'Album', enum: ['Album', 'Collaboration'], required: true},
-        songs: {type: Array, required: true},
+        songs: {type: Array},
         image: {type: String, required: true},
-        description: {type: String, required: true}, // analogous to body - might want array ??
+        description: {type: String, required: true},
         producers: {type: Array},
         link: {type: String, default: 'http://shop.com'},
         spotify: {type: String, default: 'http://spotify.com/cjq'}
