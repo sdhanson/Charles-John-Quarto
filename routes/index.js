@@ -1,5 +1,5 @@
 var express = require('express');
-// var app = express();
+var nodemailer = require('nodemailer');
 var router = express.Router();
 
 
@@ -14,8 +14,9 @@ router.get('/', function(req, res) {
 
 
 router.get('/discography/decade/:specifier', function(req, res, next) {
-    if(req.params.specifier === "1960" || req.params.specifier === "1970" || req.params.specifier === "1980" || req.params.specifier === "1990" || req.params.specifier === "2000" || req.params.specifier === "Present") {
-        res.redirect('/music/decade/' + req.params.specifier);
+    var page = req.params.specifier.toLowerCase();
+    if(page === "1960" || page === "1970" || page === "1980" || page === "1990" || page === "2000" || page === "present") {
+        res.redirect('/music/decade/' + page);
     } else {
         var err = new Error('Not Found');
         err.status = 404;
@@ -24,10 +25,11 @@ router.get('/discography/decade/:specifier', function(req, res, next) {
 });
 
 router.get('/discography/category/:specifier', function(req, res, next) {
-    if(req.params.specifier === "Collaboration"|| req.params.specifier === "Single") {
-        res.redirect('/music/category/' + req.params.specifier);
-    } else if (req.params.specifier === "Album"  || req.params.specifier === "Song" ) {
-        res.redirect('/music/' + req.params.specifier);
+    var page = req.params.specifier.toLowerCase();
+    if(page === "collaboration"|| page === "single") {
+        res.redirect('/music/category/' + page);
+    } else if (page === "album"  || page === "song" ) {
+        res.redirect('/music/category/' + page);
     } else{
         var err = new Error('Not Found');
         err.status = 404;
@@ -41,7 +43,6 @@ router.get('/discography', function(req, res) {
 
 router.get('/photography', function(req, res) {
     res.redirect('/photo');
-    // res.render('photography', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
 router.get('/about', function(req, res) {
@@ -54,8 +55,9 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/written-works/decade/:specifier', function(req, res) {
-    if(req.params.specifier == "1960" || req.params.specifier == "1970" || req.params.specifier == "1980" || req.params.specifier == "1990" || req.params.specifier == "2000" || req.params.specifier == "Present") {
-        res.redirect('/writing/decade/' + req.params.specifier);
+    var page = req.params.specifier.toLowerCase();
+    if(page === "1960" || page === "1970" || page === "1980" || page === "1990" || page === "2000" || page === "present") {
+        res.redirect('/writing/decade/' + page);
     }  else{
         var err = new Error('Not Found');
         err.status = 404;
@@ -63,9 +65,9 @@ router.get('/written-works/decade/:specifier', function(req, res) {
     }
 });
 
-router.get('/written-works/work/:specifier', function(req, res) {
-    if(req.params.specifier == "poems" || req.params.specifier == "songs" || req.params.specifier == "collections") {
-        res.redirect('/writing/' + req.params.specifier);
+router.get('/written-works/category/:specifier', function(req, res) {
+    if(req.params.specifier === "poems" || req.params.specifier === "songs" || req.params.specifier === "collections") {
+        res.redirect('/writing/category/' + req.params.specifier);
     } else{
         var err = new Error('Not Found');
         err.status = 404;
@@ -74,7 +76,7 @@ router.get('/written-works/work/:specifier', function(req, res) {
 });
 
 router.get('/written-works/:type/:specifier', function(req, res) {
-    if(req.params.type == "song" || req.params.type == "book" || req.params.type == "poem" ) {
+    if(req.params.type === "song" || req.params.type === "book" || req.params.type === "poem" ) {
         res.redirect('/writing/' + req.params.type + "/" + req.params.specifier);
     } else{
         var err = new Error('Not Found');
@@ -87,12 +89,41 @@ router.get('/written-works', function(req, res) {
     res.redirect('/writing');
 });
 
+router.get('/contact/:specifier', function(req, res) {
+    var specifier = req.params.specifier.toLowerCase();
+    var sent = false;
+    var error = false;
+    if(specifier === 'sent' ) {
+        sent = true;
+    } else if(specifier === 'error') {
+        error = true;
+    }
+    var title = 'Contact';
+    var subtitle = 'Submit Your Message.';
+    var link = '';
+    var image = '/images/tree.jpeg';
+
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
+});
+
 router.get('/contact', function(req, res) {
     var title = 'Contact';
     var subtitle = 'Submit Your Message.';
     var link = '';
     var image = '/images/tree.jpeg';
-    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image});
+    var sent = false;
+    var error = false;
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
+});
+
+router.get('/contact', function(req, res) {
+    var title = 'Contact';
+    var subtitle = 'Submit Your Message.';
+    var link = '';
+    var image = '/images/tree.jpeg';
+    var sent = false;
+    var error = false;
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
 });
 
 router.get('/poem', function(req, res) {
@@ -111,7 +142,60 @@ router.get('/shop', function(req, res) {
     res.render('shop', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
+router.post('/send', function(req, res) {
+    var output = "<p> You have a new contact request </p>" +
+        "<h3> Contact Details </h3>" +
+        "<ul> <li> Name: " +
+        req.body.firstName + req.body.lastName +
+        "</li> <li>Subject: "
+        + req.body.subject +
+        "</li><li> Phone: " +
+        req.body.phoneNumber +
+        "</li> </ul> <h3> Message: </h3> "
+        + req.body.message;
+    console.log(output);
 
+    // nodemailer.createTestAccount(function(err, account) {
+        // create reusable transporter object using default SMTP transport
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        auth: {
+            user: 'qi67zyeiy35d4k5m@ethereal.email',
+            pass: 'tKsCUc59aTkQdpj3WV'
+        },
+        // only because we are from local host
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+        // setup email data with unicode symbols
+        var mailOptions = {
+            from: '"NodeMailer Contact" <iybdurno2bsdxbds@ethereal.email>', // sender address
+            to: 'cjq.website98@gmail.com', // list of receivers
+            subject: 'hello there', // Subject line
+            text: 'hello', // plain text body
+            html: output // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                res.redirect('/contact/error');
+                return;
+            }
+            console.log('Message sent: %s', info.messageId);
+            // Preview only available when sending through an Ethereal account
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+            res.redirect('/contact/sent');
+        });
+    // });
+
+
+
+
+});
 /* GET about page */
 // app.get('/about', function(req, res) {
 //   res.render('about');

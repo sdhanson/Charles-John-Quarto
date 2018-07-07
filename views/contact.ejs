@@ -48,17 +48,25 @@
 
     <!--Form container/media body-->
     <div class="ml-2 mr-5 media-body">
+        <% if(sent) {%>
+        <h1 class="sent">Message sent!</h1>
+        <a href="/contact">Back to contact form.</a>
+        <% } else if(error) {%>
+        <h1 class="error">Uh oh! </h1>
+        <h6>There was an error sending your message. Please try again.</h6>
+        <a href="/contact">Back to contact form.</a>
+        <% } else { %>
         <!--Form-->
-        <form>
+        <form method="POST" action="/send">
             <!--First row - first and last name-->
             <div class="form-row">
                 <div class="form-group col-sm-6">
                     <label for="firstName">First Name *</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
                 </div>
             </div>
             <!--End first row-->
@@ -67,14 +75,14 @@
                 <!--Phone number-->
                 <div class="form-group col-md-12">
                     <label for="phoneNumber">Phone Number *</label>
-                    <input type="tel" class="form-control" id="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                 </div>
                 <!--End phone number-->
 
                 <!--Subject-->
                 <div class="form-group col-md-12">
                     <label for="subject">Subject *</label>
-                    <input type="text" class="form-control" id="subject" required>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
                 </div>
                 <!--End subject-->
 
@@ -96,6 +104,7 @@
 
         </form>
         <!--End form-->
+        <% } %>
     </div>
     <!--End form container-->
 </div>

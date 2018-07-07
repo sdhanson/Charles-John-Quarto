@@ -71,6 +71,8 @@ exports.poems = function(req, res, next) {
     });
 };
 
+
+// DONT THINK LYRICS TRUE WORKS
 exports.songs = function(req, res, next) {
     async.parallel({
         book_list: function(callback){
@@ -139,18 +141,20 @@ exports.collections = function(req, res, next) {
     });
 };
 
+// CHECK THAT THE SONG ALSO HAS LYRICS
 exports.decade = function(req, res, next) {
+    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
     async.parallel({
         book_list: function(callback){
-            Book.find({decade: req.params.specifier})
+            Book.find({decade: specifier})
                 .exec(callback)
         },
         poem_list: function(callback){
-            Poem.find({decade: req.params.specifier})
+            Poem.find({decade: specifier})
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({decade: req.params.specifier})
+            Song.find({decade: specifier})
                 .exec(callback)
         },
     }, function(err, results){
@@ -158,7 +162,7 @@ exports.decade = function(req, res, next) {
             return next(err);
         }
         var title = 'Written Works';
-        var subtitle = 'Written work from the ' + req.params.specifier + '. ';
+        var subtitle = 'Written work from the ' + req.param.specifier + '. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         res.render('written-works', {

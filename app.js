@@ -1,19 +1,23 @@
+// import packages
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 var logger = require('morgan');
 
-
+// available routes setup
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var photographyRouter = require('./routes/photo');
 var musicRouter = require('./routes/music');
 var writtenworkRouter = require('./routes/writing');
 
-
+// app start
 var app = express();
 
+// mongodb database setup
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
 mongoose.connect(mongoDB);
@@ -25,14 +29,21 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// logger middleware setup
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// cookieparser middleware setup
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// bodyparser middleware setup
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
 
 
+// router set up
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/photo', photographyRouter);
@@ -45,13 +56,14 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+// error handler
+app.use(function(err, req, res) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
     var title = 'Error';
     var subtitle = 'The page you are looking for cannot be found!';
     var link = 'Head back to safety.';

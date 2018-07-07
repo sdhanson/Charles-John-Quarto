@@ -7,9 +7,9 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="/written-works/work/collections">Collections</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/work/poems">Poems</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/work/songs">Lyrics</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections">Collections</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/poems">Poems</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Lyrics</a>
             <a class="dropdown-item header-dropdown-item" href="/written-works">All</a>
         </div>
     </div>
@@ -53,10 +53,10 @@
         <!--Body - title and description-->
         <div class="my-4 media-body align-self-center">
             <% if (book.title) { %>
-                <h5 class="mt-0><%= book.title %></h5>
+                <h5 class="mt-0"><%= book.title %></h5>
             <% } %>
             <% if (book.description) { %>
-                <%= book.description.substring(0, 100) %> "..."
+                <%= book.description.substring(0, 100) %> ...
             <% } %>
             <p>
                 <a href=<%=song.url%>> View

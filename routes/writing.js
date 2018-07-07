@@ -6,9 +6,9 @@ var poem_controller = require('../controllers/poemController');
 var song_controller = require('../controllers/songController');
 var writing_controller = require('../controllers/writingController');
 
-router.get('/poems', writing_controller.poems);
-router.get('/songs', writing_controller.songs);
-router.get('/collections', writing_controller.collections);
+router.get('/category/poems', writing_controller.poems);
+router.get('/category/songs', writing_controller.songs);
+router.get('/category/collections', writing_controller.collections);
 router.get('/decade/:specifier', writing_controller.decade);
 router.get('/poem/:id', writing_controller.single_poem);
 router.get('/song/:id', writing_controller.single_song);

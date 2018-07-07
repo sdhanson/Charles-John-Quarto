@@ -93,13 +93,15 @@ exports.albums = function(req, res, next) {
 };
 
 exports.category = function(req, res, next) {
+    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
+
     async.parallel({
         album_list: function(callback){
-            Album.find({category: req.params.specifier})
+            Album.find({category: specifier})
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({category: req.params.specifier})
+            Song.find({category: specifier})
                 .exec(callback)
         },
     }, function(err, results){
@@ -123,13 +125,14 @@ exports.category = function(req, res, next) {
 };
 
 exports.decade = function(req, res, next) {
+    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
     async.parallel({
         album_list: function(callback){
-            Album.find({decade: req.params.specifier})
+            Album.find({decade: specifier})
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({decade: req.params.specifier})
+            Song.find({decade: specifier})
                 .exec(callback)
         },
     }, function(err, results){

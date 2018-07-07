@@ -5,10 +5,10 @@ var router = express.Router();
 var music_controller = require('../controllers/musicController');
 
 // GET all albums
-router.get('/Song', music_controller.songs);
+router.get('/category/song', music_controller.songs);
 
 // GET all songs
-router.get('/Album', music_controller.albums);
+router.get('/category/album', music_controller.albums);
 
 // GET music with category specifier
 router.get('/category/:specifier', music_controller.category);
@@ -22,8 +22,8 @@ router.get('/', music_controller.index);
 // GET request for one Book.
 router.get('/album/:id', music_controller.album_detail);
 
-// GET request for list of all Album items.
-router.get('/albums', music_controller.album_list);
+// // GET request for list of all Album items.
+// router.get('/albums', music_controller.album_list);
 
 // // GET request for one Genre.
 // router.get('/song/:id', song_controller.song_detail);
