@@ -54,7 +54,7 @@ router.get('/about', function(req, res) {
     res.render('about', {subtitle: subtitle, title: title, link: link, image: image});
 });
 
-router.get('/written-works/decade/:specifier', function(req, res) {
+router.get('/written-works/decade/:specifier', function(req, res, next) {
     var page = req.params.specifier.toLowerCase();
     if(page === "1960" || page === "1970" || page === "1980" || page === "1990" || page === "2000" || page === "present") {
         res.redirect('/writing/decade/' + page);
@@ -65,9 +65,10 @@ router.get('/written-works/decade/:specifier', function(req, res) {
     }
 });
 
-router.get('/written-works/category/:specifier', function(req, res) {
-    if(req.params.specifier === "poems" || req.params.specifier === "songs" || req.params.specifier === "collections") {
-        res.redirect('/writing/category/' + req.params.specifier);
+router.get('/written-works/category/:specifier', function(req, res, next) {
+    var page = req.params.specifier.toLowerCase();
+    if(page === "poems" || page === "songs" || page === "collections") {
+        res.redirect('/writing/category/' + page);
     } else{
         var err = new Error('Not Found');
         err.status = 404;
@@ -75,9 +76,11 @@ router.get('/written-works/category/:specifier', function(req, res) {
     }
 });
 
-router.get('/written-works/:type/:specifier', function(req, res) {
-    if(req.params.type === "song" || req.params.type === "book" || req.params.type === "poem" ) {
-        res.redirect('/writing/' + req.params.type + "/" + req.params.specifier);
+router.get('/written-works/:type/:specifier', function(req, res, next) {
+    var id = req.params.specifier;
+    var type = req.params.type.toLowerCase();
+    if(type === "song" || type === "book" || type === "poem" ) {
+        res.redirect('/writing/' + type + "/" + id);
     } else{
         var err = new Error('Not Found');
         err.status = 404;
@@ -89,7 +92,7 @@ router.get('/written-works', function(req, res) {
     res.redirect('/writing');
 });
 
-router.get('/contact/:specifier', function(req, res) {
+router.get('/contact/:specifier', function(req, res, next) {
     var specifier = req.params.specifier.toLowerCase();
     var sent = false;
     var error = false;
@@ -97,6 +100,10 @@ router.get('/contact/:specifier', function(req, res) {
         sent = true;
     } else if(specifier === 'error') {
         error = true;
+    } else {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
     }
     var title = 'Contact';
     var subtitle = 'Submit Your Message.';

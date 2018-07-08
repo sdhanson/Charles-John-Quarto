@@ -15,7 +15,7 @@ exports.index = function(req, res, next) {
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({lyrics: true})
+            Song.find({lyrics: { $ne: false }})
             .exec(callback)
         }
     }, function(err, results){
@@ -84,7 +84,7 @@ exports.songs = function(req, res, next) {
                 .exec(callback)
         },
         song_list: function(callback){
-            Song.find({lyrics: true})
+            Song.find({lyrics: { $ne: false }})
                 .exec(callback)
         },
     }, function(err, results){
@@ -141,7 +141,6 @@ exports.collections = function(req, res, next) {
     });
 };
 
-// CHECK THAT THE SONG ALSO HAS LYRICS
 exports.decade = function(req, res, next) {
     var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
     async.parallel({
@@ -154,7 +153,7 @@ exports.decade = function(req, res, next) {
                 .exec(callback)
         },
         song_list: function(callback) {
-            Song.find({decade: specifier})
+            Song.find({decade: specifier, lyrics: { $ne: false }})
                 .exec(callback)
         },
     }, function(err, results){

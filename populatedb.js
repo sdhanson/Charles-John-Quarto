@@ -82,6 +82,19 @@ function albumCreate(title, decade, artist, category, songs, image, description,
     }  );
 }
 
+function albumEdit(num, song, cb) {
+    albums[num].songs.push(song);
+
+    albums[num].save(function (err) {
+        if (err) {
+            cb(err, null);
+            return
+        }
+        console.log('New Song added to ' + albums[num]);
+        cb(null, albums[num])
+    }  );
+}
+
 function songCreate(title, decade, artist, category, image, description, producers, album, link, length, lyrics, spotify, cb) {
     songdetail = {
         title: title,
@@ -96,7 +109,11 @@ function songCreate(title, decade, artist, category, image, description, produce
     if (album !== false) songdetail.album = album;
     if (link !== false) songdetail.link = link;
     if (length !== false) songdetail.length = length;
-    if (lyrics !== false) songdetail.lyrics = lyrics;
+    if (lyrics !== false) {
+        songdetail.lyrics = lyrics;
+    } else {
+        songdetail.lyrics = false;
+    }
     if (spotify !== false) songdetail.spotify = spotify;
 
     var song = new Song(songdetail);
@@ -116,27 +133,27 @@ function songCreate(title, decade, artist, category, image, description, produce
 //image R, photographer R, title, date, description, location, cb
 function createPhotos(cb) {
     async.parallel([
-            function(callback) {
-                photoCreate('images/water.jpg', 'Unsplash', 'Water', '2018-06-25', false, false, callback);
-            },
-            function(callback) {
-                photoCreate('images/mountain.jpg', 'Unsplash', false, '2018-06-25', 'A mountain before dusk', false, callback);
-            },
-            function(callback) {
-                photoCreate('images/book.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            },
-            function(callback) {
-                photoCreate('images/camera.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            },
-            function(callback) {
-                photoCreate('images/ripple.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            },
-            function(callback) {
-                photoCreate('images/tree.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            },
-            function(callback) {
-                photoCreate('images/forests.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            },
+            // function(callback) {
+            //     photoCreate('images/water.jpg', 'Unsplash', 'Water', '2018-06-25', false, false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/mountain.jpg', 'Unsplash', false, '2018-06-25', 'A mountain before dusk', false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/book.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/camera.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/ripple.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/tree.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
+            // },
+            // function(callback) {
+            //     photoCreate('images/forests.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
+            // },
             function(callback) {
                 photoCreate('images/headshot.jpg', 'Mary Beth Cysewski ', false, false, false, 'Radnor Lake State Park', callback);
             },
@@ -176,22 +193,22 @@ function createSongs(cb) {
                 songCreate('Nature Song', 'Present', ['Charles John Quarto'], 'Song', 'images/headshot.jpg',  'A new song by CJQ',  ['Charles John Quarto', 'Jimi Hendrix'], albums[0], albums[0].link, "4:30", "hello", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', albums[0].decade, ['Charles John Quarto'], 'Song', 'images/mountain.jpg',  'Another song by CJQ',  albums[0].producers, albums[0], albums[0].link, "2:00", "hello FROM THE OTHER SIDE", "spotify.com", callback);
+                songCreate('New song', albums[0].decade, ['Charles John Quarto'], 'Song', 'images/mountain.jpg',  'Another song by CJQ',  albums[0].producers, albums[0], albums[0].link, "2:00", "hello FROM THE OTHER SIDE", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', '1960', ['Charles John Quarto'], 'Song', 'images/back.jpg',  'My song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[0], albums[0].link, "1:34", "MORE LYRICS MORE LYRIVS", "spotify.com", callback);
+                songCreate('another song', '1960', ['Charles John Quarto'], 'Song', 'images/back.jpg',  'My song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[0], albums[0].link, "1:34", "MORE LYRICS MORE LYRIVS", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', albums[1].decade, ['Charles John Quarto'], 'Song', 'images/music.jpg',  'This is a song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[0].link, "2:30", "hello", "spotify.com", callback);
+                songCreate('song 4', albums[1].decade, ['Charles John Quarto'], 'Song', 'images/music.jpg',  'This is a song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[0].link, "2:30", "hello", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', albums[2].decade, ['Charles John Quarto'], 'Song', 'images/ripple.jpeg',  'Cool song',  ['Charles John Quarto'], albums[2], albums[0].link, "8:30", "YUMADSFAHFKAJFDNARGUWAFEHJDSOIHBJFGVHOUYTYDFHGVHBJHUGYF HADSFUIHBFEFSUIVBKJANFSHUIBRKAJFNLJOIHUBAKNHBFNADHUHJ KJKIUFTYGVHJUIYTFGHJUYTFGHJIUIYGFGVHJIUIYGVBJH FDACHJBDNFJADIUHJENRFIODJKRENFJKIENRJFGUJHENRMJGFKH RIFOJENRTEGFIOJERNTJGFIVJKLRNLGFJIVFOHKRBJGFKLJFHRBJFKJFHRHBFJVJRJKBFRQKJBFK", "spotify.com", callback);
+                songCreate('song 5', albums[2].decade, ['Charles John Quarto'], 'Song', 'images/ripple.jpeg',  'Cool song',  ['Charles John Quarto'], albums[2], albums[0].link, "8:30", "YUMADSFAHFKAJFDNARGUWAFEHJDSOIHBJFGVHOUYTYDFHGVHBJHUGYF HADSFUIHBFEFSUIVBKJANFSHUIBRKAJFNLJOIHUBAKNHBFNADHUHJ KJKIUFTYGVHJUIYTFGHJUYTFGHJIUIYGFGVHJIUIYGVBJH FDACHJBDNFJADIUHJENRFIODJKRENFJKIENRJFGUJHENRMJGFKH RIFOJENRTEGFIOJERNTJGFIVJKLRNLGFJIVFOHKRBJGFKLJFHRBJFKJFHRHBFJVJRJKBFRQKJBFK", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', '1990', ['Charles John Quarto'], 'Song', 'images/rivers.jpeg',  'Zayn',  ['Charles John Quarto', 'Jimi Hendrix'], albums[2], albums[0].link, "3:30", "COOL", "spotify.com", callback);
+                songCreate('song 6', '1990', ['Charles John Quarto'], 'Song', 'images/rivers.jpeg',  'Zayn',  ['Charles John Quarto', 'Jimi Hendrix'], albums[2], albums[0].link, "3:30", "COOL", "spotify.com", callback);
             },
             function(callback) {
-                songCreate('Nature Song', albums[3].decade, ['Charles John Quarto'], 'Song', 'images/forests.jpeg',  'Yuh',  ['Charles John Quarto', 'Jimi Hendrix'], albums[3], albums[0].link, "5:02", false, false, callback);
+                songCreate('NO LYRICS', albums[3].decade, ['Charles John Quarto'], 'Song', 'images/forests.jpeg',  'Yuh',  ['Charles John Quarto', 'Jimi Hendrix'], albums[3], albums[0].link, "5:02", false, false, callback);
             },
             function(callback) {
                 songCreate('Song 8', '1960', ['Charles John Quarto', 'Bob Dylan'], 'Single', 'images/book.jpg',  'The eighth song by CJQ',  ['Charles John Quarto'], false, false, "5:30", "hello this is the eighth song he released", "http://youtube.com", callback);
@@ -201,68 +218,40 @@ function createSongs(cb) {
         cb);
 }
 
-function editAlbumOne(cb) {
-    Album.
-    findOne({ title: albums[0].title }).
-    populate('album').
-    exec(function (err, album) {
-        if (err) return handleError(err);
-        album.songs = [songs[0], songs[1], songs[2],];
-        console.log("Added new songs");
-        cb();
-    });
-}
-
-function editAlbumTwo(cb) {
-    Album.
-    findOne({ title: albums[1].title }).
-    populate('album').
-    exec(function (err, album) {
-        if (err) return handleError(err);
-        album.songs = [songs[3],];
-        console.log("Added new songs 2");
-        cb();
-    });
-}
-
-function editAlbumThree(cb) {
-    Album.
-    findOne({ title: albums[2].title }).
-    populate('album').
-    exec(function (err, album) {
-        if (err) return handleError(err);
-        album.songs = [songs[4], songs[5],];
-        console.log("Added new songs 3");
-        console.log(album.title);
-        console.log(album.songs);
-        cb();
-    });
-}
-
-function editAlbumFour(cb) {
-    Album.
-    findOne({ title: albums[3].title }).
-    populate('album').
-    exec(function (err, album) {
-        if (err) return handleError(err);
-        album.songs =  [songs[6]];
-        console.log(album.title);
-        console.log(album.songs);
-        cb();
-    });
-}
-
+// function editAlbums(cb) {
+//     async.parallel([
+//         function(callback) {
+//             albumEdit(0, songs[0], callback);
+//         },
+//         // function(callback) {
+//         //     albumEdit(0, songs[1], callback);
+//         // },
+//         // function(callback) {
+//         //     albumEdit(0, songs[2], callback);
+//         // },
+//         function(callback) {
+//             albumEdit(1, songs[3], callback);
+//         },
+//         // function(callback) {
+//         //     albumEdit(2, songs[4], callback);
+//         // },
+//         // function(callback) {
+//         //     albumEdit(2, songs[5], callback);
+//         // },
+//         function(callback) {
+//             albumEdit(3, songs[6], callback);
+//         },
+//     ],
+//
+//     cb);
+// }
 
 
 async.series([
         createPhotos,
         createAlbums,
         createSongs,
-        editAlbumOne,
-        editAlbumTwo,
-        editAlbumThree,
-        editAlbumFour,
-
+        // editAlbums,
     ],
 // Optional callback
     function(err, results) {

@@ -5,7 +5,6 @@
 <link rel='stylesheet' href='/stylesheets/carousel.css' />
 
 <!--Dropdown buttons that overlay the header image-->
-<!--MAYBE COMBINE TO A PARTIAL WITH WRITTEN-WORKS-->
 <div class="row justify-content-center">
     <!--Category dropdown-->
     <div class="dropdown">
@@ -64,8 +63,22 @@
                             <!--MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND-->
                             <!--MORE-->
                             <div class="artists">
-                                <% if (album.artist) { album.artist.forEach(function(artist) { %>
-                                    <%= artist %>
+                                <% var count = 0;%>
+                                <% if (album.artist) { album.artist.forEach(function(artist) {  %>
+                                    <% count++;%>
+                                    <% if(album.artist.length === 1) {%>
+                                            <%= artist%>
+                                    <% } else if(album.artist.length === 2) { %>
+                                        <% if(count === 1) {%>
+                                            <%= artist%> and
+                                        <% } else if(count === 2) { %>
+                                            <%= artist%>
+                                        <% } %>
+                                    <% } else if(count === 1 || count === 2) {%>
+                                        <%= artist%>,
+                                    <%} else if(count === 3) {%>
+                                         and more
+                                    <% } %>
                                 <% })} %>
                             </div>
 
@@ -86,11 +99,11 @@
                             <!--CHECK IF THIS EVEN WORKS-->
                             <div class="songs d-none">
                                 <div class="length">
-                                    <% if (album.songs) { album.songs.forEach(function(song) { %>
+                                    <% if (album.songs.length != 0) { album.songs.forEach(function(song) { %>
                                         <% if (song.length) {%>
-                                            <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
-                                            <% } else {  %>
-                                            <span> No songs </span>
+                                            <div class="d-md-block">
+                                                <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
+                                            </div>
                                     <% } })} else {  %>
                                     <span class="track-info"> No songs </span>
                                     <% } %>
@@ -102,6 +115,7 @@
                 <!--End link-->
                 <!--Sub information-->
                 <div class="tags">
+                    <span class="mr-2">Tags: </span>
                     <% if (album.category) { %>
                     <a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=album.category%>" role="button"><%= album.category %></a>
                     <% } %>
@@ -185,6 +199,7 @@
 
             -->
             <div class="tags">
+                <span class="mr-2">Tags: </span>
                 <% if (song.category) { %>
                 <a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=song.category%>" role="button"><%= song.category %></a>
                 <% } %>
@@ -217,18 +232,22 @@
             <div class="modal-body p-4" id="result">
 
                 <!--Container for image above text on small-->
-                <div class="mt-4 container d-block d-sm-none">
-                    <div class="modal-top-container image-container container col-6">
+                <div class="mt-4 mb-4 container d-block d-sm-none">
+                    <div class="modal-top-container container col-6">
                         <img class="img-fluid" src="" alt="Generic placeholder image">
                     </div>
                 </div>
                 <!--End small display-->
 
                 <!--Media container-->
-                <div class="media mt-3">
+                <div class="media">
+
                     <!--Image container for small and up-->
-                    <div class="modal-container container image-container col-6 d-none d-sm-block">
-                        <img class="img-fluid" src="" alt="Generic placeholder image">
+                    <div class="modal-container col-6 d-none d-sm-block align-self-center">
+                        <div>
+                            <img class="img-fluid" src="" alt="Generic placeholder image">
+                        </div>
+
                     </div>
                     <!--End image container-->
 
@@ -251,7 +270,7 @@
                 <!--End spotify-->
 
                 <!--Tracklist-->
-                <div class="track-container col-4 offset-4 mt-5 mb-2">
+                <div class="track-container offset-2 col-8 col-md-4 offset-md-4 mt-5 mb-2">
                     <!--Title-->
                     <div class="d-flex justify-content-center track pt-2">Tracklist</div>
                     <!--End title-->
