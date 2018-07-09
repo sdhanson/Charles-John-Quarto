@@ -127,13 +127,46 @@
 /* ********* END NAVBAR ************ */
 
 
+
+
+/* GENERAL LINK STYLING */
+a {
+    color: #9cbbf3;
+}
+a:hover, a.in-line-link:hover, a.overlay-subtitle-link:hover {
+    color: #b8cef6;
+    text-decoration: none;
+}
+
+a.in-line-link {
+    /*color: gainsboro;*/
+    color: #9cbbf3;
+}
+
+a.overlay-subtitle-link {
+    color: gainsboro;
+}
+
+.header-link {
+    font-weight: bold;
+}
+/* *** END GENERAL LINK *** */
+
 /* FOOTER STYLING */
 .footer {
     /*border-top: 1px solid gainsboro;*/
     margin-top: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
+
+footer div div a{
+    /*font-weight: bold;*/
+    color: black;
+}
+
 
 @media (max-width: 768px) {
     .footer {
@@ -141,20 +174,3 @@
     }
 }
 /* ** END FOOTER ** */
-
-
-/* GENERAL LINK STYLING */
-a {
-    color: gainsboro;
-}
-
-a:hover, a.in-line-link:hover {
-    color: cornflowerblue;
-    text-decoration: none;
-}
-
-a.in-line-link {
-    /*color: gainsboro;*/
-    color: #7ebcd6;
-}
-/* *** END GENERAL LINK *** */

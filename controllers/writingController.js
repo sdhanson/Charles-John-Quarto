@@ -143,6 +143,12 @@ exports.collections = function(req, res, next) {
 
 exports.decade = function(req, res, next) {
     var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
+    var year;
+    if(req.params.specifier === 'present') {
+        year = 'present';
+    } else {
+        year = req.params.specifier + 's';
+    }
     async.parallel({
         book_list: function(callback){
             Book.find({decade: specifier})
@@ -161,7 +167,7 @@ exports.decade = function(req, res, next) {
             return next(err);
         }
         var title = 'Written Works';
-        var subtitle = 'Written work from the ' + req.param.specifier + '. ';
+        var subtitle = 'Written work from the ' + year + '. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         res.render('written-works', {
@@ -182,7 +188,7 @@ exports.single_song = function(req, res, next) {
                 .exec(callback)
         },
         poem: function(callback){
-            Poem.findOne({})
+            Poem.findOne({category: 'Null'})
                 .exec(callback)
         },
         song: function(callback) {

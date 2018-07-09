@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lato', sans-serif;
 }
 
 
@@ -9,9 +9,6 @@ html {
 }
 
 /* LINK STYLING */
-a {
-  color: #00B7FF;
-}
 
 a, a:active, a:visited, a:focus {
   outline: none;
@@ -51,3 +48,12 @@ h6 a {
   font-weight: 300;
 }
 /* ** END DROP DOWN STYLING ** */
+
+.fas {
+   margin-left: 10px;
+ }
+
+.fas-two {
+  margin-right: 10px;
+}
+

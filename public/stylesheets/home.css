@@ -4,11 +4,19 @@
 }
 
 .text-right-link {
-     float: right;
+    float: right;
+    margin-right: 10px;
  }
 
+.text-right-view {
+    margin-right: 0px;
+}
 .text-center-link {
     padding-left: 40%;
+}
+
+.fas.two {
+    margin-right: 10px;
 }
 
 @media (min-width: 992px) {

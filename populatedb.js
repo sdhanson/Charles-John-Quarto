@@ -82,19 +82,6 @@ function albumCreate(title, decade, artist, category, songs, image, description,
     }  );
 }
 
-function albumEdit(num, song, cb) {
-    albums[num].songs.push(song);
-
-    albums[num].save(function (err) {
-        if (err) {
-            cb(err, null);
-            return
-        }
-        console.log('New Song added to ' + albums[num]);
-        cb(null, albums[num])
-    }  );
-}
-
 function songCreate(title, decade, artist, category, image, description, producers, album, link, length, lyrics, spotify, cb) {
     songdetail = {
         title: title,
@@ -218,40 +205,10 @@ function createSongs(cb) {
         cb);
 }
 
-// function editAlbums(cb) {
-//     async.parallel([
-//         function(callback) {
-//             albumEdit(0, songs[0], callback);
-//         },
-//         // function(callback) {
-//         //     albumEdit(0, songs[1], callback);
-//         // },
-//         // function(callback) {
-//         //     albumEdit(0, songs[2], callback);
-//         // },
-//         function(callback) {
-//             albumEdit(1, songs[3], callback);
-//         },
-//         // function(callback) {
-//         //     albumEdit(2, songs[4], callback);
-//         // },
-//         // function(callback) {
-//         //     albumEdit(2, songs[5], callback);
-//         // },
-//         function(callback) {
-//             albumEdit(3, songs[6], callback);
-//         },
-//     ],
-//
-//     cb);
-// }
-
-
 async.series([
         createPhotos,
         createAlbums,
         createSongs,
-        // editAlbums,
     ],
 // Optional callback
     function(err, results) {

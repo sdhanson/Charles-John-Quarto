@@ -38,20 +38,20 @@
 <!--HAVE COLLECTION LINK TO DIFFERENT PAGE JUST POEM AND SONGS ON THIS ONE-->
 <!--Title-->
 <div class="mt-5 container">
-    <% if(results.collection) {%>
+    <% if(results.book) {%>
 
-    <%if(results.collection.title) {%>
-    <h1 class="mb-3"><%=results.collection.title%></h1>
+    <%if(results.book.title) {%>
+    <h1 class="mb-3"><%=results.book.title%></h1>
     <% }%>
     <!--End title-->
 
     <!--Sub information-->
 
-    <h6 class="mt-2"><a class="btn btn-dark rounded-2 tag btn-sm" href="/shop" role="button">Shop</a></h6>
+    <h6 class="mt-2"><a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/shop" role="button">Shop</a></h6>
     <!--End sub information-->
 
     <!--Body-->
-    <% results.collection.poems.forEach(function(poem) { %>
+    <% results.book.poems.forEach(function(poem) { %>
     <div class="media mt-5">
         <!--Image-->
         <div class="container ml-3 col-2 align-self-center">
@@ -66,10 +66,10 @@
         <!--Body - title and description-->
         <div class="my-4 media-body align-self-center">
             <% if (poem.title) { %>
-            <h5 class="mt-0><%= poem.title %></h5>
+            <h5 class="mt-0'><%= poem.title %></h5>
             <% } %>
             <% if (poem.description) { %>
-                <%= poem.description.substring(0, 100) %> "..."
+                <%= poem.description.substring(0, 100) %> ...
             <% } %>
             <p>
                 <a href=<%=poem.url%>> View
