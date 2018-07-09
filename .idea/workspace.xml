@@ -2,77 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ff3be6-fa93-4c30-b1ea-785a247e7896" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/collectiondb.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/written-works.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/controllers/writingController.js" afterPath="$PROJECT_DIR$/controllers/writingController.js" />
-      <change beforePath="$PROJECT_DIR$/models/book.js" afterPath="$PROJECT_DIR$/models/book.js" />
-      <change beforePath="$PROJECT_DIR$/models/poem.js" afterPath="$PROJECT_DIR$/models/poem.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/.evergreen/config.yml" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/.evergreen/config.yml" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/HISTORY.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/gssapi.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/gssapi.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/scram.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/scram.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/sspi.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/auth/sspi.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/connection/apm.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/connection/apm.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/connection/pool.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/connection/pool.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/cursor.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/cursor.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/error.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/error.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/sessions.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/sessions.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/mongos.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/mongos.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/read_preference.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/read_preference.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/replset.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/replset.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/server.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/server.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/shared.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/topologies/shared.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/uri_parser.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/uri_parser.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/utils.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/2_6_support.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/3_2_support.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/3_2_support.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/shared.js" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/lib/wireprotocol/shared.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb-core/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb-core/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/.coveralls.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/.eslintrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/mongodb/HISTORY.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/README.md" afterPath="$PROJECT_DIR$/node_modules/mongodb/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/conf.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/conf.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/admin.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/admin.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/apm.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/apm.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/authenticate.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/authenticate.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/common.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/common.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/ordered.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/ordered.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/unordered.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/bulk/unordered.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/change_stream.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/change_stream.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/collection.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/collection.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/cursor.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/cursor.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/db.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/db.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/download.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/download.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/index.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/index.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/upload.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs-stream/upload.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs/grid_store.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/gridfs/grid_store.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/mongo_client.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/mongo_client.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/mongos.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/mongos.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/replset.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/replset.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/server.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/server.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/topology_base.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/topologies/topology_base.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/url_parser.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/url_parser.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/mongodb/lib/utils.js" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/package.json" afterPath="$PROJECT_DIR$/node_modules/mongodb/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mongodb/yarn.lock" afterPath="$PROJECT_DIR$/node_modules/mongodb/yarn.lock" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/populatedb.js" afterPath="$PROJECT_DIR$/populatedb.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/home.js" afterPath="$PROJECT_DIR$/public/javascripts/home.js" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/home.css" afterPath="$PROJECT_DIR$/public/stylesheets/home.css" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/overlay.css" afterPath="$PROJECT_DIR$/public/stylesheets/overlay.css" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change beforePath="$PROJECT_DIR$/views/collection.ejs" afterPath="$PROJECT_DIR$/views/collection.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
+      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change beforePath="$PROJECT_DIR$/views/partials/footer.ejs" afterPath="$PROJECT_DIR$/views/partials/footer.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" afterPath="$PROJECT_DIR$/views/partials/header.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/partials/overlay.ejs" afterPath="$PROJECT_DIR$/views/partials/overlay.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/poem.ejs" afterPath="$PROJECT_DIR$/views/poem.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/written-works.ejs" afterPath="$PROJECT_DIR$/views/written-works.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,31 +18,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="97" lean-forward="false" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-357">
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overlay.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/overlay.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="161" column="21" lean-forward="true" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="populatedb.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/populatedb.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="315">
               <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -136,20 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="overlay.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/overlay.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
+            <state relative-caret-position="-86">
               <caret line="3" column="47" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
               <folding />
             </state>
@@ -182,6 +144,7 @@
       <find>param</find>
       <find>collection</find>
       <find>song.url</find>
+      <find>mongodb</find>
     </findStrings>
     <replaceStrings>
       <replace>poem</replace>
@@ -222,7 +185,6 @@
         <option value="$PROJECT_DIR$/controllers/musicController.js" />
         <option value="$PROJECT_DIR$/routes/music.js" />
         <option value="$PROJECT_DIR$/routes/writing.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/models/album.js" />
         <option value="$PROJECT_DIR$/editdb.js" />
@@ -242,10 +204,11 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/footer.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/overlay.css" />
-        <option value="$PROJECT_DIR$/views/partials/footer.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/home.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/home.css" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/partials/footer.ejs" />
       </list>
     </option>
   </component>
@@ -397,7 +360,7 @@
       <updated>1529093358011</updated>
       <workItem from="1529093365988" duration="46399000" />
       <workItem from="1529287433729" duration="11935000" />
-      <workItem from="1529693078386" duration="93288000" />
+      <workItem from="1529693078386" duration="94517000" />
     </task>
     <task id="LOCAL-00001" summary="Adding controllers for the routes based off of MDN -- may not need all routes -- will clean up later.">
       <created>1529857098919</created>
@@ -522,20 +485,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151622000" />
+    <option name="totallyTimeSpent" value="152851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.49722221" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32235295" sideWeight="0.51111114" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32235295" sideWeight="0.5138889" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37333333" sideWeight="0.49502134" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2529412" sideWeight="0.48819444" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2529412" sideWeight="0.48541668" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32235295" sideWeight="0.4888889" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32235295" sideWeight="0.4861111" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10138889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32705882" sideWeight="0.495338" order="2" side_tool="false" content_ui="tabs" />
@@ -794,14 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/populatedb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2886">
-          <caret line="210" column="20" lean-forward="false" selection-start-line="210" selection-start-column="20" selection-end-line="210" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/poem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -858,14 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="63" column="52" lean-forward="false" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/photography.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -914,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-457">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -930,26 +868,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/overlay.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="175" column="22" lean-forward="false" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -986,26 +908,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populatedb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/overlay.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="161" column="21" lean-forward="true" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/overlay.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
+        <state relative-caret-position="-86">
           <caret line="3" column="47" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="97" lean-forward="false" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="315">
           <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        <state relative-caret-position="163">
+          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="101" />
           <folding />
         </state>
       </provider>
