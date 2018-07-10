@@ -25,9 +25,9 @@ var db = mongoose.connection;
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
-Song.findOne({title: 'NO LYRICS'}, function(err, song) {
+Song.findOne({title: 'Song 1'}, function(err, song) {
     Album.findOneAndUpdate(
-        { title: 'Nashville Songs'},
+        { title: 'CJQ Album 1'},
         { $push: { songs: song  } },
         function (error, success) {
             if (error) {
@@ -38,74 +38,74 @@ Song.findOne({title: 'NO LYRICS'}, function(err, song) {
         });
 });
 
-Song.findOne({title: 'song 6'}, function(err, song) {
-    Album.findOneAndUpdate(
-        { title: 'By the River'},
-        { $push: { songs: song  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-});
+// Song.findOne({title: 'song 6'}, function(err, song) {
+//     Album.findOneAndUpdate(
+//         { title: 'By the River'},
+//         { $push: { songs: song  } },
+//         function (error, success) {
+//             if (error) {
+//                 console.log(error);
+//             } else {
+//                 console.log(success);
+//             }
+//         });
+// });
+//
+// Song.findOne({title: 'song 5'}, function(err, song) {
+//     Album.findOneAndUpdate(
+//         { title: 'By the River'},
+//         { $push: { songs: song  } },
+//         function (error, success) {
+//             if (error) {
+//                 console.log(error);
+//             } else {
+//                 console.log(success);
+//             }
+//         });
+// });
+//
+// Song.findOne({title: 'song 4'}, function(err, song) {
+//     Album.findOneAndUpdate(
+//         { title: 'John and John'},
+//         { $push: { songs: song  } },
+//         function (error, success) {
+//             if (error) {
+//                 console.log(error);
+//             } else {
+//                 console.log(success);
+//             }
+//         });
+// });
+//
+// Song.findOne({title: 'another song'}, function(err, song) {
+//     Album.findOneAndUpdate(
+//         { title: 'John and John'},
+//         { $push: { songs: song  } },
+//         function (error, success) {
+//             if (error) {
+//                 console.log(error);
+//             } else {
+//                 console.log(success);
+//             }
+//         });
+// });
+//
+// Song.findOne({title: 'New song'}, function(err, song) {
+//     Album.findOneAndUpdate(
+//         { title: 'John and John'},
+//         { $push: { songs: song  } },
+//         function (error, success) {
+//             if (error) {
+//                 console.log(error);
+//             } else {
+//                 console.log(success);
+//             }
+//         });
+// });
 
-Song.findOne({title: 'song 5'}, function(err, song) {
+Song.findOne({title: 'Song 2'}, function(err, song) {
     Album.findOneAndUpdate(
-        { title: 'By the River'},
-        { $push: { songs: song  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-});
-
-Song.findOne({title: 'song 4'}, function(err, song) {
-    Album.findOneAndUpdate(
-        { title: 'John and John'},
-        { $push: { songs: song  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-});
-
-Song.findOne({title: 'another song'}, function(err, song) {
-    Album.findOneAndUpdate(
-        { title: 'John and John'},
-        { $push: { songs: song  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-});
-
-Song.findOne({title: 'New song'}, function(err, song) {
-    Album.findOneAndUpdate(
-        { title: 'John and John'},
-        { $push: { songs: song  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
-            }
-        });
-});
-
-Song.findOne({title: 'Nature Song'}, function(err, song) {
-    Album.findOneAndUpdate(
-        { title: 'Songs about Nature'},
+        { title: 'CJQ Album 2'},
         { $push: { songs: song  } },
         function (error, success) {
             if (error) {

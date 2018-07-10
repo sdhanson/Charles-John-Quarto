@@ -157,17 +157,17 @@ function createPhotos(cb) {
 function createAlbums(cb) {
     async.parallel([
             function(callback) {
-                albumCreate('Songs about Nature', 'Present', ['Charles John Quarto'], 'Album', [], 'images/back.jpg',  'A new album by CJQ',  ['Charles John Quarto', 'Jimi Hendrix'], 'special_link.com', false, callback);
+                albumCreate('CJQ Album 1', 'Present', ['Charles John Quarto'], 'Album', [], 'images/back.jpg',  'A new album by CJQ',  ['Charles John Quarto'], 'special_link.com', false, callback);
             },
+            // function(callback) {
+            //     albumCreate('John and John', '1960', ['Charles John Quarto', 'John Lennon'], 'Collaboration', [], 'images/book.jpg',  'An album in collaboration with John Lennon',  ['Charles John Quarto', 'John Lennon'], false, 'http://youtube.com', callback);
+            // },
             function(callback) {
-                albumCreate('John and John', '1960', ['Charles John Quarto', 'John Lennon'], 'Collaboration', [], 'images/book.jpg',  'An album in collaboration with John Lennon',  ['Charles John Quarto', 'John Lennon'], false, 'http://youtube.com', callback);
+                albumCreate('CJQ Album 2', '1990', ['Charles John Quarto'], 'Collaboration', [], 'images/headshot.jpg',  'A collaborative effort with Willie Nelson',  ['Charles John Quarto', 'Willie Nelson'], false, false, callback);
             },
-            function(callback) {
-                albumCreate('By the River', '1990', ['Charles John Quarto'], 'Collaboration', [], 'images/headshot.jpg',  'A collaborative effort with Zayn Malik',  ['Charles John Quarto', 'Arnold', 'Zayn Malik'], false, false, callback);
-            },
-            function(callback) {
-                albumCreate('Nashville Songs', '1980', ['Charles John Quarto'], 'Album', [], 'images/mountain.jpg',  'An old album',  ['Charles John Quarto'], false, false, callback);
-            }
+            // function(callback) {
+            //     albumCreate('Nashville Songs', '1980', ['Charles John Quarto'], 'Album', [], 'images/mountain.jpg',  'An old album',  ['Charles John Quarto'], false, false, callback);
+            // }
         ],
         // optional callback
         cb);
@@ -177,29 +177,29 @@ function createAlbums(cb) {
 function createSongs(cb) {
     async.parallel([
             function(callback) {
-                songCreate('Nature Song', 'Present', ['Charles John Quarto'], 'Song', 'images/headshot.jpg',  'A new song by CJQ',  ['Charles John Quarto', 'Jimi Hendrix'], albums[0], albums[0].link, "4:30", "hello", "spotify.com", callback);
+                songCreate('Song 1', 'Present', ['Charles John Quarto'], 'Song', 'images/headshot.jpg',  'A new song by CJQ',  ['Charles John Quarto', 'Willie Nelson'], albums[0], albums[0].link, "4:30", "hello", "spotify.com", callback);
             },
+            // function(callback) {
+            //     songCreate('New song', albums[0].decade, ['Charles John Quarto'], 'Song', 'images/mountain.jpg',  'Another song by CJQ',  albums[0].producers, albums[0], albums[0].link, "2:00", "hello FROM THE OTHER SIDE", "spotify.com", callback);
+            // },
             function(callback) {
-                songCreate('New song', albums[0].decade, ['Charles John Quarto'], 'Song', 'images/mountain.jpg',  'Another song by CJQ',  albums[0].producers, albums[0], albums[0].link, "2:00", "hello FROM THE OTHER SIDE", "spotify.com", callback);
+                songCreate('Song 2', '1960', ['Charles John Quarto'], 'Song', 'images/back.jpg',  'My song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[1].link, "1:34", "MORE LYRICS MORE LYRIVS", "spotify.com", callback);
             },
-            function(callback) {
-                songCreate('another song', '1960', ['Charles John Quarto'], 'Song', 'images/back.jpg',  'My song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[0], albums[0].link, "1:34", "MORE LYRICS MORE LYRIVS", "spotify.com", callback);
-            },
-            function(callback) {
-                songCreate('song 4', albums[1].decade, ['Charles John Quarto'], 'Song', 'images/music.jpg',  'This is a song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[0].link, "2:30", "hello", "spotify.com", callback);
-            },
-            function(callback) {
-                songCreate('song 5', albums[2].decade, ['Charles John Quarto'], 'Song', 'images/ripple.jpeg',  'Cool song',  ['Charles John Quarto'], albums[2], albums[0].link, "8:30", "YUMADSFAHFKAJFDNARGUWAFEHJDSOIHBJFGVHOUYTYDFHGVHBJHUGYF HADSFUIHBFEFSUIVBKJANFSHUIBRKAJFNLJOIHUBAKNHBFNADHUHJ KJKIUFTYGVHJUIYTFGHJUYTFGHJIUIYGFGVHJIUIYGVBJH FDACHJBDNFJADIUHJENRFIODJKRENFJKIENRJFGUJHENRMJGFKH RIFOJENRTEGFIOJERNTJGFIVJKLRNLGFJIVFOHKRBJGFKLJFHRBJFKJFHRHBFJVJRJKBFRQKJBFK", "spotify.com", callback);
-            },
-            function(callback) {
-                songCreate('song 6', '1990', ['Charles John Quarto'], 'Song', 'images/rivers.jpeg',  'Zayn',  ['Charles John Quarto', 'Jimi Hendrix'], albums[2], albums[0].link, "3:30", "COOL", "spotify.com", callback);
-            },
-            function(callback) {
-                songCreate('NO LYRICS', albums[3].decade, ['Charles John Quarto'], 'Song', 'images/forests.jpeg',  'Yuh',  ['Charles John Quarto', 'Jimi Hendrix'], albums[3], albums[0].link, "5:02", false, false, callback);
-            },
-            function(callback) {
-                songCreate('Song 8', '1960', ['Charles John Quarto', 'Bob Dylan'], 'Single', 'images/book.jpg',  'The eighth song by CJQ',  ['Charles John Quarto'], false, false, "5:30", "hello this is the eighth song he released", "http://youtube.com", callback);
-            }
+            // function(callback) {
+            //     songCreate('song 4', albums[1].decade, ['Charles John Quarto'], 'Song', 'images/music.jpg',  'This is a song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[0].link, "2:30", "hello", "spotify.com", callback);
+            // },
+            // function(callback) {
+            //     songCreate('song 5', albums[2].decade, ['Charles John Quarto'], 'Song', 'images/ripple.jpeg',  'Cool song',  ['Charles John Quarto'], albums[2], albums[0].link, "8:30", "YUMADSFAHFKAJFDNARGUWAFEHJDSOIHBJFGVHOUYTYDFHGVHBJHUGYF HADSFUIHBFEFSUIVBKJANFSHUIBRKAJFNLJOIHUBAKNHBFNADHUHJ KJKIUFTYGVHJUIYTFGHJUYTFGHJIUIYGFGVHJIUIYGVBJH FDACHJBDNFJADIUHJENRFIODJKRENFJKIENRJFGUJHENRMJGFKH RIFOJENRTEGFIOJERNTJGFIVJKLRNLGFJIVFOHKRBJGFKLJFHRBJFKJFHRHBFJVJRJKBFRQKJBFK", "spotify.com", callback);
+            // },
+            // function(callback) {
+            //     songCreate('song 6', '1990', ['Charles John Quarto'], 'Song', 'images/rivers.jpeg',  'Zayn',  ['Charles John Quarto', 'Jimi Hendrix'], albums[2], albums[0].link, "3:30", "COOL", "spotify.com", callback);
+            // },
+            // function(callback) {
+            //     songCreate('NO LYRICS', albums[3].decade, ['Charles John Quarto'], 'Song', 'images/forests.jpeg',  'Yuh',  ['Charles John Quarto', 'Jimi Hendrix'], albums[3], albums[0].link, "5:02", false, false, callback);
+            // },
+            // function(callback) {
+            //     songCreate('Song 8', '1960', ['Charles John Quarto', 'Bob Dylan'], 'Single', 'images/book.jpg',  'The eighth song by CJQ',  ['Charles John Quarto'], false, false, "5:30", "hello this is the eighth song he released", "http://youtube.com", callback);
+            // }
         ],
         // optional callback
         cb);
