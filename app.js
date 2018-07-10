@@ -20,8 +20,7 @@ var app = express();
 // mongodb database setup
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
-// mongoose.connect('mongodb://127.0.0.1:27017/cjq');
-mongoose.connect("mongodb://sdhanson-cjq:caohwine91798cjq@ds131971.mlab.com:31971/charles-john-quarto");
+mongoose.connect('mongodb://127.0.0.1:27017/cjq');
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -74,4 +73,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-// adding this to commit 
+// adding this to commit
