@@ -22,6 +22,8 @@ exports.index = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Written Works';
         var subtitle = 'Poetry, Lyrics, and Collections. ';
         var link = 'Shop Now.';
@@ -32,7 +34,9 @@ exports.index = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
     });
 };
@@ -55,6 +59,8 @@ exports.poems = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Written Works';
         var subtitle = 'Poetry. ';
         var link = 'Shop Now.';
@@ -65,7 +71,9 @@ exports.poems = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
 
     });
@@ -91,6 +99,8 @@ exports.songs = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Written Works';
         var subtitle = 'Lyrics. ';
         var link = 'Shop Now.';
@@ -101,7 +111,9 @@ exports.songs = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            sub: sub,
+            titlesub: titlesub,
         });
 
     });
@@ -125,6 +137,8 @@ exports.collections = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Written Works';
         var subtitle = 'Collections. ';
         var link = 'Shop Now.';
@@ -135,7 +149,9 @@ exports.collections = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
 
     });
@@ -166,6 +182,8 @@ exports.decade = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Written Works';
         var subtitle = 'Written work from the ' + year + '. ';
         var link = 'Shop Now.';
@@ -176,7 +194,9 @@ exports.decade = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
     });
 };
@@ -199,6 +219,8 @@ exports.single_song = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Lyrics';
         var subtitle = '';
         var link = '';
@@ -209,7 +231,9 @@ exports.single_song = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
 
     });
@@ -233,6 +257,8 @@ exports.single_poem = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Poetry';
         var subtitle = '';
         var link = '';
@@ -243,7 +269,9 @@ exports.single_poem = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
 
     });
@@ -267,6 +295,8 @@ exports.single_collection = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Collection';
         var subtitle = '';
         var link = '';
@@ -277,7 +307,9 @@ exports.single_collection = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub,
+            sub: sub
         });
 
     });

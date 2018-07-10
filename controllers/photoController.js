@@ -10,13 +10,16 @@ exports.index = function(req, res) {
             var subtitle = '';
             var link = '';
             var image = '/images/rivers.jpeg';
+            var sub = false;
+            var titlesub = '';
             res.render('photography', {
                 title: title,
                 error: err,
                 photos: allPhotos,
                 subtitle: subtitle,
                 link: link,
-                image: image
+                image: image,
+                titlesub: titlesub, sub: sub
             });
         }
     });

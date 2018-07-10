@@ -18,8 +18,10 @@ router.get('/:specifier', function(req, res, next) {
     var subtitle = 'Submit Your Message.';
     var link = '';
     var image = '/images/tree.jpeg';
+    var sub = false;
+    var titlesub = '';
 
-    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error, titlesub: titlesub, sub: sub});
 });
 
 router.get('/', function(req, res) {
@@ -29,7 +31,9 @@ router.get('/', function(req, res) {
     var image = '/images/tree.jpeg';
     var sent = false;
     var error = false;
-    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
+    var sub = false;
+    var titlesub = '';
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error, titlesub: titlesub, sub: sub});
 });
 
 router.get('/', function(req, res) {
@@ -39,7 +43,9 @@ router.get('/', function(req, res) {
     var image = '/images/tree.jpeg';
     var sent = false;
     var error = false;
-    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error});
+    var sub = false;
+    var titlesub = '';
+    res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, sent: sent, error: error, titlesub: titlesub, sub: sub});
 });
 
 

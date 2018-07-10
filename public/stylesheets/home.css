@@ -27,6 +27,11 @@
     .media div h5 {
         font-size: 3rem;
     }
+
+
+    .text-center-link {
+        font-size: 1.25rem;
+    }
 }
 
 @media (max-width: 991px) {
@@ -37,6 +42,7 @@
     .media div h5 {
         font-size: 2rem;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -58,13 +64,13 @@
 }
 
 a p {
-    margin-top: 10px;
+    margin-top: 25px;
     font-size: 16px;
-    font-weight: 500;
+    /*font-weight: 500;*/
     color: #9cbbf3;
 }
 
-a:hover p {
+a:hover p.text-center-link {
     color: #b8cef6;
     text-decoration: none;
 }
@@ -72,5 +78,9 @@ a:hover p {
 .shop {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+a p.text-center-link {
+    color: black;
 }
 

@@ -10,10 +10,10 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="/discography/category/Song">All Songs</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/category/Album">All Albums</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/category/Collaboration">Collaborations</a>
-            <a class="dropdown-item header-dropdown-item" href="/discography/category/Single">Singles</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">All Songs</a>
+            <a class="dropdown-item header-dropdown-item" href="/discography/category/album">All Albums</a>
+            <!--<a class="dropdown-item header-dropdown-item" href="/discography/category/collaboration">Collaborations</a>-->
+            <!--<a class="dropdown-item header-dropdown-item" href="/discography/category/single">Singles</a>-->
             <a class="dropdown-item header-dropdown-item" href="/discography">All</a>
         </div>
     </div>
@@ -136,89 +136,89 @@
         <!--End image + title container-->
         <% }); %>
 
-        <% results.song_list.forEach(function(song) { %>
-        <!--Image + Title container-->
-        <div class="album-photo col-md-4 col-sm-6 my-3">
-            <!--Link to toggle modal-->
-            <a class="album-link" data-toggle="modal" href="#myModal">
-                <!--Image-->
-                <% if (song.image) { var image = "/" + song.image %>
-                    <img class="my-1 img-fluid" src="<%=image%>" alt="image">
-                <%  } else { %>
-                    <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
-                <% } %>
-                <!--Title-->
-                <div class="photo-overlay">
-                    <div class="photo-overlay-text">
-                        <% if (song.title) { %>
-                        <div class="title"> <%= song.title %> </div>
-                        <% } %>
-                        <!--MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND-->
-                        <!--MORE-->
-                        <div class="artists">
-                            <% if (song.artist) { song.artist.forEach(function(artist) { %>
-                            <%= artist %>
-                            <% })} %>
-                        </div>
+        <!--<% results.song_list.forEach(function(song) { %>-->
+        <!--&lt;!&ndash;Image + Title container&ndash;&gt;-->
+        <!--<div class="album-photo col-md-4 col-sm-6 my-3">-->
+            <!--&lt;!&ndash;Link to toggle modal&ndash;&gt;-->
+            <!--<a class="album-link" data-toggle="modal" href="#myModal">-->
+                <!--&lt;!&ndash;Image&ndash;&gt;-->
+                <!--<% if (song.image) { var image = "/" + song.image %>-->
+                    <!--<img class="my-1 img-fluid" src="<%=image%>" alt="image">-->
+                <!--<%  } else { %>-->
+                    <!--<img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">-->
+                <!--<% } %>-->
+                <!--&lt;!&ndash;Title&ndash;&gt;-->
+                <!--<div class="photo-overlay">-->
+                    <!--<div class="photo-overlay-text">-->
+                        <!--<% if (song.title) { %>-->
+                        <!--<div class="title"> <%= song.title %> </div>-->
+                        <!--<% } %>-->
+                        <!--&lt;!&ndash;MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND&ndash;&gt;-->
+                        <!--&lt;!&ndash;MORE&ndash;&gt;-->
+                        <!--<div class="artists">-->
+                            <!--<% if (song.artist) { song.artist.forEach(function(artist) { %>-->
+                            <!--<%= artist %>-->
+                            <!--<% })} %>-->
+                        <!--</div>-->
 
-                        <% if (song.spotify) { %>
-                        <div class="spotify d-none"> <%= song.spotify %> </div>
-                        <% } %>
+                        <!--<% if (song.spotify) { %>-->
+                        <!--<div class="spotify d-none"> <%= song.spotify %> </div>-->
+                        <!--<% } %>-->
 
-                        <!--MAKE SURE TO SET LINK AS GLOBAL AND NOT /MUSIC/CATEGORY-->
-                        <% if (song.description) { %>
-                        <div class="description d-none"> <%= song.description %> </div>
-                        <% } %>
+                        <!--&lt;!&ndash;MAKE SURE TO SET LINK AS GLOBAL AND NOT /MUSIC/CATEGORY&ndash;&gt;-->
+                        <!--<% if (song.description) { %>-->
+                        <!--<div class="description d-none"> <%= song.description %> </div>-->
+                        <!--<% } %>-->
 
-                        <% if (song.link) { %>
-                        <div class="link d-none"> <%= song.link %> </div>
-                        <% } %>
+                        <!--<% if (song.link) { %>-->
+                        <!--<div class="link d-none"> <%= song.link %> </div>-->
+                        <!--<% } %>-->
 
-                        <!--Container for song list and length-->
+                        <!--&lt;!&ndash;Container for song list and length&ndash;&gt;-->
 
-                        <!--CHECK IF THIS EVEN WORKS-->
-                        <div class="songs d-none">
-                            <div class="length">
-                                <% if (song.length) {%>
-                                <span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>
-                                <% } else {  %>
-                                <span> No songs </span>
-                                <% } %>
-                            </div>
+                        <!--&lt;!&ndash;CHECK IF THIS EVEN WORKS&ndash;&gt;-->
+                        <!--<div class="songs d-none">-->
+                            <!--<div class="length">-->
+                                <!--<% if (song.length) {%>-->
+                                <!--<span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>-->
+                                <!--<% } else {  %>-->
+                                <!--<span> No songs </span>-->
+                                <!--<% } %>-->
+                            <!--</div>-->
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <!--End link-->
-            <!--Sub information-->
-            <!--MAKE THE BUTTONS ACTUALLY GO TO THE PLACE THEY SHOULD DEPENDING ON THE CATEGORY
-            okay, so for the category and decade want a render page that on click send the path /discography/:specifier
-            and then can redirect to this with a true or false thing and if album is true then then include that,
-            basically for each list in the results just render with that
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--&lt;!&ndash;End link&ndash;&gt;-->
+            <!--&lt;!&ndash;Sub information&ndash;&gt;-->
+            <!--&lt;!&ndash;MAKE THE BUTTONS ACTUALLY GO TO THE PLACE THEY SHOULD DEPENDING ON THE CATEGORY-->
+            <!--okay, so for the category and decade want a render page that on click send the path /discography/:specifier-->
+            <!--and then can redirect to this with a true or false thing and if album is true then then include that,-->
+            <!--basically for each list in the results just render with that-->
 
-            DUH DUH DUH DUH JUST POPULATE THE ALBUMS WITH THE THING SELECTED AND ONLY NEED A TRUE OR FALSE FOR
-            SONGS VS ALBUMS BC REST IS SPECIFIC TO THAT DUH DUH DUH
+            <!--DUH DUH DUH DUH JUST POPULATE THE ALBUMS WITH THE THING SELECTED AND ONLY NEED A TRUE OR FALSE FOR-->
+            <!--SONGS VS ALBUMS BC REST IS SPECIFIC TO THAT DUH DUH DUH-->
 
-            CAN I CREATE A MAJOR LIST THAT JUST INCLUDES ALL THE DATA FOR RESULTS.WHOLE_LIST.FOREACH ELEMENT??
+            <!--CAN I CREATE A MAJOR LIST THAT JUST INCLUDES ALL THE DATA FOR RESULTS.WHOLE_LIST.FOREACH ELEMENT??-->
 
-            SEEMS LIKE A REASONABLE THING TO ASK FROM THIS MF PLATFORM
+            <!--SEEMS LIKE A REASONABLE THING TO ASK FROM THIS MF PLATFORM-->
 
 
-            -->
-            <div class="tags">
-                <span class="mr-2">Tags: </span>
-                <% if (song.category) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=song.category%>" role="button"><%= song.category %></a>
-                <% } %>
-                <% if (song.decade) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/decade/<%=song.decade%>" role="button"><%= song.decade %></a>
-                <% } %>
-            </div>
-        </div>
+            <!--&ndash;&gt;-->
+            <!--<div class="tags">-->
+                <!--<span class="mr-2">Tags: </span>-->
+                <!--<% if (song.category) { %>-->
+                <!--<a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=song.category%>" role="button"><%= song.category %></a>-->
+                <!--<% } %>-->
+                <!--<% if (song.decade) { %>-->
+                <!--<a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/decade/<%=song.decade%>" role="button"><%= song.decade %></a>-->
+                <!--<% } %>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <!--End image + title container-->
-        <% }); %>
+        <!--&lt;!&ndash;End image + title container&ndash;&gt;-->
+        <!--<% }); %>-->
     </div>
     <!--End row-->
 </div>

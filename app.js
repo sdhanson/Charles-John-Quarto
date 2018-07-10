@@ -69,12 +69,14 @@ app.use(function(err, req, res, next) {
     res.locals.error = req.app.get('env') === 'development' ? err : {};
 
     // render the error page
+    var sub = false;
+    var titlesub ='';
     var title = 'Error';
     var subtitle = 'The page you are looking for cannot be found!';
     var link = 'Head back to safety.';
     var image = '/images/storm.jpeg';
   res.status(err.status || 500);
-  res.render('error', {subtitle: subtitle, title: title, link: link, image: image});
+  res.render('error', {subtitle: subtitle, title: title, link: link, image: image, sub: sub, titlesub: titlesub });
 });
 
 module.exports = app;

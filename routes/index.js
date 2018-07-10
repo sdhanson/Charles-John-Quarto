@@ -5,19 +5,23 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    var title = 'Charles John Quarto: Songwriter-Poet';
+    var title = 'Charles John Quarto';
+    var sub = true;
+    var titlesub = "Poet-Songwriter, Seer-Teacher";
     var subtitle = 'New Collection Out. ';
     var link = 'Shop Now.';
     var image = '/images/mountain.jpg';
-    res.render('index', {subtitle: subtitle, title: title, link: link, image: image});
+    res.render('index', {subtitle: subtitle, title: title, titlesub: titlesub, link: link, image: image, sub: sub});
 });
 
 router.get('/shop', function(req, res) {
+    var sub = false;
+    var titlesub = '';
     var title = 'Shop All Works';
     var subtitle = '';
     var link = '';
     var image = '/images/blake.jpeg';
-    res.render('shop', {subtitle: subtitle, title: title, link: link, image: image});
+    res.render('shop', {subtitle: subtitle, title: title, link: link, image: image, titlesub: titlesub, sub: sub});
 });
 
 router.post('/send', function(req, res) {

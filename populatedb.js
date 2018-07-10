@@ -36,7 +36,11 @@ function photoCreate(image, photographer, title, date, description, location, cb
         photographer: photographer
     };
 
-    if (title !== false) photodetail.title = title;
+    if (title !== false) {
+        photodetail.title = title;
+    } else {
+
+    }
     if (date !== false) photodetail.date = date;
     if (description !== false) photodetail.description = description;
     if (location !== false) photodetail.location = location;
@@ -65,9 +69,21 @@ function albumCreate(title, decade, artist, category, songs, image, description,
         image: image,
         description: description
     };
-    if (producers !== false) albumdetail.producers = producers;
-    if (link !== false) albumdetail.link = link;
-    if (spotify !== false) albumdetail.spotify = spotify;
+    if (producers !== false) {
+        albumdetail.producers = producers;
+    } else {
+        albumdetail.producers = false;
+    }
+    if (link !== false) {
+        albumdetail.link = link;
+    } else {
+        albumdetail.link = false;
+    }
+    if (spotify !== false) {
+        albumdetail.spotify = spotify;
+    } else {
+        albumdetail.spotify = false;
+    }
 
     var album = new Album(albumdetail);
 
@@ -92,10 +108,26 @@ function songCreate(title, decade, artist, category, image, description, produce
         image: image,
         description: description
     };
-    if (producers !== false) songdetail.producers = producers;
-    if (album !== false) songdetail.album = album;
-    if (link !== false) songdetail.link = link;
-    if (length !== false) songdetail.length = length;
+    if (producers !== false) {
+        songdetail.producers = producers;
+    } else {
+        songdetail.producers = false;
+    }
+    if (album !== false) {
+        songdetail.album = album;
+    } else {
+        songdetail.album = false;
+    }
+    if (link !== false) {
+        songdetail.link = link;
+    } else {
+        songdetail.link = false;
+    }
+    if (length !== false) {
+        songdetail.length = length;
+    } else {
+        songdetail.length = false;
+    }
     if (lyrics !== false) {
         songdetail.lyrics = lyrics;
     } else {

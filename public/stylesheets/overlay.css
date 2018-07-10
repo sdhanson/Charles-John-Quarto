@@ -14,6 +14,10 @@
         font-size: 3.75rem;
     }
 
+    .header-title-sub {
+        font-size: 3rem;
+    }
+
     .header-subtitle {
         font-size: 2rem;
     }
@@ -29,6 +33,10 @@
         font-size: 2.5rem;
     }
 
+    .header-title-sub {
+        font-size: 2.25rem;
+    }
+
     .header-subtitle {
         font-size: 1.75rem;
     }
@@ -37,6 +45,10 @@
 @media (max-width: 768px) {
     .header-title {
         font-size: 1.5rem;
+    }
+
+    .header-title-sub {
+        font-size: 1.25rem;
     }
 
     .header-subtitle {
@@ -49,6 +61,10 @@
 @media (max-width: 450px) {
     .header-title {
         font-size: 1.2rem;
+    }
+
+    .header-title-sub {
+        font-size: 1.1rem;
     }
 }
 
@@ -72,7 +88,7 @@
     position: absolute;
     color: white;
     font-weight: bold;
-    margin-top: 20%;
+    margin-top: 19%;
 }
 
 .header-nav {
@@ -89,6 +105,14 @@
     padding-right: 1%;
     align-self: center;
 }
+
+.header-title-sub {
+    padding-left: 1%;
+    padding-right: 1%;
+    align-self: center;
+    color: gainsboro;
+}
+
 
 .header-subtitle {
     color: gainsboro;
@@ -182,7 +206,6 @@ footer div div a{
     }
 
 }
-
 
 @media (max-width: 968px) {
 

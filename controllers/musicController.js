@@ -17,6 +17,8 @@ exports.index = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Discography';
         var subtitle = '';
         var link = '';
@@ -27,7 +29,8 @@ exports.index = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub, sub: sub
         });
 });
 };
@@ -46,6 +49,8 @@ exports.songs = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Discography';
         var subtitle = '';
         var link = '';
@@ -56,7 +61,8 @@ exports.songs = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub, sub: sub
         });
 
     });
@@ -76,6 +82,8 @@ exports.albums = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Discography';
         var subtitle = '';
         var link = '';
@@ -86,7 +94,8 @@ exports.albums = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image,
+            titlesub: titlesub, sub: sub
         });
 
     });
@@ -108,6 +117,8 @@ exports.category = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Discography';
         var subtitle = '';
         var link = '';
@@ -118,7 +129,7 @@ exports.category = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image, titlesub: titlesub, sub: sub
         });
 
     });
@@ -139,6 +150,8 @@ exports.decade = function(req, res, next) {
         if(err){
             return next(err);
         }
+        var sub = false;
+        var titlesub = '';
         var title = 'Discography';
         var subtitle = '';
         var link = '';
@@ -149,7 +162,7 @@ exports.decade = function(req, res, next) {
             results: results,
             subtitle: subtitle,
             link: link,
-            image: image
+            image: image, titlesub: titlesub, sub: sub
         });
     });
 };

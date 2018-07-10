@@ -18,13 +18,13 @@ router.get('/decade/:specifier', function(req, res, next) {
 
 router.get('/category/:specifier', function(req, res, next) {
     var page = req.params.specifier.toLowerCase();
-    if(page === "poems" || page === "songs" || page === "collections") {
-        if(page === "songs") {
+    if(page === "poems" || page === "songs" || page === "collections" || page === "poem" || page === "song" || page === "collection") {
+        if(page === "songs" || page === "song") {
             writing_controller.songs(req, res);
-        } else if(page === "collections") {
+        } else if(page === "collections" || page === "collection") {
             // GET writing with collection specifier
             writing_controller.collections(req, res);
-        } else if (page === "poems") {
+        } else if (page === "poems" || page === "poem") {
             // GET writing with poem specifier
             writing_controller.poems(req, res);
         } else {

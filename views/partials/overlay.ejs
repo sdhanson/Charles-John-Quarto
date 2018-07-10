@@ -37,5 +37,9 @@
 
     <div class="d-flex flex-column header header-text">
         <p class="header-title"><%=title%></p>
+        <% if(sub === true) { %>
+        <p class="header-title-sub"><%=titlesub%></p>
+        <% } %>
+
         <p class="header-subtitle"><%=subtitle%> <a class=" overlay-subtitle-link" id="link" href="/shop"><%=link%></a></p>
 

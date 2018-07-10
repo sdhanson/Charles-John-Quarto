@@ -1,5 +1,6 @@
 <% include partials/header.ejs %>
 <% include partials/overlay.ejs %>
+<link rel='stylesheet' href='/stylesheets/written-list.css' />
 
 <!--Dropdown buttons that overlay the header image-->
 <div class="row justify-content-center">
@@ -9,7 +10,7 @@
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections">Collections</a>
             <a class="dropdown-item header-dropdown-item" href="/written-works/category/poems">Poems</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Lyrics</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Songs</a>
             <a class="dropdown-item header-dropdown-item" href="/written-works">All</a>
         </div>
     </div>
@@ -108,34 +109,61 @@
 <!--End media container-->
 
 <!--SONGS-->
+<hr class="mt-5" width="90%">
+<!--CREATE LINE HERE THEN LINE UNDER EACH-->
 <% results.song_list.forEach(function(song) { %>
-
-<div class="media mt-5">
-    <!--Image-->
-    <div class="container ml-3 col-2 align-self-center">
-        <% if (song.image) { var image = "/" + song.image %>
-        <img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">
-        <% } else { %>
-        <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
-        <% } %>
-    </div>
-    <!--End image-->
-
-    <!--Body - title and description-->
-    <div class="m-4 media-body align-self-center">
+<div class="media ml-5 mt-0">
+    <a href=<%=song.url%>>
+    <div class="m-3 media-body align-self-center">
         <% if (song.title) { %>
-        <h5 class="mt-0"><%= song.title %></h5>
+            <h5 class="mt-0 written-title"><%= song.title %></h5>
         <% } %>
-        <% if (song.description) { %>
-            <%= song.description.substring(0, 200) %>
+        <% if (song.album) { %>
+            <p class="mt-1 written-album">FROM ALBUM NAME HERE<%= song.album.title %> </p>
         <% } %>
-        <p>
-            <a href=<%=song.url%>> VIEW <i class="fas fa-chevron-right"></i>
-            </a>
-        </p>
+        <% if (song.display) { %>
+            <p class="mt-2 written-display"><%= song.display %> hello </p>
+        <% } %>
+        <p class="mt-1 written-display">hello </p>
+        <div class="mt-4 tags">
+            <% if (song.category) { %>
+            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=song.category%>" role="button"><%= song.category %></a>
+            <% } %>
+            <% if (song.decade) { %>
+            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=song.decade%>" role="button"><%= song.decade %></a>
+            <% } %>
+        </div>
     </div>
-    <!--End body-->
+    </a>
+
 </div>
+<hr class="mt-2" width="90%">
+<!--<div class="media mt-5">-->
+    <!--&lt;!&ndash;Image&ndash;&gt;-->
+    <!--<div class="container ml-3 col-2 align-self-center">-->
+        <!--<% if (song.image) { var image = "/" + song.image %>-->
+        <!--<img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">-->
+        <!--<% } else { %>-->
+        <!--<img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">-->
+        <!--<% } %>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;End image&ndash;&gt;-->
+
+    <!--&lt;!&ndash;Body - title and description&ndash;&gt;-->
+    <!--<div class="m-4 media-body align-self-center">-->
+        <!--<% if (song.title) { %>-->
+        <!--<h5 class="mt-0"><%= song.title %></h5>-->
+        <!--<% } %>-->
+        <!--<% if (song.description) { %>-->
+            <!--<%= song.description.substring(0, 200) %>-->
+        <!--<% } %>-->
+        <!--<p>-->
+            <!--<a href=<%=song.url%>> VIEW <i class="fas fa-chevron-right"></i>-->
+            <!--</a>-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;End body&ndash;&gt;-->
+<!--</div>-->
 
 <% }); %>
 <!--End media container-->
