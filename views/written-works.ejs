@@ -38,6 +38,14 @@
 <!--Display for written works-->
 <!--Media container for a written work photo, title, and description-->
 <!--BOOKS-->
+<% if(results.book_list.length === 0 && results.poem_list.length === 0 && results.song_list.length === 0) {%>
+<div class="mt-5 container">
+    <h1> No Results </h1>
+    <a class="no-results" href="/written-works"> Back to All Written Works
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+<% } else { %>
 <% results.book_list.forEach(function(book) { %>
     <div class="media mt-5">
         <!--Image-->
@@ -131,6 +139,7 @@
 
 <% }); %>
 <!--End media container-->
+<% } %>
 
 <!--End written works display-->
 

@@ -66,10 +66,10 @@
         <!--Body - title and description-->
         <div class="my-4 media-body align-self-center">
             <% if (poem.title) { %>
-            <h5 class="mt-0'><%= poem.title %></h5>
+            <h5 class="mt-0"><%= poem.title %></h5>
             <% } %>
             <% if (poem.description) { %>
-                <%= poem.description.substring(0, 100) %> ...
+                <%= poem.description.substring(0, 100) %>
             <% } %>
             <p>
                 <a href=<%=poem.url%>> View

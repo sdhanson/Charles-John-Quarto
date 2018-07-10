@@ -39,6 +39,14 @@
 </div>
 </div>
 
+<% if(results.album_list.length === 0 && results.song_list.length === 0) {%>
+<div class="mt-5 container">
+    <h1> No Results </h1>
+    <a class="no-results" href="/discography"> Back to Discography
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+<% } else { %>
 <!--Photo grid for album covers - triggers modal-->
 <div class="photo-container">
     <!--Row: all in one row-->
@@ -287,6 +295,7 @@
     </div>
 </div>
 <!--End modal-->
+<% } %>
 
 
 <script type="text/javascript" src="/javascripts/carousel.js"></script>

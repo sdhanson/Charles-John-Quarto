@@ -23,3 +23,12 @@ $(".album-link").click(function() {
     $(".track-container div.songs").html($(this).find(".photo-overlay .photo-overlay-text .songs .length").html());
     $(".media-body div.description").text($(this).find(".photo-overlay .photo-overlay-text .description").text());
 });
+
+
+$("a.no-results").mouseenter(function() {
+    $(this).find(".fas").css("margin-left", "20px");
+});
+
+$("a.no-results").mouseleave(function() {
+    $(this).find(".fas").css("margin-left", "10px");
+});
