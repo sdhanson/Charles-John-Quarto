@@ -1,0 +1,47 @@
+/* HEADER STYLING */
+@media (min-width: 992px) {
+    .written-title {
+        font-size: 2.5rem;
+    }
+    .written-display {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .written-title {
+        font-size: 2rem;
+    }
+    .written-album {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .written-title {
+        font-size: 1.75rem;
+    }
+    .written-album {
+        font-size: 1rem;
+    }
+}
+
+.written-album {
+    font-weight: 500;
+    /*color: black;*/
+    color: gray;
+}
+
+.written-title {
+    color: black;
+}
+
+.written-display {
+    color: black;
+    font-weight: 400;
+}
+
+hr {
+    color: black;
+    size: 70px;
+}
