@@ -21,6 +21,7 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
 mongoose.connect('mongodb://127.0.0.1:27017/cjq');
+// mongoose.connect("mongodb://sdhanson-cjq:caohwine91798cjq@ds131971.mlab.com:31971/charles-john-quarto");
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

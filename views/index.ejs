@@ -11,7 +11,7 @@
 
 <!--ADD COMMENTS-->
 <a href="/discography">
-  <div class="media one mt-5">
+  <div class="media right mt-5">
     <div class="container col-6">
       <img class="one img-fluid" src="/images/rocks.jpeg" alt="Generic placeholder image">
     </div>
@@ -42,7 +42,7 @@
 </a>
 
   <a href="/about">
-  <div class="media three mt-5">
+  <div class="media right mt-5">
     <div class="container col-6">
       <img class="three img-fluid" src="/images/ripple.jpeg" alt="Generic placeholder image">
     </div>
@@ -59,27 +59,33 @@
 <!--Shopping links container-->
 <div class="photo-container">
   <!--Row container: one row-->
-  <div class="row m-5">
+  <div class="row mt-5 mx-2 px-2">
     <!--Photo + title-->
-    <div class="photo col-md-4 col-sm-6 my-3">
-      <a href="#">
-        <img class="my-1 img-fluid" src="/images/forests.jpeg" alt="image">
-        <p class="text-center-link" >Shop</p>
+    <div class="shop photo d-flex justify-content-center mt-1 col-md-4 col-sm-6 my-3">
+      <a href="/shop">
+        <img class="my-1 img-fluid" src="/images/back.jpg" alt="image">
+        <p class="text-center-link" >Shop New Works
+          <i class="three fas fa-chevron-right"></i>
+        </p>
       </a>
     </div>
     <!--End photo + title-->
-    <div class="col-md-4 col-sm-6 my-3">
-      <div class="photo">
-        <a href="#">
-          <img class="my-1 img-fluid" src="/images/blake.jpeg" alt="image">
-          <p class="text-center-link" >Shop</p>
+    <div class="col-md-4 mt-1 col-sm-6 my-3">
+      <div class="shop photo d-flex justify-content-center">
+        <a href="/discography">
+          <img class="my-1 img-fluid" src="/images/headshot.jpg" alt="image">
+          <p class="text-center-link" >Shop All Music
+            <i class="three fas fa-chevron-right"></i>
+          </p>
         </a>
     </div>
     </div>
-    <div class="photo col-md-4 col-sm-6 my-3">
-      <a href="#">
-        <img class="my-1 img-fluid" src="/images/grasses.jpeg" alt="image">
-        <p class="text-center-link" >Shop</p>
+    <div class="shop photo d-flex justify-content-center mt-1 col-md-4 col-sm-6 my-3">
+      <a href="/written-works">
+        <img class="my-1 img-fluid" src="/images/book.jpg" alt="image">
+        <p class="text-center-link" >Shop All Written Works
+          <i class="fas fa-chevron-right"></i>
+        </p>
       </a>
     </div>
   </div>
@@ -90,8 +96,6 @@
 <script type="text/javascript" src="/javascripts/home.js"></script>
 
 <% include partials/footer.ejs %>
-
-
 
 </div>
 

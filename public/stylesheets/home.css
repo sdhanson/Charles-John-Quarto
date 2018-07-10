@@ -11,9 +11,9 @@
 .text-right-view {
     margin-right: 0px;
 }
-.text-center-link {
-    padding-left: 40%;
-}
+/*.text-center-link {*/
+    /*padding-left: 40%;*/
+/*}*/
 
 .fas.two {
     margin-right: 10px;
@@ -47,5 +47,17 @@
     .media div h5 {
         font-size: 1.5rem;
     }
+
+    a p {
+        font-size: 10px;
+    }
+}
+
+a p {
+    color: #9cbbf3;
+}
+a p:hover {
+    color: #b8cef6;
+    text-decoration: none;
 }
 

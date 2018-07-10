@@ -44,6 +44,14 @@
     }
 }
 
+
+
+@media (max-width: 450px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+}
+
 .header {
     position: absolute;
     top: 0;
@@ -173,4 +181,5 @@ footer div div a{
         font-size: 0.75rem;
     }
 }
+
 /* ** END FOOTER ** */
