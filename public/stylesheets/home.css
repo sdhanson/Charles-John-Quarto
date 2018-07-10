@@ -48,16 +48,29 @@
         font-size: 1.5rem;
     }
 
-    a p {
-        font-size: 10px;
+    .media-body p {
+        font-size: 0.6rem;
+    }
+
+    a p.text-center-link {
+        font-size: 12px;
     }
 }
 
 a p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
     color: #9cbbf3;
 }
-a p:hover {
+
+a:hover p {
     color: #b8cef6;
     text-decoration: none;
+}
+
+.shop {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 

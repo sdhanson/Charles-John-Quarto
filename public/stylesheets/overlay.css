@@ -180,6 +180,15 @@ footer div div a{
     .footer {
         font-size: 0.75rem;
     }
+
+}
+
+
+@media (max-width: 968px) {
+
+    .nav-item {
+        font-size: 0.75rem;
+    }
 }
 
 /* ** END FOOTER ** */

@@ -4,7 +4,8 @@ var router = express.Router();
 // Require controller modules.
 var photo_controller = require('../controllers/photoController');
 
-// GET catalog home page.
+/* PHOTOGRAPHY */
 router.get('/', photo_controller.index);
+/* END PHOTOGRAPHY */
 
 module.exports = router;

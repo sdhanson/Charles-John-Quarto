@@ -41,7 +41,7 @@
 <% if(results.book_list.length === 0 && results.poem_list.length === 0 && results.song_list.length === 0) {%>
 <div class="mt-5 container">
     <h1> No Results </h1>
-    <a class="no-results" href="/written-works"> Back to All Written Works
+    <a class="no-results" href="/written-works"> BACK TO ALL WORKS
         <i class="fas fa-chevron-right"></i>
     </a>
 </div>
@@ -67,7 +67,7 @@
                 <%= book.description.substring(0, 100) %>
             <% } %>
             <p>
-                <a href=<%=book.url%>> View <i class="fas fa-chevron-right"></i>
+                <a href=<%=book.url%>> VIEW <i class="fas fa-chevron-right"></i>
                 </a>
             </p>
         </div>
@@ -98,7 +98,7 @@
         <%= poem.description.substring(0, 100) %>
         <% } %>
         <p>
-            <a href=<%=poem.url%>> View <i class="fas fa-chevron-right"></i>
+            <a href=<%=poem.url%>> VIEW <i class="fas fa-chevron-right"></i>
             </a>
         </p>
     </div>
@@ -130,7 +130,7 @@
             <%= song.description.substring(0, 200) %>
         <% } %>
         <p>
-            <a href=<%=song.url%>> View <i class="fas fa-chevron-right"></i>
+            <a href=<%=song.url%>> VIEW <i class="fas fa-chevron-right"></i>
             </a>
         </p>
     </div>
@@ -143,6 +143,6 @@
 
 <!--End written works display-->
 
-<script type="text/javascript" src="/javascripts/written-works.js"></script>
+<script type="text/javascript" src="/javascripts/written-list.js"></script>
 
 <% include partials/footer.ejs %>

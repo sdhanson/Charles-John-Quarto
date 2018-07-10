@@ -10,9 +10,11 @@ var logger = require('morgan');
 // available routes setup
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var photographyRouter = require('./routes/photo');
-var musicRouter = require('./routes/music');
-var writtenworkRouter = require('./routes/writing');
+var photographyRouter = require('./routes/photography');
+var musicRouter = require('./routes/discography');
+var writtenworkRouter = require('./routes/written-works');
+var contactRouter = require('./routes/contact');
+var aboutRouter = require('./routes/about');
 
 // app start
 var app = express();
@@ -21,7 +23,6 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
 mongoose.connect('mongodb://127.0.0.1:27017/cjq');
-// mongoose.connect("mongodb://sdhanson-cjq:caohwine91798cjq@ds131971.mlab.com:31971/charles-john-quarto");
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -45,11 +46,14 @@ app.use(bodyParser.json());
 
 
 // router set up
-app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
-app.use('/photo', photographyRouter);
-app.use('/music', musicRouter);
-app.use('/writing', writtenworkRouter);
+app.use('/photography', photographyRouter);
+app.use('/discography', musicRouter);
+app.use('/written-works', writtenworkRouter);
+app.use('/contact', contactRouter);
+app.use('/about', aboutRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
