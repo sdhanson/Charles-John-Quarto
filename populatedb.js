@@ -13,8 +13,8 @@ var async = require('async');
 var Photo = require('./models/photo');
 var Album = require('./models/album');
 var Song = require('./models/song');
-// var Poem = require('./models/poem');
-// var Collection = require('./models/book');
+var Poem = require('./models/poem');
+var Collection = require('./models/book');
 
 
 var mongoose = require('mongoose');
@@ -27,8 +27,8 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 var photos = [];
 var albums = [];
 var songs = [];
-// var poems = [];
-// var collections = [];
+var poems = [];
+var collections = [];
 
 function photoCreate(image, photographer, title, date, description, location, cb) {
     photodetail = {
@@ -39,11 +39,23 @@ function photoCreate(image, photographer, title, date, description, location, cb
     if (title !== false) {
         photodetail.title = title;
     } else {
-
+        photodetail.title = null;
     }
-    if (date !== false) photodetail.date = date;
-    if (description !== false) photodetail.description = description;
-    if (location !== false) photodetail.location = location;
+    if (date !== false) {
+        photodetail.date = date;
+    } else {
+        photodetail.date = null;
+    }
+    if (description !== false) {
+        photodetail.description = description;
+    } else {
+        photodetail.description = null;
+    }
+    if (location !== false) {
+        photodetail.location = location;
+    } else {
+        photodetail.location = null;
+    }
 
 
     var photo = new Photo(photodetail);
@@ -59,7 +71,7 @@ function photoCreate(image, photographer, title, date, description, location, cb
     }  );
 }
 
-function albumCreate(title, decade, artist, category, songs, image, description, producers, link, spotify, cb) {
+function albumCreate(title, decade, artist, category, songs, image, description, producers, link, spotify, label, cb) {
     albumdetail = {
         title: title,
         decade: decade,
@@ -72,17 +84,22 @@ function albumCreate(title, decade, artist, category, songs, image, description,
     if (producers !== false) {
         albumdetail.producers = producers;
     } else {
-        albumdetail.producers = false;
+        albumdetail.producers = null;
     }
     if (link !== false) {
         albumdetail.link = link;
     } else {
-        albumdetail.link = false;
+        albumdetail.link = null;
     }
     if (spotify !== false) {
         albumdetail.spotify = spotify;
     } else {
-        albumdetail.spotify = false;
+        albumdetail.spotify = null;
+    }
+    if (label !== false) {
+        albumdetail.label = label;
+    } else {
+        albumdetail.label = null;
     }
 
     var album = new Album(albumdetail);
@@ -97,43 +114,56 @@ function albumCreate(title, decade, artist, category, songs, image, description,
         cb(null, album)
     }  );
 }
-
-function songCreate(title, decade, artist, category, image, description, producers, album, link, length, lyrics, spotify, cb) {
+// title, decade, year, artist, category, image, display, producers, album, link, length, lyrics, spotify, label, cb
+function songCreate(title, decade, year, artist, category, image, display, producers, album, link, length, lyrics, spotify, label, cb) {
     songdetail = {
         title: title,
         decade: decade,
+        year: year,
         artist: artist,
         category: category,
-        songs: songs,
-        image: image,
-        description: description
+        display: display
     };
+    if (image !== false) {
+        songdetail.image = image;
+    } else {
+        songdetail.image = null;
+    }
     if (producers !== false) {
         songdetail.producers = producers;
     } else {
-        songdetail.producers = false;
+        songdetail.producers = null;
     }
     if (album !== false) {
         songdetail.album = album;
     } else {
-        songdetail.album = false;
+        songdetail.album = null;
     }
     if (link !== false) {
         songdetail.link = link;
     } else {
-        songdetail.link = false;
+        songdetail.link = null;
     }
     if (length !== false) {
         songdetail.length = length;
     } else {
-        songdetail.length = false;
+        songdetail.length = null;
     }
     if (lyrics !== false) {
         songdetail.lyrics = lyrics;
     } else {
-        songdetail.lyrics = false;
+        songdetail.lyrics = null;
     }
-    if (spotify !== false) songdetail.spotify = spotify;
+    if (spotify !== false) {
+        songdetail.spotify = spotify;
+    } else {
+        songdetail.spotify = null;
+    }
+    if (label !== false) {
+        songdetail.label = label;
+    } else {
+        songdetail.label = null;
+    }
 
     var song = new Song(songdetail);
 
@@ -148,38 +178,55 @@ function songCreate(title, decade, artist, category, image, description, produce
     });
 }
 
+function poemCreate(title, author, image, decade, year, category, body, book, link, display, cb) {
+    poemdetail = {
+        title: title,
+        author: author,
+        decade: decade,
+        year: year,
+        category: category,
+        body: body,
+        display: display
+    };
+    if (image !== false) {
+        poemdetail.image = image;
+    } else {
+        poemdetail.image = null;
+    }
+    if (book !== false) {
+        poemdetail.book = book;
+    } else {
+        poemdetail.book = null;
+    }
+    if (link !== false) {
+        poemdetail.link = link;
+    } else {
+        poemdetail.link = null;
+    }
+
+    var poem = new Poem(poemdetail);
+
+    poem.save(function (err) {
+        if (err) {
+            cb(err, null);
+            return
+        }
+        console.log('New Poem: ' + poem);
+        poems.push(poem);
+        cb(null, poem)
+    });
+}
+
 
 //image R, photographer R, title, date, description, location, cb
 function createPhotos(cb) {
     async.parallel([
-            // function(callback) {
-            //     photoCreate('images/water.jpg', 'Unsplash', 'Water', '2018-06-25', false, false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/mountain.jpg', 'Unsplash', false, '2018-06-25', 'A mountain before dusk', false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/book.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/camera.jpg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/ripple.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/tree.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            // },
-            // function(callback) {
-            //     photoCreate('images/forests.jpeg', 'Unsplash', false, '2018-06-25', false, false, callback);
-            // },
             function(callback) {
                 photoCreate('images/headshot.jpg', 'Mary Beth Cysewski ', false, false, false, 'Radnor Lake State Park', callback);
             },
             function(callback) {
                 photoCreate('images/back.jpg', 'Mary Beth Cysewski ', false, false, false, 'Radnor Lake State Park', callback);
             }
-
         ],
         // optional callback
         cb);
@@ -189,13 +236,13 @@ function createPhotos(cb) {
 function createAlbums(cb) {
     async.parallel([
             function(callback) {
-                albumCreate('CJQ Album 1', 'Present', ['Charles John Quarto'], 'Album', [], 'images/back.jpg',  'A new album by CJQ',  ['Charles John Quarto'], 'special_link.com', false, callback);
+                albumCreate('CJQ Album 1', 'Present', ['Charles John Quarto'], 'Album', [], 'images/back.jpg',  'A new album by CJQ',  ['Charles John Quarto'], 'special_link.com', false, false, callback);
             },
             // function(callback) {
             //     albumCreate('John and John', '1960', ['Charles John Quarto', 'John Lennon'], 'Collaboration', [], 'images/book.jpg',  'An album in collaboration with John Lennon',  ['Charles John Quarto', 'John Lennon'], false, 'http://youtube.com', callback);
             // },
             function(callback) {
-                albumCreate('CJQ Album 2', '1990', ['Charles John Quarto'], 'Collaboration', [], 'images/headshot.jpg',  'A collaborative effort with Willie Nelson',  ['Charles John Quarto', 'Willie Nelson'], false, false, callback);
+                albumCreate('CJQ Album 2', '1990', ['Charles John Quarto'], 'Collaboration', [], 'images/headshot.jpg',  'A collaborative effort with Willie Nelson',  ['Charles John Quarto', 'Willie Nelson'], false, false, false, callback);
             },
             // function(callback) {
             //     albumCreate('Nashville Songs', '1980', ['Charles John Quarto'], 'Album', [], 'images/mountain.jpg',  'An old album',  ['Charles John Quarto'], false, false, callback);
@@ -205,33 +252,55 @@ function createAlbums(cb) {
         cb);
 }
 
-//title, decade, artist, category, image, description, producers, album, link, length, lyrics, spotify, cb
+// title, decade, year, artist, category, image, display, producers, album, link, length, lyrics, spotify, label, cb
 function createSongs(cb) {
     async.parallel([
             function(callback) {
-                songCreate('Song 1', 'Present', ['Charles John Quarto'], 'Song', 'images/headshot.jpg',  'A new song by CJQ',  ['Charles John Quarto', 'Willie Nelson'], albums[0], albums[0].link, "4:30", "hello", "spotify.com", callback);
+                songCreate('THE WIND BECOMES COYOTE ', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'The wind becomes coyote',  false, false, false, false, ['The wind becomes coyote',
+                    'Echoes blue Oklahoma',
+                    'The first Sunday in October',
+                    'Come symbols made of moon',
+                    'Scarecrow knows he’ll be a snowman soon',
+                    '\n',
+                    'Winter seals the prairie',
+                    'Stitches back the story',
+                    'In Indian time',
+                    'The fire below the panhandle',
+                    'Is an uprising sign',
+                    'It taught the river',
+                    'How to wind around the town',
+                    'Leaving in its traces',
+                    'An endless distant sound',
+                    '\n',
+                    'It took forever',
+                    'To lead us to this place',
+                    'We’ll take forever with us',
+                    'In the coming of the days,',
+                    '\n',
+                    'The wind becomes coyote',
+                    'Echoes blue Oklahoma',
+                    'The first Sunday in October',
+                    'Come symbols made of moon',
+                    'Scarecrow knows he’ll be a snowman soon'], false, false, callback);
             },
-            // function(callback) {
-            //     songCreate('New song', albums[0].decade, ['Charles John Quarto'], 'Song', 'images/mountain.jpg',  'Another song by CJQ',  albums[0].producers, albums[0], albums[0].link, "2:00", "hello FROM THE OTHER SIDE", "spotify.com", callback);
-            // },
+        ],
+        // optional callback
+        cb);
+}
+
+// title, author, image, decade, year, category, body, book, link, display, cb
+function createPoems(cb) {
+    async.parallel([
             function(callback) {
-                songCreate('Song 2', '1960', ['Charles John Quarto'], 'Song', 'images/back.jpg',  'My song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[1].link, "1:34", "MORE LYRICS MORE LYRIVS", "spotify.com", callback);
+                poemCreate('THE GREATEST', 'Charles John Quarto', false, '1980', '1982', 'Poem', ['The greatest event I ever saw',
+                    'Took place in the Catskill Mountains',
+                    'When Harry Blankley my grandfather',
+                    'Threw rocks at a low flying helicopter',
+                    'Not understanding those confounded things',
+                    'While I stood with my dumbfounded cousins',
+                'And watched the greatest event I ever saw',
+                'It was the greatest breaking of the Law'],  false,  false, 'The greatest event I ever saw', callback);
             },
-            // function(callback) {
-            //     songCreate('song 4', albums[1].decade, ['Charles John Quarto'], 'Song', 'images/music.jpg',  'This is a song',  ['Charles John Quarto', 'Jimi Hendrix'], albums[1], albums[0].link, "2:30", "hello", "spotify.com", callback);
-            // },
-            // function(callback) {
-            //     songCreate('song 5', albums[2].decade, ['Charles John Quarto'], 'Song', 'images/ripple.jpeg',  'Cool song',  ['Charles John Quarto'], albums[2], albums[0].link, "8:30", "YUMADSFAHFKAJFDNARGUWAFEHJDSOIHBJFGVHOUYTYDFHGVHBJHUGYF HADSFUIHBFEFSUIVBKJANFSHUIBRKAJFNLJOIHUBAKNHBFNADHUHJ KJKIUFTYGVHJUIYTFGHJUYTFGHJIUIYGFGVHJIUIYGVBJH FDACHJBDNFJADIUHJENRFIODJKRENFJKIENRJFGUJHENRMJGFKH RIFOJENRTEGFIOJERNTJGFIVJKLRNLGFJIVFOHKRBJGFKLJFHRBJFKJFHRHBFJVJRJKBFRQKJBFK", "spotify.com", callback);
-            // },
-            // function(callback) {
-            //     songCreate('song 6', '1990', ['Charles John Quarto'], 'Song', 'images/rivers.jpeg',  'Zayn',  ['Charles John Quarto', 'Jimi Hendrix'], albums[2], albums[0].link, "3:30", "COOL", "spotify.com", callback);
-            // },
-            // function(callback) {
-            //     songCreate('NO LYRICS', albums[3].decade, ['Charles John Quarto'], 'Song', 'images/forests.jpeg',  'Yuh',  ['Charles John Quarto', 'Jimi Hendrix'], albums[3], albums[0].link, "5:02", false, false, callback);
-            // },
-            // function(callback) {
-            //     songCreate('Song 8', '1960', ['Charles John Quarto', 'Bob Dylan'], 'Single', 'images/book.jpg',  'The eighth song by CJQ',  ['Charles John Quarto'], false, false, "5:30", "hello this is the eighth song he released", "http://youtube.com", callback);
-            // }
         ],
         // optional callback
         cb);
@@ -240,7 +309,8 @@ function createSongs(cb) {
 async.series([
         createPhotos,
         createAlbums,
-        createSongs,
+       createSongs,
+        createPoems
     ],
 // Optional callback
     function(err, results) {

@@ -53,9 +53,12 @@
         <!--Body-->
         <%if(results.poem.body) {%>
             <p class="mt-3">
-                <%=results.poem.body%>
+                <% for( var i = 0; i < results.poem.body.length; i++) { if(results.poem.body[i] === '\n') { %>
+                <br/>
+                <% } else {%>
+                <%=results.poem.body[i]%>
             </p>
-        <% }%>
+        <% } } }%>
     <!--End body-->
 
     <% } %>
@@ -74,11 +77,14 @@
     <!--End sub information-->
 
         <!--Body-->
-        <%if(results.song.body) {%>
-            <p class="mt-3">
-                <%=results.song.body%>
-            </p>
-        <% }%>
+    <%if(results.song.lyrics) {%>
+        <p class="mt-3">
+            <% for( var i = 0; i < results.song.lyrics.length; i++) { if(results.song.lyrics[i] === '\n') { %>
+            <br/>
+            <% } else {%>
+            <%=results.song.lyrics[i]%>
+        </p>
+    <% } } }%>
         <!--End body-->
 
     <% } %>

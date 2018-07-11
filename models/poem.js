@@ -5,13 +5,14 @@ var PoemSchema = new Schema(
     {
         title: {type: String, required: true},
         author: {type: String, default: 'Charles John Quarto', required: true},
-        image: {type: String, default: 'images/mountain.jpg'},
+        image: {type: String},
         decade: {type: String, enum: ['1960', '1970', '1980', '1990', '2000', 'Present'], required: true, default: 'Present'},
+        year: {type: String, required: true},
         category: {type: String, default: 'Poem', required: true, enum: ['Poem']},
-        body: {type: String, required: true},
-        description: {type: String, default: 'A poem by Charles John Quarto'},
+        body: {type: Array, required: true},
         book: {type: Schema.ObjectId, ref: 'Book'},
-        link: {type: String}
+        link: {type: String},
+        display: {type: String, required: true},
 }
 );
 
