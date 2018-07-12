@@ -833,6 +833,66 @@ function createPoems(cb) {
                     'Light brings fire',
                     'Fire light'],  false,  false, 'Light brings fire', callback);
             },
+            function(callback) {
+                poemCreate('THE GARDEN IN THE ROSE', 'Charles John Quarto', false, 'Present', '2013', 'Poem', [
+                    'Now that you have heard the sea in a shell',
+                    'Open your heart to the sky',
+                    'Let the wind bring you everything',
+                    'If not your world',
+                    'Well then your wing',
+                    'It is there you shall come to understand',
+                    'What the child’s forever telling the man',
+                    'It is here that you will remember',
+                    'What every angel knows',
+                    'Love looks for you through your own eyes',
+                    'Whenever they open or close',
+                    'Learn to see the garden in the rose'],  false,  false, 'Now that you have heard the sea in a shell', callback);
+            },
+            function(callback) {
+                poemCreate('LOOK DEEP INTO THE EYES OF DOGS', 'Charles John Quarto', false, '1980', '1982', 'Poem', [
+                    'Look deep into the eyes of dogs',
+                    'They know the true master',
+                    'Is contained within',
+                    'So they put up with the leash',
+                    'And give you permission to convince yourself',
+                    'That you are right',
+                    'To tell them when to eat',
+                    'And where to sit',
+                    'And at whose feet',
+                    '\n',
+                    'Look deep into the eyes of dogs',
+                    'They are not ashamed to be perfect',
+                    'Even in the cage of your address',
+                    'They consider your statement',
+                    'And energize their faith',
+                    'Coming over to you',
+                    'And always responding with grace',
+                    'As if saying:',
+                    '“You know, I love you silly folks',
+                    'But honestly',
+                    'My eyes show more than my tail does',
+                    'And as soon as you figure that out',
+                    'I’ll teach you some other tricks” . . . .'],  false,  false, 'Look deep into the eyes of dogs', callback);
+            },
+            function(callback) {
+                poemCreate('STRAWBERRIES', 'Charles John Quarto', false, '1980', '1982', 'Poem', [
+                    'When Freddie Ditmar',
+                    'And I got caught stealing strawberries',
+                    'Redhanded from the Tilden farm',
+                    'We had nearly filled our milk pails',
+                    'When Old Man Tilden crossed the field',
+                    'And drew a buckshot bead on us',
+                    'With the family gun',
+                    'Our hands went up like spring corn',
+                    'As he asked what in the tarnation',
+                    'We were doing, but he knew . . .',
+                    'So he marched us to his farmhouse',
+                    'Called a cop who made us promise',
+                    'That we believed in God and Heaven',
+                    'Which was true',
+                    'Trouble was we believed in strawberries',
+                    'Still do . . .'],  false,  false, 'When Freddie Ditmar', callback);
+            },
         ],
         // optional callback
         cb);
