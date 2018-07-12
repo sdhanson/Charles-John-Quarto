@@ -44,11 +44,9 @@
             <h1 class="mb-3"><%=results.poem.title%></h1>
         <% }%>
         <!--End title-->
+            <!--ADD AUTHOR AND YEAR HERE-->
 
         <!--Sub information-->
-
-        <h6 class="mt-2"><a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/shop" role="button">Shop</a></h6>
-        <!--End sub information-->
 
         <!--Body-->
         <%if(results.poem.body) {%>
@@ -60,6 +58,8 @@
             </p>
         <% } } }%>
     <!--End body-->
+    <h6 class="mt-5"><a class="btn btn-outline-dark rounded-0 p-1 btn-sm" href="/shop" role="button">Shop Collection</a></h6>
+    <!--End sub information-->
 
     <% } %>
 
@@ -71,8 +71,6 @@
         <!--End title-->
 
         <!--Sub information-->
-
-    <h6 class="mt-2"><a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/shop" role="button">Shop</a></h6>
 
     <!--End sub information-->
 
@@ -86,6 +84,7 @@
         </p>
     <% } } }%>
         <!--End body-->
+    <h6 class="mt-5"><a class="btn btn-outline-dark rounded-0 p-1 btn-sm" href="/shop" role="button">Shop Album</a></h6>
 
     <% } %>
 </div>

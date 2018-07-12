@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
     var title = 'Charles John Quarto';
     var sub = true;
-    var titlesub = "Poet-Songwriter, Seer-Teacher";
+    var titlesub = "Poet-Songwriter & Spiritual Teacher-Seer";
     var subtitle = 'New Collection Out. ';
     var link = 'Shop Now.';
     var image = '/images/mountain.jpg';

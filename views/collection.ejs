@@ -68,8 +68,8 @@
             <% if (poem.title) { %>
             <h5 class="mt-0"><%= poem.title %></h5>
             <% } %>
-            <% if (poem.description) { %>
-                <%= poem.description.substring(0, 100) %>
+            <% if (poem.display) { %>
+                <%= poem.display %>
             <% } %>
             <p>
                 <a href=<%=poem.url%>> VIEW
