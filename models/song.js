@@ -27,5 +27,17 @@ SongSchema
         return '/written-works/song/' + this._id;
     });
 
+SongSchema
+    .virtual('albumTitle')
+    .get(function () {
+            if(this.album) {
+                return this.album.title.toUpperCase();
+            } else {
+                return 'Single';
+            }
+
+    });
+
+
 //Export model
 module.exports = mongoose.model('Song', SongSchema);

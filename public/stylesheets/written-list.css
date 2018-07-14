@@ -46,3 +46,26 @@ hr {
     color: black;
     size: 70px;
 }
+div.tags span {
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.paging {
+    margin-left: 5%;
+}
+
+.paging a.btn {
+    color: black;
+}
+
+.paging li.active a.btn {
+    background-color: black;
+    border-color: black;
+}
+
+.paging li.active:hover a.btn {
+    color: white;
+    opacity: 0.5;
+}

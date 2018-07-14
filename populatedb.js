@@ -215,17 +215,18 @@ function poemCreate(title, author, image, decade, year, category, body, book, li
     });
 }
 
-function collectionCreate(title, decade, author, poems, image, display, link, category, visible, cb) {
+function collectionCreate(title, decade, author, poems, image, link, category, visible, type, cb) {
     collectiondetail = {
         title: title,
         decade: decade,
         poems: poems,
+        type: type,
     };
-    if (year !== false) {
-        collectiondetail.image = year;
-    } else {
-        collectiondetail.image = null;
-    }
+    // if (year !== false) {
+    //     collectiondetail.image = year;
+    // } else {
+    //     collectiondetail.image = null;
+    // }
     if (author !== false) {
         collectiondetail.author = author;
     }
@@ -235,7 +236,7 @@ function collectionCreate(title, decade, author, poems, image, display, link, ca
         collectiondetail.link = null;
     }
     if (visible !== false) {
-        collectiondetail.visible = link;
+        collectiondetail.visible = visible;
     } else {
         collectiondetail.visible = null;
     }
@@ -979,7 +980,7 @@ function createCollections(cb) {
                     'OLD NASHVILLE RAIN',
                     'ADIOS',
                     'STRAWBERRIES',
-                    'A PRAYER FOR A CLOSE FRIENDS\' DAUGHTER'], false, false, false, false, [poems[12], poems[13], poems[14]], callback);
+                    'A PRAYER FOR A CLOSE FRIENDS\' DAUGHTER'], false, false, false, [poems[12], poems[13], poems[14]], 'Poetry', callback);
             },
             function(callback) {
                 collectionCreate('ALMOST', 'Present', 'Charles John Quarto', ['METEORS',
@@ -1011,10 +1012,10 @@ function createCollections(cb) {
                     'KING PRIDE',
                     'A POEM TO GOD ABOUT THE WARS',
                     'HARMONICA',
-                    'ALMOST'], false, false, false, false, [poems[3], poems[4], poems[5]], callback);
+                    'ALMOST'], false, false, false, [poems[3], poems[4], poems[5]], 'Poetry', callback);
             },
             function(callback) {
-                collectionCreate('BLUE MORNING STARS', 'Present', 'Charles John Quarto', ['THE MUSIC DURING WAR',
+                collectionCreate('BLUE MORNING STARS', 'Present', 'Charles John Quarto', ['BLUE MORNING STARS',
                     'ELVES',
                     'WRIST WATCHES',
                     'CHRISTMAS IN THE EVERGLADES',
@@ -1043,7 +1044,7 @@ function createCollections(cb) {
                     'THE SIMPLE ROADS OF MY HOMETOWN',
                     'ROCKING CHAIRS',
                     'TREACE OF MINGUS',
-                    'THE GREENLAWN WATER TOWER'], false, false, false, false, [poems[6], poems[7], poems[8]], callback);
+                    'THE GREENLAWN WATER TOWER'], false, false, false, [poems[6], poems[7], poems[8]], 'Poetry', callback);
             },
             function(callback) {
                 collectionCreate('WEIGHTLIFTERS', 'Present', 'Charles John Quarto', ['THE MUSIC DURING WAR',
@@ -1075,7 +1076,7 @@ function createCollections(cb) {
                     'HONDO',
                     'HURRY',
                     'HOBO LOVE',
-                    'THE GREATEST'], false, false, false, false, [poems[0], poems[1], poems[2]], callback);
+                    'THE GREATEST'], false, false, false, [poems[0], poems[1], poems[2]], 'Poetry', callback);
             },
             function(callback) {
                 collectionCreate('WHEN MY SISTER FELL OUT OF THE MAPLE TREE', 'Present', 'Charles John Quarto', ['TAKING UP THE FIDDLE',
@@ -1107,7 +1108,103 @@ function createCollections(cb) {
                     'THE WHISTLE',
                     'LIGHT BRINGS FIRE',
                     'ONLY A TRAIN',
-                    '1965'], false, false, false, false, [poems[9], poems[10], poems[11]], callback);
+                    '1965'], false, false, false, [poems[9], poems[10], poems[11]], 'Poetry', callback);
+            },
+            function(callback) {
+                collectionCreate('MERCY BEAUCOUP', 'Present', 'Charles John Quarto', ['IN THE FACE OF THE LOOKING GLASS MOON',
+                    'MERCY BEAUCOUP',
+                    'THE WHISPER IN THE WIND',
+                    'I STILL LOOK AT ME HEART THAT WAY',
+                    'GLAD',
+                    'FREIGHT TRAIN COMING',
+                    'MARIANNA',
+                    'EVERYTHING TURNS INTO YOU',
+                    'DRIFTWOOD',
+                    'MR. MOON',
+                    'ROLLING BY',
+                    'THE WIND\'S THE ONLY WOMAN WHO EVER SANG TO ME THAT WAY',
+                    'SHE TIPPED HER WINGS',
+                    'SHE\'S GOING SOMEWHERE',
+                    'LARIAT',
+                    'SOMETHING IN THE WEST TEXAS WINDS',
+                    'OF MANDOLINS AND SAMUEL CLEMENS',
+                    'THE ROAD TO THE RAINBOW',
+                    'CHRIST THROUGH THE CLOUDS',
+                    'BLUES ANGELS OF DIXIELAND',
+                    'THAT OLD FREIGHT TRAIN ME',
+                    'I LOVE YOU FROM THE LONG AGO',
+                    'I\'M FOLLOWING MY STAR INTO YOUR EYES',
+                    'ROMEO',
+                    'OH NEW ORLEANS',
+                    'OUT IN THE RICOCHET RAIN',
+                    'RAIN DANCER',
+                    'MISSISSIPPI ROLLING THROUGH MY MIND',
+                    'TURN AND STARE',
+                    'MIDNIGHT ON THE BAYOU'], false, false, false, [songs[4], songs[5]], 'Songs', callback);
+            },
+            function(callback) {
+                collectionCreate('CORNER OF THE CIRCLE', 'Present', 'Charles John Quarto', ['THAT WANDERING INDIAN',
+                    'SOMETHING STIRRING IN THE SOUTH',
+                    'THE RULES',
+                    'BABY\'S MOVING AT THE SPEED OF BLUE',
+                    'COMBINE THE WOODS WITH THE WIND',
+                    'CHEROKEE MANDOLIN',
+                    'BLUE OUTSKIRTS OF TUPELO',
+                    'WHEN SHE WHISPERS TO ME',
+                    'SONGS COME IN STORMS',
+                    'THE WIND KEEPS ITS\' WORD',
+                    'ONCE YOU WISH UPON A STAR',
+                    'THE WEST WAS NEVER SETTLED',
+                    'MEMORIES MAY BE CLOSER THAN THEY APPEAR',
+                    'SHE WEARS THE CLOUDS FOR FEATHERS',
+                    'THE WILD BLUE YONDER IN HER EYES',
+                    'GYPSY JOE',
+                    'THE WIND BECOMES COYOTE',
+                    'SKYWRITER IN WINTER',
+                    'I FELL IN LOVE WITH YOU',
+                    'THE OLD LOST CANYON LULLABY',
+                    'IT AIN\'T THE BLUES',
+                    'IN MY OWN SECRET SKY',
+                    'THE GYPSIES AREN\'T PUZZLED BY THAT',
+                    'JUST FINE',
+                    'I WALK ALONG THE TRACKS',
+                    'I WISH YOU MANY RAVENS ON YOUR ROAD',
+                    'IF I WAS A RIVER',
+                    'MY OWN SECRET STAR',
+                    'THE ARROWHEAD\'S MY HIGHWAY SIGN (SONG OF APACHE LAKE)',
+                    'NOW THAT THE GYPSIES ARE GONE'], false, false, false, [songs[0], songs[1]], 'Songs', callback);
+            },
+            function(callback) {
+                collectionCreate('CHARLES JOHN QUARTO', 'Present', 'Charles John Quarto', ['COBWEBS IN TEXAS',
+                    'HOPE LOVE',
+                    'I JUST KNOW',
+                    'FIDDLE MAY CARE',
+                    'SOMEWHERE AWAY',
+                    'IT WAS THE JAZZ',
+                    'JULES\' SONG',
+                    'I AM BLUE WOLF',
+                    'KING OF THE HILL',
+                    'LATE NIGHT EARLY MORNING BLUES',
+                    'SEAGULL ON SANDCASTLE',
+                    'RAINFALL MADE OF MERCY',
+                    'AUTUMN SONG',
+                    'BELLS IN MY HEART',
+                    'ECHO ON THEIR OWN',
+                    'THE HEART IS WILD',
+                    'OLD RIVERS GET ALONG JUST FINE',
+                    'TIME TO GO',
+                    'THE RAILROADS\' GOT A ONE TRACK MIND',
+                    'IT AIN\'T THE BLUES',
+                    'CHEROKEE CIRCLE OF STONES',
+                    'SARA, GREEN RIBBONS AND SONGS',
+                    'FROM DALLAS TO DENVER',
+                    'MAYBE I\'M A RAINBOW',
+                    'SHE LEAVES ME STANDING IN THE AIR',
+                    'SHE\'S ONE OTHER THING SHE\'S MINE',
+                    'CHRISTMAS SONG',
+                    'LOVE BRINGS OUT THE LILAC IN YOU',
+                    'THE ONE EYED PIRATE',
+                    'THROUGH MISSISSIPPI'], false, false, false, [songs[2], songs[3]], 'Songs', callback);
             },
         ],
         // optional callback
@@ -1118,7 +1215,8 @@ async.series([
         createPhotos,
         createAlbums,
         createSongs,
-        createPoems
+        createPoems,
+    createCollections,
     ],
 // Optional callback
     function(err, results) {

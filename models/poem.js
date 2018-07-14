@@ -23,5 +23,15 @@ PoemSchema
         return '/written-works/poem/' + this._id;
     });
 
+PoemSchema
+    .virtual('bookTitle')
+    .get(function () {
+            if(this.book) {
+                return this.book.title.toUpperCase();
+            } else {
+                return 'No collection';
+            }
+    });
+
 //Export model
 module.exports = mongoose.model('Poem', PoemSchema);
