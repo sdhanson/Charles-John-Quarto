@@ -86,15 +86,13 @@ function albumCreate(title, decade, artist, category, songs, image, description,
     } else {
         albumdetail.producers = null;
     }
+    // has a default
     if (link !== false) {
         albumdetail.link = link;
-    } else {
-        albumdetail.link = null;
     }
+    // has a default
     if (spotify !== false) {
         albumdetail.spotify = spotify;
-    } else {
-        albumdetail.spotify = null;
     }
     if (label !== false) {
         albumdetail.label = label;
@@ -217,6 +215,44 @@ function poemCreate(title, author, image, decade, year, category, body, book, li
     });
 }
 
+function collectionCreate(title, decade, author, poems, image, display, link, category, visible, cb) {
+    collectiondetail = {
+        title: title,
+        decade: decade,
+        poems: poems,
+    };
+    if (year !== false) {
+        collectiondetail.image = year;
+    } else {
+        collectiondetail.image = null;
+    }
+    if (author !== false) {
+        collectiondetail.author = author;
+    }
+    if (link !== false) {
+        collectiondetail.link = link;
+    } else {
+        collectiondetail.link = null;
+    }
+    if (visible !== false) {
+        collectiondetail.visible = link;
+    } else {
+        collectiondetail.visible = null;
+    }
+
+    var collection = new Collection(collectiondetail);
+
+    collection.save(function (err) {
+        if (err) {
+            cb(err, null);
+            return
+        }
+        console.log('New Collection: ' + collection);
+        collections.push(collection);
+        cb(null, collection)
+    });
+}
+
 
 //image R, photographer R, title, date, description, location, cb
 function createPhotos(cb) {
@@ -256,7 +292,7 @@ function createAlbums(cb) {
 function createSongs(cb) {
     async.parallel([
             function(callback) {
-                songCreate('THE WIND BECOMES COYOTE', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'The wind becomes coyote',  false, false, false, false, ['The wind becomes coyote',
+                songCreate('THE WIND BECOMES COYOTE', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'Echoes blue Oklahoma',  false, false, false, false, ['The wind becomes coyote',
                     'Echoes blue Oklahoma',
                     'The first Sunday in October',
                     'Come symbols made of moon',
@@ -332,7 +368,7 @@ function createSongs(cb) {
                     'It’s the Old Lost Canyon Lullaby'], false, false, callback);
             },
             function(callback) {
-                songCreate('THE LILAC IN YOU', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'This is the morning I\'ll sing',  false, false, false, false, [
+                songCreate('THE LILAC IN YOU', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'THE LILAC IN YOU',  false, false, false, false, [
                     'This is the morning I’ll sing',
                     'Every thought I have held in my wings',
                     'Each time that you touched my heart just by being',
@@ -369,29 +405,41 @@ function createSongs(cb) {
                     'Love brings out the lilac in you'], false, false, callback);
             },
             function(callback) {
-                songCreate('THE PARABLE POEM', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'This is the morning I\'ll sing',  false, false, false, false, [
-                    'I am the wolf as well as the lamb',
-                    'God bless you mother and father god damn',
-                    'Blue jeans and blue eyes hang upon hell',
-                    'The angel in my manger is the devil as well',
+                songCreate('I AM BLUE WOLF', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'I am Blue Wolf',  false, false, false, false, [
+                    'I am Blue Wolf',
+                    'Of the winter tribe',
+                    'I am Cheyenne',
+                    'Deep down inside',
+                    'I sing with the wind',
+                    'By opening my eyes',
                     '\n',
-                    'I am the wolf as well as the lamb',
-                    'Dear girls in a garden in near Viet Nam',
-                    'Two dozen lone roses and two quick beers',
-                    'A million murders in my twenty-six years',
+                    'Here in Wisdom’s innocence',
+                    'Where the tumbleweed comes to rest',
+                    'I come to ride',
                     '\n',
-                    'Lamb on your table wolf in your head',
-                    'Priest in your heart and beast in your bed',
-                    'I am the fire as well as the water',
-                    'God gave his son and God help your daughter',
+                    'Out across the prairie',
+                    'Where the great ghosts go',
+                    'Through Antelope Valley',
+                    'To greet the Arapahoe',
                     '\n',
-                    'Wolf on your shelf Christ in your stable',
-                    'Grace in your face and snake in your cradle',
-                    'I am the water as well as the fire',
-                    'I am the lyre and I am a liar'], false, false, callback);
+                    'My mother is a medicine woman',
+                    'An amethyst in each eye',
+                    'A bird so human you could fly',
+                    '\n',
+                    'I am Blue Wolf',
+                    'Human Indian',
+                    'I am Cheyenne',
+                    'Beyond my skin',
+                    'I am made out of sky',
+                    'I sing with the wind',
+                    'By opening your eyes',
+                    '\n',
+                    'Here in Wisdom’s innocence',
+                    'Where the tumbleweed comes to rest',
+                    'The dreamer comes to ride'], false, false, callback);
             },
             function(callback) {
-                songCreate('IN THE FACE OF THE LOOKING GLASS MOON', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'This is the morning I\'ll sing',  false, false, false, false, [
+                songCreate('IN THE FACE OF THE LOOKING GLASS MOON', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'Love with you',  false, false, false, false, [
                     'Love with you',
                     'Was like handing my heart',
                     'Through a broken window',
@@ -432,7 +480,7 @@ function createSongs(cb) {
                     'In the face of the looking glass moon'], false, false, callback);
             },
             function(callback) {
-                songCreate('ROLLING BY', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'This is the morning I\'ll sing',  false, false, false, false, [
+                songCreate('ROLLING BY', 'Present', '2013', ['Charles John Quarto'], 'Song', false, 'Out where the wind tells the stories',  false, false, false, false, [
                     'Out where the wind tells the stories',
                     'They are not lost upon the land',
                     'The blue coyote wanders',
@@ -660,7 +708,7 @@ function createPoems(cb) {
                     'I know that’s who we are'],  false,  false, 'Remember the drift of the days', callback);
             },
             function(callback) {
-                poemCreate('OLE POPS MAGIC JAR', 'Charles John Quarto', false, 'Present', '2013', 'Poem', [
+                poemCreate('OLE POPS\' MAGIC JAR', 'Charles John Quarto', false, 'Present', '2013', 'Poem', [
                     'Ole Pops, he had a magic jar',
                     'He told me to never look in there',
                     'It was from somewhere way back in the Bible',
@@ -892,6 +940,142 @@ function createPoems(cb) {
                     'Which was true',
                     'Trouble was we believed in strawberries',
                     'Still do . . .'],  false,  false, 'When Freddie Ditmar', callback);
+            },
+        ],
+        // optional callback
+        cb);
+}
+
+// title, decade, author, poems, image, display, link, category, visible cb
+function createCollections(cb) {
+    async.parallel([
+            function(callback) {
+                collectionCreate('THE GARDEN IN THE ROSE', 'Present', 'Charles John Quarto', ['BIG RIVER',
+                    'THE GARDEN IN THE ROSE',
+                    'THE GIFT',
+                    'MINSTRELS ON THE INTERSTATE',
+                    'MY NEIGHBORS\' BLUE RADIO',
+                    'THE LITTLE FLOWERS ON THE HILL',
+                    'THE NEW FALL LIGHT',
+                    'MUSICS\' A GYPSY',
+                    'THE SOLDIERS',
+                    'THE METROPOLITAN ELF',
+                    'THE HEALING',
+                    'LOVE\'S BLUE ABANDON',
+                    'LOVE WANDERS NEARBY',
+                    'LOOK DEEP INTO THE EYES OF DOGS',
+                    'THE THING ABOUT 1965',
+                    'THE OLDTIMERS KNOW',
+                    'THE TEENAGE GIRL\'S FATHER',
+                    'THE RAIN COMES DOWN IN POEMS',
+                    'ROSES',
+                    'POET',
+                    'THE DARK AND THE DIVINE',
+                    'FEATHER LEAVES OF THE FIGBIRD TREE',
+                    'MISSED CALLING',
+                    'MELODIES',
+                    'THE GHOST OF YOUR EYES',
+                    'MY BLUE CRAYON',
+                    'OLD NASHVILLE RAIN',
+                    'ADIOS',
+                    'STRAWBERRIES',
+                    'A PRAYER FOR A CLOSE FRIENDS\' DAUGHTER'], false, false, false, false, [poems[12], poems[13], poems[14]], callback);
+            },
+            function(callback) {
+                collectionCreate('ALMOST', 'Present', 'Charles John Quarto', ['METEORS',
+                    'TAKING A WALK',
+                    'DOLPHIN IN A GOLDFISH BOWL',
+                    'TO KERRVILLE',
+                    'I HAVE STOOD IN THEIR DARK FRONT YARDS',
+                    'HIS HEART WAS SO FULL OF MISCHIEF',
+                    'WEEDS ALWAYS LOOKED LIKE WILDFLOWERS TO ME',
+                    'ESTRELLA, THE NIGHT (IN PROGRESS)',
+                    'EASILY LOST IN THE OCEAN',
+                    'TIMES NOW',
+                    'YOUR POEM',
+                    'THE CHILDBEARER',
+                    'GOD',
+                    'GULP',
+                    'THE RAIN COMES DOWN IN POEMS',
+                    'THAT BUZZING ON THE MOUNTAIN',
+                    'THE OLD FIDDLER',
+                    'THE CHARMING POETS OF COEUR D\'ALENE',
+                    'I\'D LIKE THE WORLD TO CALL BE GRANDPAPA',
+                    'I LIKE THE WAY YOUR DAUGHTER SINGS',
+                    'HONDO\'S GHOST',
+                    'I HEAR THE GYPSY WHISTLING',
+                    'BEGIN AS A FLOWER',
+                    'FROM A BOY UNTO A COWBOY',
+                    'THE GREENLAWN WATER TOWER',
+                    'A WOMAN IN THE SHIELDED SPRING',
+                    'KING PRIDE',
+                    'A POEM TO GOD ABOUT THE WARS',
+                    'HARMONICA',
+                    'ALMOST'], false, false, false, false, [poems[3], poems[4], poems[5]], callback);
+            },
+            function(callback) {
+                collectionCreate('BLUE MORNING STARS', 'Present', 'Charles John Quarto', ['THE MUSIC DURING WAR',
+                    'ELVES',
+                    'WRIST WATCHES',
+                    'CHRISTMAS IN THE EVERGLADES',
+                    'MUSIC CALLING',
+                    'MY FRIEND THE FOLKSINGER',
+                    'MOTHER I SHALL SALUTE YOU',
+                    'WORK',
+                    'FIRST AND LAST PIANO LESSON',
+                    'LETTER TO HOLLYWOOD',
+                    'OLD POPS\' MAGIC JAR',
+                    'LONG BEFORE WE WERE LITTLE, WE WERE LOVE',
+                    'STORYTELLER',
+                    'SQUASHED BEATLE',
+                    'YOU SAY YOU ARE IN THE MILITARY',
+                    'PUT YOURSELD THERE',
+                    'PURITY',
+                    'POETS WATCH NORTH MAINE COAST',
+                    'THE WIND FEELS YOU',
+                    'NOTICE',
+                    'THAT SONG ABOUT GERONIMO',
+                    'THAT CHINESE BOW',
+                    'OUT ON LAKE ERIE',
+                    'THE WALTZ ON THE WILLOWS',
+                    'BOB DYLAN',
+                    'CONTEMPLATING BOXING EDDIE BIVONA',
+                    'THE SIMPLE ROADS OF MY HOMETOWN',
+                    'ROCKING CHAIRS',
+                    'TREACE OF MINGUS',
+                    'THE GREENLAWN WATER TOWER'], false, false, false, false, [poems[6], poems[7], poems[8]], callback);
+            },
+            function(callback) {
+                collectionCreate('WEIGHTLIFTERS', 'Present', 'Charles John Quarto', ['THE MUSIC DURING WAR',
+                    'YOU DON\'T BELIEVE IN GHOSTS',
+                    'MALIBU LOVE',
+                    'THE FAMILY PLOT',
+                    'BIRD POET',
+                    'ROCKING CHAIR',
+                    'NOTE TO MY FUTURE DAUGHTER',
+                    'THE NIGHTTIME',
+                    'THE THING ABOUT 1965',
+                    'THE MIRACLE',
+                    'SONNET',
+                    'SOMETHING GREEN',
+                    'SECRETS I CANNOT KEEP',
+                    'SEBASTIANS\'S SONG',
+                    'SAILING',
+                    'RENOIR WOULD HAVE PAINTED THIS',
+                    'REAL JAZZ WEATHER',
+                    'RAVENSONG',
+                    'BEYOND CARTOON REPAIR',
+                    'TRANSLATING TRAINWHISTLES',
+                    'ANY MOMENT ON A MOUNTAINTOP',
+                    'TOWNES',
+                    'THOUGHTS ON A GLOBE',
+                    'HOBOES',
+                    'WASHING HANDS OF THE WAR',
+                    'WEIGHTLIFTERS',
+                    'HONDO',
+                    'HURRY',
+                    'HOBO LOVE',
+                    'THE GREATEST'], false, false, false, false, [poems[0], poems[1], poems[2]], callback);
             },
         ],
         // optional callback

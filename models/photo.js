@@ -5,7 +5,6 @@ var PhotoSchema = new Schema(
     {
         photographer: {type: String, required: true},
         image: {type: String, required: true},
-
         title: {type: String},
         date: {type: String},
         description: {type: String},

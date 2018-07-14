@@ -100,7 +100,9 @@
 
                             <% if (album.link) { %>
                             <div class="link d-none"> <%= album.link %> </div>
-                            <% } %>
+                            <% } else { %>
+                            <div class="link d-none"> /shop </div>
+                            <% }%>
 
                             <!--Container for song list and length-->
 
