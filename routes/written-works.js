@@ -23,9 +23,16 @@ router.get('/decade/:specifier', function(req, res, next) {
 
 });
 
+router.get('/category/Collection/Songs', function(req, res, next) {
+    res.redirect('/written-works/category/collections/songs/1');
+});
 
 router.get('/category/collections/songs', function(req, res, next) {
     res.redirect('/written-works/category/collections/songs/1');
+});
+
+router.get('/category/Collection/Poetry', function(req, res, next) {
+    res.redirect('/written-works/category/collections/poetry/1');
 });
 
 router.get('/category/collections/poetry', function(req, res, next) {
@@ -113,7 +120,6 @@ router.get('/:ty/:specifier', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
     res.redirect('/written-works/1');
-
 });
 
 router.get('/:page', writing_controller.index);

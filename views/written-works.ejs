@@ -49,36 +49,6 @@
     </a>
 </div>
 <% } else { %>
-<!--<% results.book_list.forEach(function(book) { %>-->
-    <!--<div class="media mt-5">-->
-        <!--&lt;!&ndash;Image&ndash;&gt;-->
-        <!--<div class="container ml-3 col-2 align-self-center">-->
-            <!--<% if (book.image) { var image = "/" + book.image %>-->
-            <!--<img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">-->
-            <!--<% } else { %>-->
-            <!--<img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">-->
-            <!--<% } %>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;End image&ndash;&gt;-->
-
-        <!--&lt;!&ndash;Body - title and description&ndash;&gt;-->
-        <!--<div class="m-4 media-body align-self-center">-->
-            <!--<% if (book.title) { %>-->
-                <!--<h5 class="mt-0"><%= book.title %></h5>-->
-            <!--<% } %>-->
-            <!--<% if (book.description) { %>-->
-                <!--<%= book.description.substring(0, 100) %>-->
-            <!--<% } %>-->
-            <!--<p>-->
-                <!--<a href=<%=book.url%>> VIEW <i class="fas fa-chevron-right"></i>-->
-                <!--</a>-->
-            <!--</p>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;End body&ndash;&gt;-->
-    <!--</div>-->
-<!--<% }); %>-->
-<!--End media container-->
-
 <hr class="mt-5" width="90%">
 <% results.book_list.forEach(function(book) { %>
 <div class="media ml-5 mt-0">
@@ -93,7 +63,7 @@
             <div class="mt-4 tags">
                 <span class="mr-2">Tags: </span>
                 <% if (book.category && book.type) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category%>/<%= book.type %>" role="button"><%= book.category %> of <%= book.type %>  </a>
+                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category%>/<%= book.type %>" role="button"><%= book.category %>s of <%= book.type %>  </a>
                 <% } %>
                 <% if (book.decade) { %>
                 <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=book.decade%>" role="button"><%= book.decade %></a>

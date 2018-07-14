@@ -1,0 +1,35 @@
+.collection-poem {
+    font-weight: 500;
+    /*color: black;*/
+    color: gray;
+}
+
+.collection-poem-title {
+    color: black;
+}
+
+.collection-poem-display {
+    color: black;
+    font-weight: 400;
+    font-style: italic;
+}
+
+div.tags span {
+    color: black;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.featured {
+    font-size: 2.0rem;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.featured-content {
+    border: 2px solid #b8cef6;
+}
+
+.collection-title {
+    font-size: 4rem;
+}

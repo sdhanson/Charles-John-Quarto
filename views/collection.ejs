@@ -1,15 +1,17 @@
 <% include partials/header.ejs %>
 <% include partials/overlay.ejs %>
-
+<link rel='stylesheet' href='/stylesheets/collection-list.css' />
 <!--Dropdown buttons that overlay the header image-->
 <div class="row justify-content-center">
     <!--Category dropdown-->
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections">Collections</a>
             <a class="dropdown-item header-dropdown-item" href="/written-works/category/poems">Poems</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Lyrics</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Songs</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections/songs">Song Collections</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections/poetry">Poetry Collections</a>
+            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections">All Collections</a>
             <a class="dropdown-item header-dropdown-item" href="/written-works">All</a>
         </div>
     </div>
@@ -41,50 +43,84 @@
     <% if(results.book) {%>
 
     <%if(results.book.title) {%>
-    <h1 class="mb-3"><%=results.book.title%></h1>
+    <h1 class="collection-title mb-3"><%=results.book.title%></h1>
     <% }%>
     <!--End title-->
 
     <!--Sub information-->
+    <div class="mt-2 ml-1"><%=results.book.display%></div>
+    <h6 class="mt-3"><a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/shop" role="button">Shop</a>
+        <a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/written-works/category/collections" role="button">Back to Collections</a></h6>
 
-    <h6 class="mt-2"><a class="btn btn-outline-dark rounded-0 ml-1 p-1 btn-sm" href="/shop" role="button">Shop</a></h6>
     <!--End sub information-->
 
     <!--Body-->
-    <% results.book.poems.forEach(function(poem) { %>
-    <div class="media mt-5">
-        <!--Image-->
-        <div class="container ml-3 col-2 align-self-center">
-            <% if (poem.image) { var image = "/" + poem.image %>
-            <img class="img-fluid" src="<%=image%>" alt="Generic placeholder image">
-            <% } else { %>
-            <img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">
-            <% } %>
-        </div>
-        <!--End image-->
+    <div class="row">
 
-        <!--Body - title and description-->
-        <div class="my-4 media-body align-self-center">
-            <% if (poem.title) { %>
-            <h5 class="mt-0"><%= poem.title %></h5>
-            <% } %>
-            <% if (poem.display) { %>
-                <%= poem.display %>
-            <% } %>
-            <p>
-                <a href=<%=poem.url%>> VIEW
-                    <i class="fas fa-chevron-right"></i>
+        <div class="col-12 col-lg-8">
+            <% if(results.book.type === "Poetry") { %>
+                <div class="mt-5 featured">FULL WORK LIST:</div>
+                <% results.book.poems.forEach(function(work) { %>
+                <div class="mt-0">
+                    <div class="my-1">
+                        <div class="mt-0 collection-poem-title"><%= work %></div>
+                    </div>
+                </div>
+                <% });} else { %>
+                <div class="mt-4 featured">FULL WORK LIST:</div>
+                <% results.book.songs.forEach(function(work) { %>
+                <div class="mt-0">
+                    <div class="my-1">
+                        <div class="mt-0 collection-poem-title"><%= work %></div>
+                    </div>
+                </div>
+                <% });} %>
+
+                    <!--End body-->
+
+
+            </div>
+        <div class="col-12 col-lg-4">
+            <div class="mt-4 featured-content">
+            <div class="mx-3 mt-3 featured">FEATURED POEMS:</div>
+            <hr class="mx-3" width="90%">
+            <% results.book.visible.forEach(function(poem) { %>
+            <div class="mx-3 media mt-0">
+                <a href="/written-works/poem/<%=poem._id%>">
+                    <div class="my-3 media-body align-self-center">
+                        <% if (poem.title) { %>
+                        <h5 class="mt-0 collection-poem-title"><%= poem.title %></h5>
+                        <% } %>
+                        <!--<% if (poem.book) { %>-->
+                        <p class="mt-1 collection-poem">FROM <%= poem.bookTitle %> </p>
+                        <!--<% } %>-->
+                        <% if (poem.display) { %>
+                        <p class="mt-3 collection-poem-display"><%= poem.display %></p>
+                        <% } %>
+                        <div class="mt-4 tags">
+                            <span class="mr-2">Tags: </span>
+                            <% if (poem.category) { %>
+                            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=poem.category%>" role="button"><%= poem.category %>s</a>
+                            <% } %>
+                            <% if (poem.decade) { %>
+                            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=poem.decade%>" role="button"><%= poem.decade %></a>
+                            <% } %>
+                        </div>
+                    </div>
                 </a>
-            </p>
+
+            </div>
+                <hr class="mx-3" width="90%">
+            <% });}%>
+            </div>
         </div>
-        <!--End body-->
+
+
+
     </div>
-    <% });}%>
-
-    <!--End body-->
-
 </div>
 <!--End container-->
+<script type="text/javascript" src="/javascripts/collection-list.js"></script>
 
 
 <% include partials/footer.ejs %>
