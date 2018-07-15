@@ -1,5 +1,9 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
+var validator = require('validator');
+var debug = require('debug')('author');
+
+
 var router = express.Router();
 
 
@@ -25,6 +29,23 @@ router.get('/shop', function(req, res) {
 });
 
 router.post('/send', function(req, res) {
+    req.checkBody('firstName').notEmpty();
+    req.checkBody('lastName').notEmpty();
+    req.checkBody('subject').notEmpty();
+    req.checkBody('message').notEmpty();
+    var err = req.validationErrors();
+    if (err) {
+        res.redirect('/contact/error');
+        return;
+    }
+
+    req.sanitize('firstName').escape().trim();
+    req.sanitize('lastName').escape().trim();
+    req.sanitize('subject').escape().trim();
+    req.sanitize('message').escape().trim();
+    req.sanitize('phoneNumber').escape().trim();
+
+
     var output = "<p> You have a new contact request </p>" +
         "<h3> Contact Details </h3>" +
         "<ul> <li> Name: " +
@@ -35,7 +56,7 @@ router.post('/send', function(req, res) {
         req.body.phoneNumber +
         "</li> </ul> <h3> Message: </h3> "
         + req.body.message;
-    console.log(output);
+        debug(output);
 
     // nodemailer.createTestAccount(function(err, account) {
     // create reusable transporter object using default SMTP transport
@@ -67,9 +88,9 @@ router.post('/send', function(req, res) {
             res.redirect('/contact/error');
             return;
         }
-        console.log('Message sent: %s', info.messageId);
+        debug('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        debug('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         res.redirect('/contact/sent');
     });
     // });

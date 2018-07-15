@@ -5,7 +5,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var expressValidator = require('express-validator');
 var logger = require('morgan');
+var compression = require('compression');
+var helmet = require('helmet');
+
 
 // available routes setup
 var indexRouter = require('./routes/index');
@@ -15,6 +19,7 @@ var musicRouter = require('./routes/discography');
 var writtenworkRouter = require('./routes/written-works');
 var contactRouter = require('./routes/contact');
 var aboutRouter = require('./routes/about');
+
 
 // app start
 var app = express();
@@ -32,6 +37,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// compression set up
+app.use(compression());
+
 // logger middleware setup
 app.use(logger('dev'));
 app.use(express.json());
@@ -44,6 +52,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // bodyparser middleware setup
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
+
+// security set up
+app.use(helmet());
+
+// express validator set up
+app.use(expressValidator());
 
 
 // router set up

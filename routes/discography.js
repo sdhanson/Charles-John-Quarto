@@ -33,18 +33,4 @@ router.get('/category/:specifier', function(req, res, next) {
 
 router.get('/', music_controller.index);
 
-/* END DISCOGRAPHY */
-
-// GET all albums
-// router.get('/category/song', music_controller.songs);
-//
-// // GET all songs
-// router.get('/category/album', music_controller.albums);
-//
-// // GET music with category specifier
-// router.get('/category/:specifier', music_controller.category);
-
-// // GET music with decade specifier
-// router.get('/decade/:specifier', music_controller.decade);
-
 module.exports = router;
