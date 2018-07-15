@@ -315,7 +315,7 @@ exports.decade = function(req, res, next) {
 
     var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
     var year;
-    if(req.params.specifier === 'present') {
+    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
         year = 'present';
     } else {
         year = req.params.specifier + 's';
