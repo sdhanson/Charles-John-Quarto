@@ -58,7 +58,6 @@
     <div class="row">
 
         <div class="col-12 col-lg-8">
-            <% if(results.book.type === "Poetry") { %>
                 <div class="mt-5 featured">FULL WORK LIST:</div>
                 <% results.book.poems.forEach(function(work) { %>
                 <div class="mt-0">
@@ -66,15 +65,7 @@
                         <div class="mt-0 collection-poem-title"><%= work %></div>
                     </div>
                 </div>
-                <% });} else { %>
-                <div class="mt-4 featured">FULL WORK LIST:</div>
-                <% results.book.songs.forEach(function(work) { %>
-                <div class="mt-0">
-                    <div class="my-1">
-                        <div class="mt-0 collection-poem-title"><%= work %></div>
-                    </div>
-                </div>
-                <% });} %>
+                <% }); %>
 
                     <!--End body-->
 
@@ -82,7 +73,6 @@
             </div>
         <div class="col-12 col-lg-4">
             <div class="mt-4 featured-content">
-                <% if(results.book.type === "Poetry") { %>
             <div class="mx-3 mt-3 featured">FEATURED POEMS:</div>
             <hr class="mx-3" width="90%">
             <% results.book.visible.forEach(function(poem) { %>
@@ -113,7 +103,6 @@
             </div>
                 <hr class="mx-3" width="90%">
             <% });}%>
-<% } %>
             </div>
         </div>
 
