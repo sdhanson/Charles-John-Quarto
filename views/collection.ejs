@@ -82,6 +82,7 @@
             </div>
         <div class="col-12 col-lg-4">
             <div class="mt-4 featured-content">
+                <% if(results.book.type === "Poetry") { %>
             <div class="mx-3 mt-3 featured">FEATURED POEMS:</div>
             <hr class="mx-3" width="90%">
             <% results.book.visible.forEach(function(poem) { %>
@@ -112,6 +113,7 @@
             </div>
                 <hr class="mx-3" width="90%">
             <% });}%>
+<% } %>
             </div>
         </div>
 
