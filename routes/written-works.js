@@ -88,7 +88,7 @@ router.get('/category/:specifier', function(req, res, next) {
 
 });
 
-router.get('/:ty/:specifier/:page', function(req, res, next) {
+router.get('/:ty/:specifier', function(req, res, next) {
     req.params.id = req.params.specifier;
     var type = req.params.ty.toLowerCase();
     if(type === "song" || type === "book" || type === "poem" ) {
@@ -113,7 +113,7 @@ router.get('/:ty/:specifier/:page', function(req, res, next) {
 });
 
 router.get('/:ty/:specifier', function(req, res, next) {
-    res.redirect('/written-works/'+ req.params.ty + '/' + req.params.specifier + '/1');
+    res.redirect('/written-works/'+ req.params.ty + '/' + req.params.specifier);
 
 });
 
