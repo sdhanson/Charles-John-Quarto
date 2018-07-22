@@ -466,7 +466,7 @@ exports.single_collection = function(req, res, next) {
         }
     }, function(err, results){
         if(err){
-            res.render()
+            return next(err);
         }
         var sub = false;
         var titlesub = '';

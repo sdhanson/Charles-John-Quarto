@@ -22,6 +22,10 @@ router.get('/decade/:specifier', function(req, res, next) {
     res.redirect('/written-works/decade/'+ req.params.specifier + '/1');
 });
 
+router.get('/category/collection/songs', function(req, res, next) {
+    res.redirect('/written-works/category/collections/songs/1');
+});
+
 router.get('/category/collections/songs', function(req, res, next) {
     res.redirect('/written-works/category/collections/songs/1');
 });

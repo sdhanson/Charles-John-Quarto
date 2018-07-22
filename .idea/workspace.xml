@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ff3be6-fa93-4c30-b1ea-785a247e7896" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/controllers/writingController.js" afterPath="$PROJECT_DIR$/controllers/writingController.js" />
       <change beforePath="$PROJECT_DIR$/routes/written-works.js" afterPath="$PROJECT_DIR$/routes/written-works.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,8 +51,18 @@
       <file leaf-file-name="writingController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/writingController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4313">
-              <caret line="328" column="10" lean-forward="false" selection-start-line="328" selection-start-column="10" selection-end-line="328" selection-end-column="10" />
+            <state relative-caret-position="264">
+              <caret line="469" column="9" lean-forward="false" selection-start-line="469" selection-start-column="9" selection-end-line="469" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="book.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/book.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -59,8 +71,8 @@
       <file leaf-file-name="written-works.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/written-works.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="115" column="78" lean-forward="false" selection-start-line="115" selection-start-column="78" selection-end-line="115" selection-end-column="78" />
+            <state relative-caret-position="208">
+              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -69,7 +81,7 @@
       <file leaf-file-name="populatedb.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/populatedb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="149">
               <caret line="1196" column="30" lean-forward="true" selection-start-line="1196" selection-start-column="30" selection-end-line="1196" selection-end-column="30" />
               <folding />
             </state>
@@ -184,13 +196,13 @@
         <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/discography.js" />
-        <option value="$PROJECT_DIR$/controllers/writingController.js" />
         <option value="$PROJECT_DIR$/controllers/musicController.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/collection.ejs" />
         <option value="$PROJECT_DIR$/views/written-works.ejs" />
         <option value="$PROJECT_DIR$/populatedb.js" />
         <option value="$PROJECT_DIR$/views/error.ejs" />
+        <option value="$PROJECT_DIR$/controllers/writingController.js" />
         <option value="$PROJECT_DIR$/routes/written-works.js" />
       </list>
     </option>
@@ -348,7 +360,7 @@
       <updated>1529093358011</updated>
       <workItem from="1529093365988" duration="46399000" />
       <workItem from="1529287433729" duration="11935000" />
-      <workItem from="1529693078386" duration="169929000" />
+      <workItem from="1529693078386" duration="170271000" />
     </task>
     <task id="LOCAL-00001" summary="Adding controllers for the routes based off of MDN -- may not need all routes -- will clean up later.">
       <created>1529857098919</created>
@@ -557,7 +569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228263000" />
+    <option name="totallyTimeSpent" value="228605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -841,14 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/book.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/written-list.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -977,14 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/about.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/collectiondb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -997,14 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1015">
           <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/writingController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4313">
-          <caret line="328" column="10" lean-forward="false" selection-start-line="328" selection-start-column="10" selection-end-line="328" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1061,8 +1049,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/populatedb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="149">
           <caret line="1196" column="30" lean-forward="true" selection-start-line="1196" selection-start-column="30" selection-end-line="1196" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/book.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/about.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1075,10 +1079,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/writingController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="469" column="9" lean-forward="false" selection-start-line="469" selection-start-column="9" selection-end-line="469" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/written-works.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="115" column="78" lean-forward="false" selection-start-line="115" selection-start-column="78" selection-end-line="115" selection-end-column="78" />
+        <state relative-caret-position="208">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
       </provider>
