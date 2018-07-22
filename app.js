@@ -9,7 +9,7 @@ var expressValidator = require('express-validator');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
-require('dotenv').config();
+require("dotenv").config();
 
 
 // available routes setup
@@ -29,7 +29,7 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
 // mongoose.connect('mongodb://127.0.0.1:27017/cjq');
-mongoose.connect(process.env.DB_HOST+ "://" + process.env.DB_USER + ":" + process.env.DB_PASSWORD + "@ds131971.mlab.com:31971/" + process.env.DB_NAME);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
