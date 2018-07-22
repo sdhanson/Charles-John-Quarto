@@ -3,7 +3,6 @@ var nodemailer = require('nodemailer');
 var validator = require('validator');
 var debug = require('debug')('author');
 
-
 var router = express.Router();
 
 
@@ -56,27 +55,29 @@ router.post('/send', function(req, res) {
         req.body.phoneNumber +
         "</li> </ul> <h3> Message: </h3> "
         + req.body.message;
-        debug(output);
+    debug(output);
 
-    // nodemailer.createTestAccount(function(err, account) {
-    // create reusable transporter object using default SMTP transport
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
+    const poolConfig = {
+        pool: true,
+        host: 'smtp-relay.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
-            user: 'qi67zyeiy35d4k5m@ethereal.email',
-            pass: 'tKsCUc59aTkQdpj3WV'
+            user: 'cjq.website@gmail.com',
+            pass: '27}}u3hXej+%\\bRY%'
         },
-        // only because we are from local host
         tls: {
             rejectUnauthorized: false
         }
-    });
+    };
+
+    // create reusable transporter object using default SMTP transport
+    const transporter = nodemailer.createTransport(poolConfig);
 
     // setup email data with unicode symbols
     var mailOptions = {
-        from: '"NodeMailer Contact" <iybdurno2bsdxbds@ethereal.email>', // sender address
-        to: 'cjq.website98@gmail.com', // list of receivers
+        from: 'cjq.website@gmail.com', // sender address
+        to: 'cjq.website@gmail.com', // list of receivers
         subject: 'hello there', // Subject line
         text: 'hello', // plain text body
         html: output // html body
@@ -84,6 +85,7 @@ router.post('/send', function(req, res) {
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info) {
+        console.log(error);
         if (error) {
             res.redirect('/contact/error');
             return;

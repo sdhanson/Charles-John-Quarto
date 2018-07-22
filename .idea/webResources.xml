@@ -16,6 +16,7 @@
             <path value="file://$PROJECT_DIR$/views/partials" />
             <path value="file://$PROJECT_DIR$/models" />
             <path value="file://$PROJECT_DIR$/controllers" />
+            <path value="file://$PROJECT_DIR$/ico" />
           </resourceRoots>
         </entryData>
       </entry>

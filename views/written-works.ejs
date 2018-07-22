@@ -63,10 +63,10 @@
             <div class="mt-4 tags">
                 <span class="mr-2">Tags: </span>
                 <% if (book.category && book.type) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category%>/<%= book.type %>" role="button"><%= book.category %>s of <%= book.type %>  </a>
+                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category.toLowerCase()%>/<%= book.type.toLowerCase()%>" role="button"><%= book.category %>s of <%= book.type %>  </a>
                 <% } %>
                 <% if (book.decade) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=book.decade%>" role="button"><%= book.decade %></a>
+                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=book.decade.toLowerCase()%>" role="button"><%= book.decade %></a>
                 <% } %>
             </div>
         </div>
@@ -93,10 +93,10 @@
             <div class="mt-4 tags">
                 <span class="mr-2">Tags: </span>
                 <% if (poem.category) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=poem.category%>" role="button"><%= poem.category %>s</a>
+                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=poem.category.toLowerCase()%>" role="button"><%= poem.category %>s</a>
                 <% } %>
                 <% if (poem.decade) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=poem.decade%>" role="button"><%= poem.decade %></a>
+                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=poem.decade.toLowerCase()%>" role="button"><%= poem.decade %></a>
                 <% } %>
             </div>
         </div>
@@ -123,10 +123,10 @@
         <div class="mt-4 tags">
             <span class="mr-2">Tags: </span>
             <% if (song.category) { %>
-            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=song.category%>" role="button"><%= song.category %>s</a>
+            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=song.category.toLowerCase()%>" role="button"><%= song.category %>s</a>
             <% } %>
             <% if (song.decade) { %>
-            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=song.decade%>" role="button"><%= song.decade %></a>
+            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=song.decade.toLowerCase()%>" role="button"><%= song.decade %></a>
             <% } %>
         </div>
     </div>

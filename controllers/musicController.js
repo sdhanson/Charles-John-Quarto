@@ -1,7 +1,11 @@
+// Controller for the discography page //
+// Uses album and song schemas / collections to show the info that is queried for
 var Album = require('../models/album');
 var Song = require('../models/song');
 
 var async = require('async');
+
+// IF I END UP JUST USING WRITTEN WORK CAN REMOVE ALL OF THE SONG LIST STUFF AND REFACTOR
 
 exports.index = function(req, res, next) {
     async.parallel({

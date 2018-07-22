@@ -20,18 +20,13 @@ router.get('/decade/:specifier/:page', function(req, res, next) {
 
 router.get('/decade/:specifier', function(req, res, next) {
     res.redirect('/written-works/decade/'+ req.params.specifier + '/1');
-
-});
-
-router.get('/category/Collection/Songs', function(req, res, next) {
-    res.redirect('/written-works/category/collections/songs/1');
 });
 
 router.get('/category/collections/songs', function(req, res, next) {
     res.redirect('/written-works/category/collections/songs/1');
 });
 
-router.get('/category/Collection/Poetry', function(req, res, next) {
+router.get('/category/collection/poetry', function(req, res, next) {
     res.redirect('/written-works/category/collections/poetry/1');
 });
 
@@ -61,16 +56,22 @@ router.get('/category/collections/:ty/:page', function(req, res, next) {
 
 router.get('/category/:specifier/:page', function(req, res, next) {
     var p = req.params.specifier.toLowerCase();
-    if(p === "poems" || p === "songs" || p === "collections" || p === "poem" || p === "song" || p === "collection") {
-        if(p === "songs" || p === "song") {
-            writing_controller.songs(req, res);
-        } else if(p === "collections" || p === "collection") {
-            // GET writing with collection specifier
-            writing_controller.collections(req, res);
-        } else if (p === "poems" || p === "poem") {
-            // GET writing with poem specifier
-            writing_controller.poems(req, res);
-        } else {
+    if(!isNaN(req.params.page)) {
+        if(p === "poems" || p === "songs" || p === "collections" || p === "poem" || p === "song" || p === "collection") {
+            if (p === "songs" || p === "song") {
+                writing_controller.songs(req, res);
+            } else if (p === "collections" || p === "collection") {
+                // GET writing with collection specifier
+                writing_controller.collections(req, res);
+            } else if (p === "poems" || p === "poem") {
+                // GET writing with poem specifier
+                writing_controller.poems(req, res);
+            } else {
+                var err1 = new Error('Not Found');
+                err1.status = 404;
+                next(err1);
+            }
+        }  else {
             var err1 = new Error('Not Found');
             err1.status = 404;
             next(err1);
@@ -86,7 +87,6 @@ router.get('/category/:specifier', function(req, res, next) {
     res.redirect('/written-works/category/'+ req.params.specifier + '/1');
 
 });
-
 
 router.get('/:ty/:specifier/:page', function(req, res, next) {
     req.params.id = req.params.specifier;
@@ -105,7 +105,6 @@ router.get('/:ty/:specifier/:page', function(req, res, next) {
             err1.status = 404;
             next(err1);
         }
-
     } else{
         var err = new Error('Not Found');
         err.status = 404;
