@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ff3be6-fa93-4c30-b1ea-785a247e7896" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -372,7 +371,7 @@
       <updated>1529093358011</updated>
       <workItem from="1529093365988" duration="46399000" />
       <workItem from="1529287433729" duration="11935000" />
-      <workItem from="1529693078386" duration="172770000" />
+      <workItem from="1529693078386" duration="172806000" />
     </task>
     <task id="LOCAL-00001" summary="Adding controllers for the routes based off of MDN -- may not need all routes -- will clean up later.">
       <created>1529857098919</created>
@@ -581,7 +580,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231104000" />
+    <option name="totallyTimeSpent" value="231140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="571" y="23" width="849" height="822" extended-state="0" />
