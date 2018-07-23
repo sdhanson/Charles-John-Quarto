@@ -11,7 +11,7 @@
     }
 
     .header-title {
-        font-size: 3.75rem;
+        font-size: 4.0rem;
     }
 
     .header-title-sub {
@@ -30,7 +30,7 @@
     }
 
     .header-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     .header-title-sub {
@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
     .header-title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .header-title-sub {

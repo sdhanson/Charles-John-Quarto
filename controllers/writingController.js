@@ -90,8 +90,8 @@ exports.poems = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Poetry. ';
+        var title = 'All Poetry';
+        var subtitle = 'Explore All Poems. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         var count = results.poem_count;
@@ -141,8 +141,8 @@ exports.songs = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Lyrics. ';
+        var title = 'All Songs';
+        var subtitle = 'Explore All Lyrics. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         var count = results.song_count;
@@ -190,8 +190,8 @@ exports.collections = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Collections. ';
+        var title = 'All Collections';
+        var subtitle = 'Explore Featured Collections. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         var count = results.book_count;
@@ -239,8 +239,8 @@ exports.song_collections = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Song Collections. ';
+        var title = 'Song Collections';
+        var subtitle = ' Explore Featured Song Collections. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         var count = results.book_count;
@@ -288,8 +288,8 @@ exports.poetry_collections = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Poetry Collections. ';
+        var title = 'Poetry Collections';
+        var subtitle = 'Explore Featured Poetry Collections. ';
         var link = 'Shop Now.';
         var image = '/images/water.jpg';
         var count = results.book_count;
@@ -394,7 +394,7 @@ exports.single_song = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Lyrics';
+        var title = results.song.title;
         var subtitle = '';
         var link = '';
         var image = '/images/water.jpg';
@@ -432,7 +432,7 @@ exports.single_poem = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Poetry';
+        var title = results.poem.title;
         var subtitle = '';
         var link = '';
         var image = '/images/water.jpg';
@@ -470,7 +470,7 @@ exports.single_collection = function(req, res, next) {
         }
         var sub = false;
         var titlesub = '';
-        var title = 'Collection';
+        var title = results.book.title;
         var subtitle = '';
         var link = '';
         var image = '/images/water.jpg';

@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "snyk test"
+    "test": "snyk test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "^2.6.1",
@@ -29,10 +31,12 @@
     "nsp": "^3.2.1",
     "p": "^0.2.0",
     "request-sanitizer": "^1.0.0",
+    "snyk": "^1.89.0",
+    "throng": "^4.0.0",
     "validator": "^10.4.0"
   },
   "devDependencies": {
-    "@types/express": "^4.16.0",
-    "snyk": "^1.89.0"
-  }
+    "@types/express": "^4.16.0"
+  },
+  "snyk": true
 }

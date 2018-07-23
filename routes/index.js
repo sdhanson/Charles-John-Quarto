@@ -20,7 +20,7 @@ router.get('/', function(req, res) {
 router.get('/shop', function(req, res) {
     var sub = false;
     var titlesub = '';
-    var title = 'Shop All Works';
+    var title = 'Shopping Coming Soon';
     var subtitle = '';
     var link = '';
     var image = '/images/blake.jpeg';

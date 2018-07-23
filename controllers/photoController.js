@@ -7,7 +7,7 @@ exports.index = function(req, res) {
             console.log(err);
         } else {
             var title = 'Photo Gallery';
-            var subtitle = '';
+            var subtitle = 'Browse All Photos';
             var link = '';
             var image = '/images/rivers.jpeg';
             var sub = false;
