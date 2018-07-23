@@ -33,7 +33,7 @@ var mongoose = require('mongoose');
 // mongoose.connect(process.env.DB_HOST+"://"+process.env.DB_USER+ ":" + process.env.DB_PASSWORD + "@ds131971.mlab.com:31971/" + process.env.DB_NAME).catch(function(err) {
 //     console.log('error');
 // });
-mongoose.connect(MONGODB_URI).catch(function(err) {
+mongoose.connect(process.env.MONGODB_URI).catch(function(err) {
     debug("Connection error: " + err);
 });
 mongoose.Promise = global.Promise;
