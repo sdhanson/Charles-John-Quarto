@@ -1,7 +1,25 @@
 .collection-poem {
     font-weight: 500;
-    /*color: black;*/
     color: gray;
+}
+
+.featured-collection-poem {
+    font-weight: 500;
+    color: lightgray;
+}
+
+.featured-collection-poem-title {
+    color: white;
+}
+
+.featured-collection-poem-title:hover {
+    color: black;
+}
+
+.featured-collection-poem-display {
+    color: white;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .collection-poem-title {
@@ -14,8 +32,12 @@
     font-style: italic;
 }
 
+hr {
+    color: white;
+}
+
 div.tags span {
-    color: black;
+    color: white;
     font-weight: 100;
     font-size: 13px;
 }
@@ -28,6 +50,8 @@ div.tags span {
 
 .featured-content {
     border: 2px solid #b8cef6;
+    /*border: 2px solid #153E89;*/
+    background-color: #b8cef6;
 }
 
 .collection-title {

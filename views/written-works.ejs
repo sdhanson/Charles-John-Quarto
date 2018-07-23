@@ -8,12 +8,12 @@
     <div class="dropdown">
         <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/poems">Poems</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Songs</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections/songs">Song Collections</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections/poetry">Poetry Collections</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/category/collections">All Collections</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works">All</a>
+            <a title="All Poems" class="dropdown-item header-dropdown-item" href="/written-works/category/poems">Poems</a>
+            <a title="All Songs" class="dropdown-item header-dropdown-item" href="/written-works/category/songs">Songs</a>
+            <a title="Song Collections" class="dropdown-item header-dropdown-item" href="/written-works/category/collections/songs">Song Collections</a>
+            <a title="Poem Collections" class="dropdown-item header-dropdown-item" href="/written-works/category/collections/poetry">Poetry Collections</a>
+            <a title="All Collections" class="dropdown-item header-dropdown-item" href="/written-works/category/collections">All Collections</a>
+            <a title="All Written Works" class="dropdown-item header-dropdown-item" href="/written-works">All</a>
         </div>
     </div>
     <!--End category dropdown-->
@@ -22,12 +22,12 @@
     <div class="dropdown-2">
         <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
         <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1960">1960s</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1970">1970s</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1980">1980s</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/1990">1990s</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/2000">2000s</a>
-            <a class="dropdown-item header-dropdown-item" href="/written-works/decade/present">Present</a>
+            <a title="Music From the 1960s" class="dropdown-item header-dropdown-item" href="/written-works/decade/1960">1960s</a>
+            <a title="Music From the 1970s" class="dropdown-item header-dropdown-item" href="/written-works/decade/1970">1970s</a>
+            <a title="Music From the 1980s" class="dropdown-item header-dropdown-item" href="/written-works/decade/1980">1980s</a>
+            <a title="Music From the 1990s" class="dropdown-item header-dropdown-item" href="/written-works/decade/1990">1990s</a>
+            <a title="Music From the 2000s" class="dropdown-item header-dropdown-item" href="/written-works/decade/2000">2000s</a>
+            <a title="Music From the Present" class="dropdown-item header-dropdown-item" href="/written-works/decade/Present">Present</a>
         </div>
     </div>
     <!--End decade dropdown-->
@@ -44,15 +44,16 @@
 <% if(results.book_list.length === 0 && results.poem_list.length === 0 && results.song_list.length === 0) {%>
 <div class="mt-5 container">
     <h1> No Results </h1>
-    <a class="no-results" href="/written-works"> BACK TO ALL WORKS
+    <a title="All Written Works" class="no-results" href="/written-works"> BACK TO ALL WORKS
         <i class="fas fa-chevron-right"></i>
     </a>
 </div>
 <% } else { %>
+<div class="container">
 <hr class="mt-5" width="90%">
 <% results.book_list.forEach(function(book) { %>
-<div class="media ml-5 mt-0">
-    <a href=<%=book.url%>>
+<div class="media mt-0">
+    <a title="Read <%= book.title %>" href=<%=book.url%>>
         <div class="m-3 media-body align-self-center">
             <% if (book.title) { %>
             <h5 class="mt-0 written-title"><%= book.title %></h5>
@@ -63,10 +64,10 @@
             <div class="mt-4 tags">
                 <span class="mr-2">Tags: </span>
                 <% if (book.category && book.type) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category.toLowerCase()%>/<%= book.type.toLowerCase()%>" role="button"><%= book.category %>s of <%= book.type %>  </a>
+                <a title="All <%= book.category %>s of <%= book.type %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=book.category.toLowerCase()%>/<%= book.type.toLowerCase()%>" role="button"><%= book.category %>s of <%= book.type %>  </a>
                 <% } %>
                 <% if (book.decade) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=book.decade.toLowerCase()%>" role="button"><%= book.decade %></a>
+                <a title="Written Works from <%= book.decade %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=book.decade.toLowerCase()%>" role="button"><%= book.decade %></a>
                 <% } %>
             </div>
         </div>
@@ -78,8 +79,8 @@
 
 <!--POEMS-->
 <% results.poem_list.forEach(function(poem) { %>
-<div class="media ml-5 mt-0">
-    <a href=<%=poem.url%>>
+<div class="media mt-0">
+    <a title="Read <%= poem.title %>" href=<%=poem.url%>>
         <div class="m-3 media-body align-self-center">
             <% if (poem.title) { %>
             <h5 class="mt-0 written-title"><%= poem.title %></h5>
@@ -93,10 +94,10 @@
             <div class="mt-4 tags">
                 <span class="mr-2">Tags: </span>
                 <% if (poem.category) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=poem.category.toLowerCase()%>" role="button"><%= poem.category %>s</a>
+                <a title="All <%= poem.category %>s" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=poem.category.toLowerCase()%>" role="button"><%= poem.category %>s</a>
                 <% } %>
                 <% if (poem.decade) { %>
-                <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=poem.decade.toLowerCase()%>" role="button"><%= poem.decade %></a>
+                <a title="Written Works from <%= poem.decade %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=poem.decade.toLowerCase()%>" role="button"><%= poem.decade %></a>
                 <% } %>
             </div>
         </div>
@@ -108,8 +109,8 @@
 
 <!--SONGS-->
 <% results.song_list.forEach(function(song) { %>
-<div class="media ml-5 mt-0">
-    <a href=<%=song.url%>>
+<div class="media mt-0">
+    <a title="Read <%= song.title %>" href=<%=song.url%>>
     <div class="m-3 media-body align-self-center">
         <% if (song.title) { %>
             <h5 class="mt-0 written-title"><%= song.title %></h5>
@@ -123,10 +124,10 @@
         <div class="mt-4 tags">
             <span class="mr-2">Tags: </span>
             <% if (song.category) { %>
-            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=song.category.toLowerCase()%>" role="button"><%= song.category %>s</a>
+            <a title="All <%= song.category %>s" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/category/<%=song.category.toLowerCase()%>" role="button"><%= song.category %>s</a>
             <% } %>
             <% if (song.decade) { %>
-            <a class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=song.decade.toLowerCase()%>" role="button"><%= song.decade %></a>
+            <a title="Written Works from <%= song.decade %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/decade/<%=song.decade.toLowerCase()%>" role="button"><%= song.decade %></a>
             <% } %>
         </div>
     </div>
@@ -165,6 +166,7 @@
     <% } %>
 </div>
 <% } %>
+</div>
 
 
 <!--End written works display-->

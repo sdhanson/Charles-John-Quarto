@@ -142,6 +142,7 @@
 
 .navbar .navbar-brand {
     font-size: 25px !important;
+    font-style: italic;
 }
 
 .navbar li a, .navbar .navbar-brand {

@@ -15,7 +15,7 @@
         <!--foreach photo in the data create a column like so with the image link set to the image-->
         <% photos.forEach(function(photo) { %>
         <div class="photo col-md-4 col-sm-6 my-3">
-            <a class="photo-link" data-toggle="modal" href="#myModal">
+            <a title="Select Photo to View Full Screen" class="photo-link" data-toggle="modal" href="#myModal">
                 <img class="my-1 img-fluid" src="<%= photo.image %>" alt="image">
                 <div class="photo-overlay">
                     <div class="photo-overlay-text">

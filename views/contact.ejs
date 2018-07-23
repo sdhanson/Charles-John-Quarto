@@ -50,11 +50,11 @@
     <div class="ml-2 mr-5 media-body">
         <% if(sent) {%>
         <h1 class="sent">Message sent!</h1>
-        <a href="/contact">BACK TO CONTACT FORM</a>
+        <a title="Contact Charles John Quarto" href="/contact">BACK TO CONTACT FORM</a>
         <% } else if(error) {%>
         <h1 class="error">Uh oh! </h1>
         <h6>There was an error sending your message. Please try again.</h6>
-        <a href="/contact">BACK TO CONTACT FORM</a>
+        <a title="Contact Charles John Quarto" href="/contact">BACK TO CONTACT FORM</a>
         <% } else { %>
         <!--Form-->
         <form method="POST" action="/send">
@@ -90,7 +90,7 @@
                 <div class="form-group col-12">
                     <label for="message">Message *</label>
                     <br>
-                    <textarea class="w-100" id="message" name="message" placeholder=" " rows="5" required></textarea>
+                    <textarea title="Send Charles John Quarto Your Message" class="w-100" id="message" name="message" placeholder=" " rows="5" required></textarea>
                 </div>
                 <!--End message-->
             </div>
@@ -98,7 +98,7 @@
 
             <!--Submit button-->
             <div class="form-group col-md-12">
-                <button class="button-submit btn btn-md btn-outline-dark rounded-0" type="submit">Submit</button>
+                <button title="Submit Your Message" class="button-submit btn btn-md btn-outline-dark rounded-0" type="submit">Submit</button>
             </div>
             <!--End submit button-->
 
