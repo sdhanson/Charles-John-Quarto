@@ -17,6 +17,8 @@
             <path value="file://$PROJECT_DIR$/models" />
             <path value="file://$PROJECT_DIR$/controllers" />
             <path value="file://$PROJECT_DIR$/ico" />
+            <path value="file://$PROJECT_DIR$/views/ajax" />
+            <path value="file://$PROJECT_DIR$/views/ajax/contact" />
           </resourceRoots>
         </entryData>
       </entry>

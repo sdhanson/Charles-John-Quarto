@@ -30,12 +30,12 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongoDB = 'mongodb://127.0.0.1:27017/cjq';
 // mongoose.connect('mongodb://127.0.0.1:27017/cjq');
-mongoose.connect(process.env.DB_HOST+"://"+process.env.DB_USER+ ":" + process.env.DB_PASSWORD + "@ds131971.mlab.com:31971/" + process.env.DB_NAME).catch(function(err) {
-    console.log('error');
-});
-// mongoose.connect(process.env.MONGODB_URI).catch(function(err) {
-//     debug("Connection error: " + err);
+// mongoose.connect(process.env.DB_HOST+"://"+process.env.DB_USER+ ":" + process.env.DB_PASSWORD + "@ds131971.mlab.com:31971/" + process.env.DB_NAME).catch(function(err) {
+//     console.log('error');
 // });
+mongoose.connect(process.env.MONGODB_URI).catch(function(err) {
+    debug("Connection error: " + err);
+});
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
