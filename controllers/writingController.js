@@ -45,7 +45,7 @@ exports.index = function(req, res, next) {
         var title = 'Written Works';
         var subtitle = 'Poetry, Lyrics, and Collections. ';
         var link = 'Shop Now.';
-        var image = '/images/water.jpg';
+        var image = '/images/sky.jpg';
         var count = results.book_count + results.poem_count + results.song_count;
         res.render('written-works', {
             title: title,

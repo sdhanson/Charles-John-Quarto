@@ -54,7 +54,8 @@ div.tags span {
 }
 
 .paging {
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-top: 3%;
 }
 
 .paging a.btn {
@@ -69,4 +70,316 @@ div.tags span {
 .paging li.active:hover a.btn {
     color: white;
     opacity: 0.5;
+}
+
+.about-header-title {
+    font-weight: 200;
+    font-size: 5rem;
+}
+
+/* HEADER STYLING */
+@media (min-width: 992px) {
+    header {
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .header-image {
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .header-title {
+        font-size: 4.0rem;
+    }
+
+    .header-title-sub {
+        font-size: 3rem;
+    }
+
+    .header-subtitle {
+        font-size: 2rem;
+    }
+
+
+    .about-container {
+        margin-top: 5%;
+        max-width: 60%;
+        margin-left: 20%
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .header-image {
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .header-title {
+        font-size: 3.5rem;
+    }
+
+    .header-title-sub {
+        font-size: 2.25rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.75rem;
+    }
+
+
+    .about-container {
+        margin-top: 5%;
+        max-width: 80%;
+        margin-left: 10%
+    }
+}
+
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-title-sub {
+        font-size: 1.25rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+
+@media (max-width: 450px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .header-title-sub {
+        font-size: 1.1rem;
+    }
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.header-image {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.header-text {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 200px;
+}
+
+.header-nav {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.header-title {
+    padding-left: 1%;
+    padding-right: 1%;
+    align-self: center;
+}
+
+.header-title-sub {
+    padding-left: 1%;
+    padding-right: 1%;
+    align-self: center;
+    color: gainsboro;
+}
+
+
+.header-subtitle {
+    color: gainsboro;
+    align-self: center;
+}
+
+.header-button {
+    color: white;
+    border: 1px solid white;
+}
+
+.header-dropdown-menu {
+    border-radius: 0;
+}
+
+.header-dropdown-item {
+    font-size: 0.8rem;
+    padding-left: 10px;
+}
+/* ***** END HEADER ***** */
+
+
+/* NAVBAR STYLING */
+.navbar {
+    z-index: 100;
+}
+
+.navbar .navbar-brand {
+    font-size: 25px !important;
+    font-style: italic;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+.navbar-nav li.active a {
+    color: black !important;
+    font-weight: 400;
+}
+
+.navbar-nav li a:hover {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 400;
+}
+/* ********* END NAVBAR ************ */
+
+
+
+
+/* GENERAL LINK STYLING */
+a {
+    color: #9cbbf3;
+}
+a:hover, a.in-line-link:hover, a.overlay-subtitle-link:hover {
+    color: #b8cef6;
+    text-decoration: none;
+}
+
+a.in-line-link {
+    /*color: gainsboro;*/
+    color: #9cbbf3;
+}
+
+a.overlay-subtitle-link {
+    color: gainsboro;
+}
+
+.header-link {
+    font-weight: bold;
+}
+/* *** END GENERAL LINK *** */
+
+/* FOOTER STYLING */
+.footer {
+    /*border-top: 1px solid gainsboro;*/
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+footer div div a{
+    /*font-weight: bold;*/
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.75rem;
+    }
+
+}
+
+@media (max-width: 968px) {
+
+    .nav-item {
+        font-size: 0.75rem;
+    }
+}
+
+
+a.discography-shop-link.btn.btn-outline-dark:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (min-width: 768px) {
+    a.discography-shop-link.btn.btn-outline-dark {
+        border: 2px solid black;
+
+        padding: 10px 20px;
+
+
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: black;
+    }
+
+}
+
+@media (max-width: 768px) {
+    div a.discography-shop-link.btn.btn-outline-dark {
+        border: 2px solid black;
+
+        padding: 10px 20px;
+
+
+        font-weight: 400;
+        font-size: 12px;
+        color: black;
+    }
+}
+
+
+
+.about-container .row div a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.about-container .row div a:hover img {
+    opacity: 0.75;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+strong {
+    font-size: 1.75em;
+}
+
+p {
+    font-size: 1.2rem;
+    letter-spacing: 0.75px;
+    line-height: 30px;
+}
+
+.card {
+    background: slategray;
+    color: white;
+    opacity: 0.9;
+    height: 400px;
+    margin: 50px;
+
 }

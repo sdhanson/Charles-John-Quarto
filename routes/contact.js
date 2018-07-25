@@ -13,7 +13,7 @@ router.route('/')
             var title = 'Contact';
             var subtitle = 'Submit Your Message.';
             var link = '';
-            var image = '/images/tree.jpeg';
+            var image = '/images/road.jpg';
             var sub = false;
             var titlesub = '';
             res.render('contact', {subtitle: subtitle, title: title, link: link, image: image, titlesub: titlesub, sub: sub});

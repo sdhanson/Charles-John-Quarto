@@ -3,10 +3,10 @@
 <link rel='stylesheet' href='/stylesheets/home.css' />
 
 <div class="header">
-  <img src="<%=image%>" class="header header-image" alt="Responsive image">
+  <img src="images/wind.jpg" class="header header-image" alt="Responsive image">
   <div class="overlay">
     <div class="d-flex flex-column header header-nav">
-      <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+      <nav class="navbar invisible navbar-expand-md navbar-dark bg-transparent">
         <a title="Home" class="navbar-brand" href="/">CJQ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon header-link"></span>
@@ -36,107 +36,28 @@
       </nav>
     </div>
 
-    <div class="d-flex flex-column justify-content-center header header-text">
+    <div class="d-flex flex-column justify-content-center header header-text invisible" id="loaded-title">
       <p class="home-header-title align-self-center">CHARLES JOHN QUARTO</p>
       <p class="home-header-subtitle align-self-center">POET-SONGWRITER SPIRITUAL TEACHER-SEER</p>
+      <a title="Enter Website" class="home-header-link align-self-center" href="/written-works">Explore the Works</a>
     <!--Closing tags from overlay-->
     </div>
+
+  <div class="d-flex flex-column justify-content-center header header-text">
+      <div class="home-header-poem align-self-center hideme loaded-quote">
+        OUT WHERE THE WIND TELLS THE STORIES ...
+        <div class="small">Enter Website</div>
+      </div>
+
   </div>
 
-
-
-<!--ADD COMMENTS-->
-<!--<div class="container mt-5">-->
-  <!--<div class="card-deck">-->
-    <!--<div class="card cardSet1 text-white">-->
-      <!--<div class="card-body">-->
-        <!--<img class="img-fluid" src="/images/rocks.jpeg" alt="Mountain">-->
-        <!--<h3 class="card-title mt-2">Music and Discography</h3>-->
-        <!--<h5 class="card-subtitle mt-3">-->
-          <!--<a title="Explore Discography" href="/discography">-->
-            <!--New Album Out Now-->
-          <!--</a>-->
-        <!--</h5>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="card-deck">-->
-    <!--<div class="card cardSet2 text-white">-->
-      <!--<div class="card-body">-->
-        <!--<img class="img-fluid" src="/images/book.jpg" alt="Book">-->
-        <!--<h3 class="card-title mt-2">Written Works</h3>-->
-        <!--<h5 class="card-subtitle mt-3">-->
-          <!--<a title="Explore Written Works" class="btn btn-outline-dark rounded-0 btn-sm" href="/written-works/1" role="button">New Collections</a>-->
-        <!--</h5>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="card-deck">-->
-      <!--<div class="card cardSet3 text-white">-->
-        <!--<div class="card-body">-->
-          <!--<img class="img-fluid" src="/images/ripple.jpeg" alt="Ripple in the Water">-->
-          <!--<h3 class="card-title mt-2">About Charles John Quarto</h3>-->
-          <!--<h5 class="card-subtitle mt-3">-->
-            <!--<a title="Explore Written Works" href="/about">-->
-              <!--Discover the Life and Works-->
-            <!--</a>-->
-          <!--</h5>-->
-        <!--</div>-->
-      <!--</div>-->
-
-<!--</div>-->
-
-<!--<a title="Explore Discography" href="/discography">-->
-  <!--<div class="media right mt-5">-->
-    <!--<div class="container test-container col-6">-->
-      <!--<img class="one img-fluid" src="/images/rocks.jpeg" alt="Generic placeholder image">-->
-    <!--</div>-->
-
-    <!--<div class="media-body mx-5 align-self-center">-->
-      <!--<h5 class="mt-0 home-title">Music and Discography</h5>-->
-      <!--<p>VIEW MORE-->
-        <!--<i class="one fas fa-chevron-right"></i>-->
-      <!--</p>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</a>-->
-
-<!--<a title="Explore Written Works" href="/written-works">-->
-    <!--<div class="media two mt-5">-->
-      <!--<div class="media-body mx-5 align-self-center">-->
-        <!--<h5 class="mt-0 text-right home-title">Poetry</h5>-->
-        <!--<p class="text-right-link">-->
-          <!--<span class="text-right-view">VIEW MORE</span>-->
-
-          <!--<i class="two fas fa-chevron-right"></i>-->
-        <!--</p>-->
-      <!--</div>-->
-      <!--<div class="container test-container-2 col-6">-->
-        <!--<img class="two img-fluid" src="/images/book.jpg" alt="Generic placeholder image">-->
-      <!--</div>-->
-    <!--</div>-->
-<!--</a>-->
-
-  <!--<a title="About Charles John Quarto" href="/about">-->
-  <!--<div class="media right mt-5">-->
-    <!--<div class="container test-container-3 col-6">-->
-      <!--<img class="three img-fluid" src="/images/ripple.jpeg" alt="Generic placeholder image">-->
-    <!--</div>-->
-
-    <!--<div class="media-body mx-5 align-self-center">-->
-      <!--<h5 class="mt-0 home-title">About</h5>-->
-      <!--<p> VIEW MORE-->
-        <!--<i class="three fas fa-chevron-right"></i>-->
-      <!--</p>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--</a>-->
-
-<script type="text/javascript" src="/javascripts/home.js"></script>
-
-<% include partials/footer.ejs %>
-
+  </div>
 </div>
+
+
+</body>
+</html>
+<script type="text/javascript" src="/javascripts/home.js"></script>
 
 
 

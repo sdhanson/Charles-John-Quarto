@@ -19,7 +19,7 @@ router.get('/shop', function(req, res) {
     var title = 'Shopping Coming Soon';
     var subtitle = '';
     var link = '';
-    var image = '/images/blake.jpeg';
+    var image = '/images/nash.jpeg';
     res.render('shop', {subtitle: subtitle, title: title, link: link, image: image, titlesub: titlesub, sub: sub});
 });
 
