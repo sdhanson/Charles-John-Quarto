@@ -1,32 +1,69 @@
 <% include partials/header.ejs %>
-<% include partials/overlay.ejs %>
 
+<link rel='stylesheet' href='/stylesheets/about.css' />
+
+<div class="header">
+    <img src="<%=image%>" class="header header-image" alt="Responsive image">
+    <div class="overlay">
+        <div class="d-flex flex-column header header-nav">
+            <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+                <a title="Home" class="navbar-brand" href="/">CJQ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon header-link"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a title="Home" class="nav-link header-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--<div class="d-flex justify-content-center header header-text">-->
+            <!--<p class="about-header-title align-self-center">MUSIC</p>-->
+            <!--&lt;!&ndash;Closing tags from overlay&ndash;&gt;-->
+        <!--</div>-->
+    </div>
 <!--Closes tags from overlay-->
-</div>
-</div>
+
 
 <!--Image on top of container up to media-->
-<div class="mt-4 container d-block d-md-none">
-    <img class="img-fluid" src="/images/headshot.jpg" alt="Generic placeholder image">
-</div>
-<!--End image container-->
-
+<!--<div class="mt-4 container d-block d-md-none">-->
+    <!--<img class="img-fluid" src="/images/headshot.jpg" alt="Generic placeholder image">-->
+<!--</div>-->
+<!--&lt;!&ndash;End image container&ndash;&gt;-->
 
 <!--Media container (Bootstrap 4: Groups image and body)-->
-<div class="media mt-5">
+<div class="about-container mt-5">
 
-    <!--Image container-->
-    <div class="container d-none d-md-block col-md-4">
-        <img class="img-fluid" src="/images/headshot.jpg" alt="Generic placeholder image">
-    </div>
-    <!--End image container-->
+    <!--&lt;!&ndash;Image container&ndash;&gt;-->
+    <!--<div class="container d-block col-md-4">-->
+        <!--<img class="img-fluid" src="/images/headshot.jpg" alt="Generic placeholder image">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;End image container&ndash;&gt;-->
 
     <!--Body container-->
-    <div class="mr-5 pr-2 col-md-8 media-body">
+    <!--<div class="mr-5 pr-2 col-md-8 justify-content-center media-body">-->
 
         <!--Container for the body to create padding-->
         <div class="container">
-            <h2 class="pb-2">Chronological Biography</h2>
             <p>
                 <strong>Charles John Quarto</strong> is a mystic spiritual master, healer, psychic, poet, songwriter, philosopher, ally and advisor, on all matters vast. He began his performing career as a poet in Greenwich Village (his
                 birthplace) in 1968. He performed on the David Frost Show, the Museum of Modern Art, New York
@@ -103,7 +140,7 @@
             <!--<br>-->
 
             <!--Creative Writing teacher Header-->
-            <h4 class="mt-3 pb-2">Creative Writing Teacher of Songs and Poems</h4>
+            <h2 class="mt-5 mb-3 pb-2">Creative Writing Teacher of Songs and Poems</h2>
             <p>
                 As a creative writing teacher, Charles John's approach is to expand the intuitive and encourage the stream of
                 consciousness into a river of wonder, reflection, and specificity, so that the student can realize that inspiration may also be
@@ -216,7 +253,7 @@
             <!--<br>-->
 
 
-            <h4 class="mt-3 pb-2">Metaphysical Work</h4>
+            <h2 class="mt-5 mb-3 pb-2">Metaphysical Work</h2>
 
             <p>
             As a spiritual teacher, seer, and healer, thousands of individuals have sought his guidance, vision, and healing energies.
@@ -294,7 +331,7 @@
 
         </div>
         <!--End inner body container-->
-    </div>
+    <!--</div>-->
     <!--End outer body container-->
 </div>
 <!--End media container-->

@@ -1,79 +1,43 @@
 <% include partials/header.ejs %>
-<% include partials/overlay.ejs %>
-<link rel='stylesheet' href='/stylesheets/modal-grid.css' />
-<link rel='stylesheet' href='/stylesheets/carousel.css' />
-<link rel='stylesheet' href='/stylesheets/home.css' />
+<link rel='stylesheet' href='/stylesheets/contact.css' />
 
-<!--Dropdown buttons that overlay the header image-->
-<!--MAYBE COMBINE TO A PARTIAL WITH WRITTEN-WORKS-->
+<div class="header">
+    <img src="<%=image%>" class="header header-image" alt="Responsive image">
+    <div class="overlay">
+        <div class="d-flex flex-column header header-nav">
+            <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+                <a title="Home" class="navbar-brand" href="/">CJQ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon header-link"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a title="Home" class="nav-link header-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-<!--<div class="row justify-content-center">-->
-    <!--&lt;!&ndash;Category dropdown&ndash;&gt;-->
-    <!--<div class="dropdown">-->
-        <!--<button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>-->
-        <!--<div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-            <!--<a class="dropdown-item header-dropdown-item" href="#">All</a>-->
-            <!--<a class="dropdown-item header-dropdown-item" href="#">Albums</a>-->
-            <!--<a class="dropdown-item header-dropdown-item" href="#">Songs</a>-->
-            <!--<a class="dropdown-item header-dropdown-item" href="#">Collections</a>-->
-            <!--<a class="dropdown-item header-dropdown-item" href="#">Poems</a>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;End category dropdown&ndash;&gt;-->
-<!--</div>-->
-<!--End dropdown buttons-->
-
-<!--Closing tags from overlay-->
-</div>
-</div>
-
-<!--&lt;!&ndash;Photo container&ndash;&gt;-->
-<!--<div class="photo-container">-->
-    <!--&lt;!&ndash;Row&ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--&lt;!&ndash;Photo + title&ndash;&gt;-->
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="my-1 img-fluid" src="images/mountain.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;End photo + title&ndash;&gt;-->
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="my-1 img-fluid" src="images/water.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="img-fluid my-1" src="images/book.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="img-fluid my-1" src="images/music.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="img-fluid my-1" src="images/book.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-        <!--<div class="photo col-md-4 col-sm-6 my-5">-->
-            <!--<a href="#">-->
-                <!--<img class="img-fluid my-1" src="images/contacts.jpg" alt="image">-->
-                <!--<p>Name of collection/link</p>-->
-            <!--</a>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;End row&ndash;&gt;-->
-<!--</div>-->
-<!--End photo container-->
-
-
+        <div class="d-flex justify-content-center header header-text">
+            <p class="contact-header-title align-self-center">SHOPPING COMING SOON</p>
+            <!--Closing tags from overlay-->
+        </div>
+    </div>
 <% include partials/footer.ejs %>

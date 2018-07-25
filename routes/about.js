@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     var title = 'Charles John Quarto';
     var subtitle = 'The Life and Work';
     var link = '';
-    var image = '/images/ripple.jpeg';
+    var image = '/images/hollywood.jpeg';
     res.render('about', {subtitle: subtitle, title: title, link: link, image: image, titlesub: titlesub, sub: sub});
 });
 /* END ABOUT */

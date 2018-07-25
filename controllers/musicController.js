@@ -26,7 +26,7 @@ exports.index = function(req, res, next) {
         var title = 'Discography';
         var subtitle = '';
         var link = '';
-        var image = '/images/rocks.jpeg';
+        var image = '/images/moon.jpg';
         res.render('discography', {
             title: title,
             error: err,

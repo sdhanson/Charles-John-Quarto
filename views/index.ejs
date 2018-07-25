@@ -1,11 +1,47 @@
 <% include partials/header.ejs %>
-<% include partials/overlay.ejs %>
 <link rel='stylesheet' href='/stylesheets/modal-grid.css' />
 <link rel='stylesheet' href='/stylesheets/home.css' />
 
-<!--Closing tags from overlay-->
-</div>
-</div>
+<div class="header">
+  <img src="<%=image%>" class="header header-image" alt="Responsive image">
+  <div class="overlay">
+    <div class="d-flex flex-column header header-nav">
+      <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+        <a title="Home" class="navbar-brand" href="/">CJQ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon header-link"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a title="Home" class="nav-link header-link" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
+            </li>
+            <li class="nav-item">
+              <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
+            </li>
+            <li class="nav-item">
+              <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
+            </li>
+            <li class="nav-item">
+              <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="d-flex flex-column justify-content-center header header-text">
+      <p class="home-header-title align-self-center">CHARLES JOHN QUARTO</p>
+      <p class="home-header-subtitle align-self-center">POET-SONGWRITER SPIRITUAL TEACHER-SEER</p>
+    <!--Closing tags from overlay-->
+    </div>
+  </div>
 
 
 
@@ -50,95 +86,51 @@
 
 <!--</div>-->
 
-<a title="Explore Discography" href="/discography">
-  <div class="media right mt-5">
-    <div class="container test-container col-6">
-      <img class="one img-fluid" src="/images/rocks.jpeg" alt="Generic placeholder image">
-    </div>
+<!--<a title="Explore Discography" href="/discography">-->
+  <!--<div class="media right mt-5">-->
+    <!--<div class="container test-container col-6">-->
+      <!--<img class="one img-fluid" src="/images/rocks.jpeg" alt="Generic placeholder image">-->
+    <!--</div>-->
 
-    <div class="media-body mx-5 align-self-center">
-      <h5 class="mt-0 home-title">Music and Discography</h5>
-      <p>VIEW MORE
-        <i class="one fas fa-chevron-right"></i>
-      </p>
-    </div>
-  </div>
-</a>
+    <!--<div class="media-body mx-5 align-self-center">-->
+      <!--<h5 class="mt-0 home-title">Music and Discography</h5>-->
+      <!--<p>VIEW MORE-->
+        <!--<i class="one fas fa-chevron-right"></i>-->
+      <!--</p>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</a>-->
 
-<a title="Explore Written Works" href="/written-works">
-    <div class="media two mt-5">
-      <div class="media-body mx-5 align-self-center">
-        <h5 class="mt-0 text-right home-title">Poetry</h5>
-        <p class="text-right-link">
-          <span class="text-right-view">VIEW MORE</span>
+<!--<a title="Explore Written Works" href="/written-works">-->
+    <!--<div class="media two mt-5">-->
+      <!--<div class="media-body mx-5 align-self-center">-->
+        <!--<h5 class="mt-0 text-right home-title">Poetry</h5>-->
+        <!--<p class="text-right-link">-->
+          <!--<span class="text-right-view">VIEW MORE</span>-->
 
-          <i class="two fas fa-chevron-right"></i>
-        </p>
-      </div>
-      <div class="container test-container-2 col-6">
-        <img class="two img-fluid" src="/images/book.jpg" alt="Generic placeholder image">
-      </div>
-    </div>
-</a>
+          <!--<i class="two fas fa-chevron-right"></i>-->
+        <!--</p>-->
+      <!--</div>-->
+      <!--<div class="container test-container-2 col-6">-->
+        <!--<img class="two img-fluid" src="/images/book.jpg" alt="Generic placeholder image">-->
+      <!--</div>-->
+    <!--</div>-->
+<!--</a>-->
 
-  <a title="About Charles John Quarto" href="/about">
-  <div class="media right mt-5">
-    <div class="container test-container-3 col-6">
-      <img class="three img-fluid" src="/images/ripple.jpeg" alt="Generic placeholder image">
-    </div>
+  <!--<a title="About Charles John Quarto" href="/about">-->
+  <!--<div class="media right mt-5">-->
+    <!--<div class="container test-container-3 col-6">-->
+      <!--<img class="three img-fluid" src="/images/ripple.jpeg" alt="Generic placeholder image">-->
+    <!--</div>-->
 
-    <div class="media-body mx-5 align-self-center">
-      <h5 class="mt-0 home-title">About</h5>
-      <p> VIEW MORE
-        <i class="three fas fa-chevron-right"></i>
-      </p>
-    </div>
-  </div>
-  </a>
-
-<!--Shopping links container-->
-<div class="photo-container">
-  <!--Row container: one row-->
-  <div class="row mx-2 px-2">
-    <!--Photo + title-->
-    <div class="shop photo mt-1 col-md-4 col-sm-6 my-3">
-      <a href="/shop">
-        <img class="my-1 img-fluid" src="/images/back.jpg" alt="image">
-        <div class="d-flex justify-content-center">
-          <p class="text-center-link" >SHOP NEW RELEASES
-          </p>
-
-        </div>
-      </a>
-    </div>
-    <!--End photo + title-->
-    <div class="col-md-4 mt-1 col-sm-6 my-3">
-      <div class="shop photo">
-        <a href="/discography">
-          <img class="my-1 img-fluid" src="/images/headshot.jpg" alt="image">
-          <div class="d-flex justify-content-center">
-            <p class="text-center-link" >SHOP ALL MUSIC
-            </p>
-
-          </div>
-
-        </a>
-    </div>
-    </div>
-    <div class="shop photo mt-1 col-md-4 col-sm-6 my-3">
-      <a href="/written-works">
-        <img class="my-1 img-fluid" src="/images/book.jpg" alt="image">
-        <div class="d-flex justify-content-center">
-          <p class="text-center-link" >SHOP ALL WRITTEN WORKS
-          </p>
-
-        </div>
-      </a>
-    </div>
-  </div>
-  <!--End row-->
-</div>
-<!--End shopping container-->
+    <!--<div class="media-body mx-5 align-self-center">-->
+      <!--<h5 class="mt-0 home-title">About</h5>-->
+      <!--<p> VIEW MORE-->
+        <!--<i class="three fas fa-chevron-right"></i>-->
+      <!--</p>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--</a>-->
 
 <script type="text/javascript" src="/javascripts/home.js"></script>
 

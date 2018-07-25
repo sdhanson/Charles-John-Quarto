@@ -1,3 +1,12 @@
+$(document).ready(function(){
+
+    $('[data-toggle=collapse]').hover(function (e) {
+        $(this).click();
+    });
+
+});
+
+
 $("#contact-submit").on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
