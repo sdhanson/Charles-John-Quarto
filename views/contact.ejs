@@ -7,8 +7,8 @@
 <!--End closing tags-->
 
 <!--Container for contact info shown above media on xs to small-->
-<div class="mt-4 container d-block d-sm-none">
-    <h3>Contact Info</h3>
+<div class="mt-4 w-100 ml-0 container d-flex flex-column d-lg-none">
+    <h2>Contact Info</h2>
     <br>
     <div>
         Charles John Quarto<br>P.O. Box 120535<br>
@@ -21,10 +21,12 @@
 </div>
 <!--End container for above contact info-->
 
+<hr class="mt-4 d-lg-none ml-2 mr-4" width="96%">
+
 <!--Media container for contact form (Bootstrap 4: Group text and form)-->
-<div class="media mt-5">
+<div class="media mt-4">
     <!--Container for contact info shown from small to xl-->
-    <div class="ml-5 container d-none d-sm-block col-2">
+    <div class="ml-5 container d-none d-lg-block col-2">
         <!--Title-->
         <h3>Contact Info</h3>
         <!--End title-->
@@ -48,16 +50,8 @@
 
     <!--Form container/media body-->
     <div class="ml-2 mr-5 media-body">
-        <% if(sent) {%>
-        <h1 class="sent">Message sent!</h1>
-        <a title="Contact Charles John Quarto" href="/contact">BACK TO CONTACT FORM</a>
-        <% } else if(error) {%>
-        <h1 class="error">Uh oh! </h1>
-        <h6>There was an error sending your message. Please try again.</h6>
-        <a title="Contact Charles John Quarto" href="/contact">BACK TO CONTACT FORM</a>
-        <% } else { %>
         <!--Form-->
-        <form method="POST" action="/send">
+        <form id="contact-form" method="POST" action="/send">
             <!--First row - first and last name-->
             <div class="form-row">
                 <div class="form-group col-sm-6">
@@ -97,19 +91,20 @@
             <!--End second row-->
 
             <!--Submit button-->
-            <div class="form-group col-md-12">
-                <button title="Submit Your Message" class="button-submit btn btn-md btn-outline-dark rounded-0" type="submit">Submit</button>
+            <div class="form-group">
+                <button id="contact-submit" title="Submit Your Message" class="button-submit btn btn-md btn-outline-dark rounded-0" type="submit">Submit</button>
             </div>
             <!--End submit button-->
 
         </form>
         <!--End form-->
-        <% } %>
     </div>
     <!--End form container-->
 </div>
 <!--End media-->
 
+
+<script type="text/javascript" src="/javascripts/contact.js"></script>
 
 
 <% include partials/footer.ejs %>
