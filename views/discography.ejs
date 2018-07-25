@@ -4,34 +4,34 @@
 <link rel='stylesheet' href='/stylesheets/pop-up.css' />
 <link rel='stylesheet' href='/stylesheets/carousel.css' />
 
-<!--Dropdown buttons that overlay the header image-->
-<div class="row justify-content-center">
-    <!--Category dropdown-->
-    <div class="dropdown">
-        <button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
-        <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a title="View All Songs" class="dropdown-item header-dropdown-item" href="/written-works/category/songs">All Songs</a>
-            <a title="View All Albums" class="dropdown-item header-dropdown-item" href="/discography/category/album">All Albums</a>
-            <a title="View All Music" class="dropdown-item header-dropdown-item" href="/discography">All</a>
-        </div>
-    </div>
-    <!--End category dropdown-->
+<!--&lt;!&ndash;Dropdown buttons that overlay the header image&ndash;&gt;-->
+<!--<div class="row justify-content-center">-->
+    <!--&lt;!&ndash;Category dropdown&ndash;&gt;-->
+    <!--<div class="dropdown">-->
+        <!--<button type="button" class="mr-4 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>-->
+        <!--<div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+            <!--<a title="View All Songs" class="dropdown-item header-dropdown-item" href="/written-works/category/songs">All Songs</a>-->
+            <!--<a title="View All Albums" class="dropdown-item header-dropdown-item" href="/discography/category/album">All Albums</a>-->
+            <!--<a title="View All Music" class="dropdown-item header-dropdown-item" href="/discography">All</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;End category dropdown&ndash;&gt;-->
 
-    <!--Decade dropdown-->
-    <div class="dropdown-2">
-        <button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
-        <div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <a title="View Music From the 1960s" class="dropdown-item header-dropdown-item" href="/discography/decade/1960">1960s</a>
-            <a title="View Music From the 1970s" class="dropdown-item header-dropdown-item" href="/discography/decade/1970">1970s</a>
-            <a title="View Music From the 1980s" class="dropdown-item header-dropdown-item" href="/discography/decade/1980">1980s</a>
-            <a title="View Music From the 1990s" class="dropdown-item header-dropdown-item" href="/discography/decade/1990">1990s</a>
-            <a title="View Music From the 2000s" class="dropdown-item header-dropdown-item" href="/discography/decade/2000">2000s</a>
-            <a title="View Music From the Present" class="dropdown-item header-dropdown-item" href="/discography/decade/Present">Present</a>
-        </div>
-    </div>
-    <!--End decade dropdown-->
-</div>
-<!--End dropdown buttons-->
+    <!--&lt;!&ndash;Decade dropdown&ndash;&gt;-->
+    <!--<div class="dropdown-2">-->
+        <!--<button type="button" class="ml-2 header-button btn btn-lg btn-outline-light rounded-0 dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>-->
+        <!--<div class="dropdown-menu header-dropdown-menu" aria-labelledby="dropdownMenuButton2">-->
+            <!--<a title="View Music From the 1960s" class="dropdown-item header-dropdown-item" href="/discography/decade/1960">1960s</a>-->
+            <!--<a title="View Music From the 1970s" class="dropdown-item header-dropdown-item" href="/discography/decade/1970">1970s</a>-->
+            <!--<a title="View Music From the 1980s" class="dropdown-item header-dropdown-item" href="/discography/decade/1980">1980s</a>-->
+            <!--<a title="View Music From the 1990s" class="dropdown-item header-dropdown-item" href="/discography/decade/1990">1990s</a>-->
+            <!--<a title="View Music From the 2000s" class="dropdown-item header-dropdown-item" href="/discography/decade/2000">2000s</a>-->
+            <!--<a title="View Music From the Present" class="dropdown-item header-dropdown-item" href="/discography/decade/Present">Present</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;End decade dropdown&ndash;&gt;-->
+<!--</div>-->
+<!--&lt;!&ndash;End dropdown buttons&ndash;&gt;-->
 
 <!--Closing tags from overlay-->
 </div>
@@ -51,7 +51,7 @@
     <div class="row">
         <% results.album_list.forEach(function(album) { %>
         <!--Image + Title container-->
-            <div class="album-photo col-md-4 col-sm-6 my-3">
+            <div class="album-photo col-sm-6 my-3">
                 <!--Link to toggle modal-->
                 <a title="Select to View Album Details" class="album-link" data-toggle="modal" href="#myModal">
                     <!--Image-->
@@ -122,103 +122,20 @@
                 </a>
                 <!--End link-->
                 <!--Sub information-->
-                <div class="tags">
-                    <span class="mr-2">Tags: </span>
-                    <% if (album.category) { %>
-                    <a title="View All <%=album.category%>" class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=album.category%>" role="button"><%= album.category %></a>
-                    <% } %>
-                    <% if (album.decade) { %>
-                    <a title="View Music From the <%= album.decade %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/decade/<%=album.decade%>" role="button"><%= album.decade %></a>
-                    <% } %>
-                </div>
+                <!--<div class="tags">-->
+                    <!--<span class="mr-2">Tags: </span>-->
+                    <!--<% if (album.category) { %>-->
+                    <!--<a title="View All <%=album.category%>" class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=album.category%>" role="button"><%= album.category %></a>-->
+                    <!--<% } %>-->
+                    <!--<% if (album.decade) { %>-->
+                    <!--<a title="View Music From the <%= album.decade %>" class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/decade/<%=album.decade%>" role="button"><%= album.decade %></a>-->
+                    <!--<% } %>-->
+                <!--</div>-->
             </div>
 
         <!--End image + title container-->
         <% }); %>
 
-        <!--<% results.song_list.forEach(function(song) { %>-->
-        <!--&lt;!&ndash;Image + Title container&ndash;&gt;-->
-        <!--<div class="album-photo col-md-4 col-sm-6 my-3">-->
-            <!--&lt;!&ndash;Link to toggle modal&ndash;&gt;-->
-            <!--<a class="album-link" data-toggle="modal" href="#myModal">-->
-                <!--&lt;!&ndash;Image&ndash;&gt;-->
-                <!--<% if (song.image) { var image = "/" + song.image %>-->
-                    <!--<img class="my-1 img-fluid" src="<%=image%>" alt="image">-->
-                <!--<%  } else { %>-->
-                    <!--<img class="img-fluid" src="/images/mountain.jpg" alt="Generic placeholder image">-->
-                <!--<% } %>-->
-                <!--&lt;!&ndash;Title&ndash;&gt;-->
-                <!--<div class="photo-overlay">-->
-                    <!--<div class="photo-overlay-text">-->
-                        <!--<% if (song.title) { %>-->
-                        <!--<div class="title"> <%= song.title %> </div>-->
-                        <!--<% } %>-->
-                        <!--&lt;!&ndash;MAKE IT SO IF THERE ARE GREATER THAN 2 OR SO ARTISTS IT ONLY SHOWS THE FIRST 2 AND THEN SAYS AND&ndash;&gt;-->
-                        <!--&lt;!&ndash;MORE&ndash;&gt;-->
-                        <!--<div class="artists">-->
-                            <!--<% if (song.artist) { song.artist.forEach(function(artist) { %>-->
-                            <!--<%= artist %>-->
-                            <!--<% })} %>-->
-                        <!--</div>-->
-
-                        <!--<% if (song.spotify) { %>-->
-                        <!--<div class="spotify d-none"> <%= song.spotify %> </div>-->
-                        <!--<% } %>-->
-
-                        <!--&lt;!&ndash;MAKE SURE TO SET LINK AS GLOBAL AND NOT /MUSIC/CATEGORY&ndash;&gt;-->
-                        <!--<% if (song.description) { %>-->
-                        <!--<div class="description d-none"> <%= song.description %> </div>-->
-                        <!--<% } %>-->
-
-                        <!--<% if (song.link) { %>-->
-                        <!--<div class="link d-none"> <%= song.link %> </div>-->
-                        <!--<% } %>-->
-
-                        <!--&lt;!&ndash;Container for song list and length&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;CHECK IF THIS EVEN WORKS&ndash;&gt;-->
-                        <!--<div class="songs d-none">-->
-                            <!--<div class="length">-->
-                                <!--<% if (song.length) {%>-->
-                                <!--<span class="track-info"><%= song.title %></span><span class="track-info float-right"><%= song.length %></span>-->
-                                <!--<% } else {  %>-->
-                                <!--<span> No songs </span>-->
-                                <!--<% } %>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</a>-->
-            <!--&lt;!&ndash;End link&ndash;&gt;-->
-            <!--&lt;!&ndash;Sub information&ndash;&gt;-->
-            <!--&lt;!&ndash;MAKE THE BUTTONS ACTUALLY GO TO THE PLACE THEY SHOULD DEPENDING ON THE CATEGORY-->
-            <!--okay, so for the category and decade want a render page that on click send the path /discography/:specifier-->
-            <!--and then can redirect to this with a true or false thing and if album is true then then include that,-->
-            <!--basically for each list in the results just render with that-->
-
-            <!--DUH DUH DUH DUH JUST POPULATE THE ALBUMS WITH THE THING SELECTED AND ONLY NEED A TRUE OR FALSE FOR-->
-            <!--SONGS VS ALBUMS BC REST IS SPECIFIC TO THAT DUH DUH DUH-->
-
-            <!--CAN I CREATE A MAJOR LIST THAT JUST INCLUDES ALL THE DATA FOR RESULTS.WHOLE_LIST.FOREACH ELEMENT??-->
-
-            <!--SEEMS LIKE A REASONABLE THING TO ASK FROM THIS MF PLATFORM-->
-
-
-            <!--&ndash;&gt;-->
-            <!--<div class="tags">-->
-                <!--<span class="mr-2">Tags: </span>-->
-                <!--<% if (song.category) { %>-->
-                <!--<a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/category/<%=song.category%>" role="button"><%= song.category %></a>-->
-                <!--<% } %>-->
-                <!--<% if (song.decade) { %>-->
-                <!--<a class="btn btn-outline-dark rounded-0 btn-sm" href="/discography/decade/<%=song.decade%>" role="button"><%= song.decade %></a>-->
-                <!--<% } %>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash;End image + title container&ndash;&gt;-->
-        <!--<% }); %>-->
     </div>
     <!--End row-->
 </div>

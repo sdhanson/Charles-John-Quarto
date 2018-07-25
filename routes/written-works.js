@@ -38,6 +38,34 @@ router.get('/category/collections/poetry', function(req, res, next) {
     res.redirect('/written-works/category/collections/poetry/1');
 });
 
+router.get('/category/collections/:ty/decade/:specifier', function(req,res, next) {
+    res.redirect('category/collections/' + req.params.ty + "/decade/" + req.params.specifier + "/1");
+});
+
+router.get('/category/:specifier/decade/:decade', function(req,res, next) {
+    res.redirect('category/' + req.params.specifier + "/decade/" + req.params.decade + "/1");
+});
+
+router.get('/category/collections/:ty/decade/:specifier/:page', function(req, res, next) {
+    var cat = req.params.ty.toLowerCase();
+    if((cat === 'songs' || cat === 'poetry')) {
+        if(cat === "songs") {
+            writing_controller.song_year_collections(req, res, next);
+        } else if(cat === 'poetry') {
+            // GET writing with collection specifier
+            writing_controller.poetry_year_collections(req, res, next);
+        } else {
+            var err1 = new Error('Not Found');
+            err1.status = 404;
+            next(err1);
+        }
+    } else{
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    }
+});
+
 router.get('/category/collections/:ty/:page', function(req, res, next) {
     var cat = req.params.ty.toLowerCase();
     if((cat === 'songs' || cat === 'poetry')) {
@@ -47,6 +75,36 @@ router.get('/category/collections/:ty/:page', function(req, res, next) {
             // GET writing with collection specifier
             writing_controller.poetry_collections(req, res, next);
         } else {
+            var err1 = new Error('Not Found');
+            err1.status = 404;
+            next(err1);
+        }
+    } else{
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    }
+});
+
+router.get('/category/:specifier/decade/:decade/:page', function(req, res, next) {
+    var p = req.params.specifier.toLowerCase();
+    req.params.specifier = req.params.decade;
+    if(!isNaN(req.params.page)) {
+        if(p === "poems" || p === "songs" || p === "collections" || p === "poem" || p === "song" || p === "collection") {
+            if (p === "songs" || p === "song") {
+                writing_controller.songs_year(req, res);
+            } else if (p === "collections" || p === "collection") {
+                // GET writing with collection specifier
+                writing_controller.collections_year(req, res);
+            } else if (p === "poems" || p === "poem") {
+                // GET writing with poem specifier
+                writing_controller.poems_year(req, res);
+            } else {
+                var err1 = new Error('Not Found');
+                err1.status = 404;
+                next(err1);
+            }
+        }  else {
             var err1 = new Error('Not Found');
             err1.status = 404;
             next(err1);

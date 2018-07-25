@@ -12,6 +12,11 @@ html {
 
 a, a:active, a:visited, a:focus {
   outline: none;
+  pointer-events: auto !important;
+}
+
+.navbar-toggler, .header-dropdown-item, .header-button {
+  pointer-events: auto !important;
 }
 
 a:active {
@@ -57,3 +62,6 @@ h6 a {
   margin-right: 10px;
 }
 
+div.overlay {
+  pointer-events: none;
+}
