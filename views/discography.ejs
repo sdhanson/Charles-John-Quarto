@@ -1,42 +1,9 @@
 <% include partials/header.ejs %>
+<% include partials/overlay.ejs %>
 <link rel='stylesheet' href='/stylesheets/modal-grid.css' />
 <link rel='stylesheet' href='/stylesheets/pop-up.css' />
 <link rel='stylesheet' href='/stylesheets/carousel.css' />
 <link rel='stylesheet' href='/stylesheets/discography.css' />
-
-<div class="header">
-    <img src="<%=image%>" class="header header-image" alt="Responsive image">
-    <div class="overlay">
-        <div class="d-flex flex-column header header-nav">
-            <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-                <a title="Home" class="navbar-brand" href="/">CJQ</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon header-link"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a title="Home" class="nav-link header-link" href="/">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
 
     <div class="d-flex justify-content-center header header-text">
         <p class="discography-header-title align-self-center">MUSIC</p>

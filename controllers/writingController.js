@@ -40,22 +40,13 @@ exports.index = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Poetry, Lyrics, and Collections. ';
-        var link = 'Shop Now.';
+        var title = 'WRITTEN WORKS';
         var image = '/images/sky.jpg';
         var count = results.book_count + results.poem_count + results.song_count;
         res.render('written-works', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub,
             current: page,
             pages: Math.ceil(count/(perPage*3)),
         });
@@ -63,7 +54,7 @@ exports.index = function(req, res, next) {
 };
 
 exports.poems = function(req, res, next) {
-    var perPage = 5;
+    var perPage = 6;
     var page = req.params.page || 1;
 
     async.parallel({
@@ -88,22 +79,13 @@ exports.poems = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Poetry';
-        var subtitle = 'Explore All Poems. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
+        var title = 'POEMS';
+        var image = '/images/sky.jpg';
         var count = results.poem_count;
         res.render('written-works', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub,
             current: page,
             pages: Math.ceil(count/perPage),
         });
@@ -113,7 +95,7 @@ exports.poems = function(req, res, next) {
 
 // DONT THINK LYRICS TRUE WORKS
 exports.songs = function(req, res, next) {
-    var perPage = 5;
+    var perPage = 6;
     var page = req.params.page || 1;
 
     async.parallel({
@@ -138,22 +120,13 @@ exports.songs = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Songs';
-        var subtitle = 'Explore All Lyrics. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
+        var title = 'SONGS';
+        var image = '/images/sky.jpg';
         var count = results.song_count;
         res.render('written-works', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            sub: sub,
-            titlesub: titlesub,
             current: page,
             pages: Math.ceil(count/perPage),
         });
@@ -162,7 +135,7 @@ exports.songs = function(req, res, next) {
 };
 
 exports.collections = function(req, res, next) {
-    var perPage = 5;
+    var perPage = 6;
     var page = req.params.page || 1;
 
     async.parallel({
@@ -187,22 +160,13 @@ exports.collections = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Collections';
-        var subtitle = 'Explore Featured Collections. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
+        var title = 'COLLECTIONS';
+        var image = '/images/sky.jpg';
         var count = results.book_count;
         res.render('written-works', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub,
             current: page,
             pages: Math.ceil(count/perPage),
         });
@@ -210,459 +174,6 @@ exports.collections = function(req, res, next) {
     });
 };
 
-exports.song_collections = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({type: 'Songs'})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({type: 'Songs'}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Song Collections';
-        var subtitle = ' Explore Featured Song Collections. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-exports.poetry_collections = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({type: 'Poetry'})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({type: 'Poetry'}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Poetry Collections';
-        var subtitle = 'Explore Featured Poetry Collections. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-exports.song_year_collections = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'Present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({type: 'Songs', decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({type: 'Songs'}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Song Collections';
-        var subtitle = ' Explore Featured Song Collections from the ' + year;
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-exports.poetry_year_collections = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'Present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({type: 'Poetry', decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({type: 'Poetry'}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Poetry Collections';
-        var subtitle = 'Explore Featured Poetry Collections from the ' + year;
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-
-exports.poems_year = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'Present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({category: 'Null'})
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        song_list: function(callback) {
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        poem_count: function(callback) {
-            Poem.find({}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Poetry';
-        var subtitle = 'Explore All Poems from the ' + year;
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.poem_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-// DONT THINK LYRICS TRUE WORKS
-exports.songs_year = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'Present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({category: 'Null'})
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({lyrics: { $ne: false }, decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        song_count: function(callback) {
-            Song.find({lyrics: { $ne: false }, decade: specifier}).count().exec(callback)
-        }
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Songs';
-        var subtitle = 'Explore All Lyrics from the ' + year;
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.song_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            sub: sub,
-            titlesub: titlesub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-exports.collections_year = function(req, res, next) {
-    var perPage = 5;
-    var page = req.params.page || 1;
-
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'Present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-
-    async.parallel({
-        book_list: function(callback){
-            Book.find({decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({category: 'Null'})
-                .exec(callback)
-        },
-        song_list: function(callback){
-            Song.find({category: 'Null'})
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'All Collections';
-        var subtitle = 'Explore Featured Collections from the ' + year;
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/perPage),
-        });
-
-    });
-};
-
-
-exports.decade = function(req, res, next) {
-    var perPage = 2;
-    var page = req.params.page || 1;
-
-    var specifier = req.params.specifier.charAt(0).toUpperCase() + req.params.specifier.slice(1);
-    var year;
-    if(req.params.specifier === 'present' || req.params.specifier === 'Present' ) {
-        year = 'present';
-    } else {
-        year = req.params.specifier + 's';
-    }
-    async.parallel({
-        book_list: function(callback){
-            Book.find({decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        poem_list: function(callback){
-            Poem.find({decade: specifier})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        song_list: function(callback) {
-            Song.find({decade: specifier, lyrics: { $ne: false }})
-                .skip((perPage * page) - perPage)
-                .limit(perPage)
-                .exec(callback)
-        },
-        book_count: function(callback) {
-            Book.find({decade: specifier}).count().exec(callback)
-        },
-        poem_count: function(callback) {
-            Poem.find({decade: specifier}).count().exec(callback)
-        },
-        song_count: function(callback) {
-            Song.find({decade: specifier, lyrics: { $ne: false }}).count().exec(callback)
-        },
-    }, function(err, results){
-        if(err){
-            return next(err);
-        }
-        var sub = false;
-        var titlesub = '';
-        var title = 'Written Works';
-        var subtitle = 'Written work from the ' + year + '. ';
-        var link = 'Shop Now.';
-        var image = '/images/water.jpg';
-        var count = results.book_count + results.poem_count + results.song_count;
-        res.render('written-works', {
-            title: title,
-            error: err,
-            results: results,
-            subtitle: subtitle,
-            link: link,
-            image: image,
-            titlesub: titlesub,
-            sub: sub,
-            current: page,
-            pages: Math.ceil(count/(perPage*3)),
-        });
-    });
-};
 
 exports.single_song = function(req, res, next) {
     async.parallel({
@@ -682,21 +193,12 @@ exports.single_song = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
         var title = results.song.title;
-        var subtitle = '';
-        var link = '';
-        var image = '/images/water.jpg';
+        var image = '/images/sunset.jpg';
         res.render('poem', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub
         });
 
     });
@@ -720,21 +222,12 @@ exports.single_poem = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
         var title = results.poem.title;
-        var subtitle = '';
-        var link = '';
-        var image = '/images/water.jpg';
+        var image = '/images/sunset.jpg';
         res.render('poem', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub
         });
 
     });
@@ -758,21 +251,12 @@ exports.single_collection = function(req, res, next) {
         if(err){
             return next(err);
         }
-        var sub = false;
-        var titlesub = '';
         var title = results.book.title;
-        var subtitle = '';
-        var link = '';
-        var image = '/images/water.jpg';
+        var image = '/images/sunset.jpg';
         res.render('collection', {
             title: title,
-            error: err,
             results: results,
-            subtitle: subtitle,
-            link: link,
             image: image,
-            titlesub: titlesub,
-            sub: sub
         });
 
     });

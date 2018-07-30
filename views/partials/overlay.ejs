@@ -1,9 +1,6 @@
-<link rel='stylesheet' href='/stylesheets/overlay.css' />
-
 <div class="header">
     <img src="<%=image%>" class="header header-image" alt="Responsive image">
     <div class="overlay">
-
         <div class="d-flex flex-column header header-nav">
             <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
                 <a title="Home" class="navbar-brand" href="/">CJQ</a>
@@ -13,19 +10,19 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">ABOUT</a>
+                            <a title="Home" class="nav-link header-link" href="/">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a title="Explore Discography" class="nav-link header-link" href="/discography">DISCOGRAPHY</a>
+                            <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
                         </li>
                         <li class="nav-item">
                             <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
                         </li>
                         <li class="nav-item">
-                            <a title="Explore Photo Gallery" class="nav-link header-link" href="/photography">PHOTO GALLERY</a>
+                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
                         </li>
                         <li class="nav-item">
-                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
+                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
                         </li>
                         <li class="nav-item">
                             <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
@@ -34,12 +31,3 @@
                 </div>
             </nav>
         </div>
-
-    <div class="d-flex flex-column header header-text">
-        <p class="header-title"><%=title%></p>
-        <% if(sub === true) { %>
-        <p class="header-title-sub"><%=titlesub%></p>
-        <% } %>
-
-        <p class="header-subtitle"><%=subtitle%> <a class="overlay-subtitle-link" title="Shop New Collections" id="link" href="/shop"><%=link%></a></p>
-

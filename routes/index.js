@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     var titlesub = "Poet-Songwriter & Spiritual Teacher-Seer";
     var subtitle = 'New Collection Out. ';
     var link = 'Shop Now.';
-    var image = '/images/mountain.jpg';
+    var image = '/images/wind.jpg';
     res.render('index', {subtitle: subtitle, title: title, titlesub: titlesub, link: link, image: image, sub: sub});
 });
 

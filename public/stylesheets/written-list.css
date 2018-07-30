@@ -381,5 +381,18 @@ p {
     opacity: 0.9;
     height: 400px;
     margin: 50px;
+    max-width: 275px;
+    min-width: 275px;
 
+}
+
+
+.featured {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+button {
+    pointer-events: auto !important;
 }

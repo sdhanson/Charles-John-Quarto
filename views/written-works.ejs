@@ -1,42 +1,9 @@
 <% include partials/header.ejs %>
+<% include partials/overlay.ejs %>
 <link rel='stylesheet' href='/stylesheets/written-list.css' />
 
-<div class="header">
-    <img src="<%=image%>" class="header header-image" alt="Responsive image">
-    <div class="overlay">
-        <div class="d-flex flex-column header header-nav">
-            <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-                <a title="Home" class="navbar-brand" href="/">CJQ</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon header-link"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a title="Home" class="nav-link header-link" href="/">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Explore Discography" class="nav-link header-link" href="/discography">MUSIC</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Explore Written Works" class="nav-link header-link" href="/written-works">WRITTEN WORK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Contact Charles John Quarto" class="nav-link header-link" href="/contact">CONTACT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="About Charles John Quarto" class="nav-link header-link" href="/about">BIO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a title="Shop New Collections" class="nav-link header-link" href="/shop">SHOP</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
         <div class="d-flex flex-column justify-content-center header header-text">
-        <p class="about-header-title align-self-center">WRITTEN WORKS</p>
+        <p class="about-header-title align-self-center"><%=title%></p>
         <!--Closing tags from overlay-->
 
 
@@ -76,17 +43,39 @@
 <div class="container">
     <div class="row">
     <% results.book_list.forEach(function(book) { %>
-        <div class="card col-4 border-0 rounded-0" style="max-width: 275px;">
+        <div class="card col-3 border-0 rounded-0">
             <!-- Image -->
             <img style="height: 125px; max-width: 125px;" class="rounded-circle mt-5 mx-auto" src="/images/hollywood.jpeg" alt="Photo of sunset">
 
             <!-- Text Content -->
             <div class="card-body mt-4 d-flex flex-column">
                 <p class="card-text justify-self-center align-self-center"><%= book.title %></p>
-                <a title="View Collection" class="justify-self-center align-self-center button-submit btn btn-md btn-outline-light rounded-0" role="button" href="/"><%= book.category %>s of <%= book.type %></a>
+                <a title="View Collection" class="justify-self-center align-self-center mt-4 button-submit btn btn-md btn-outline-light rounded-0" role="button" href="<%=book.url%>">Explore <%= book.category %></a>
             </div>
         </div>
-    <% }); %>
+    <% }); results.song_list.forEach(function(song) { %>
+        <div class="card col-3 border-0 rounded-0">
+            <!-- Image -->
+            <img style="height: 125px; max-width: 125px;" class="rounded-circle mt-5 mx-auto" src="/images/hollywood.jpeg" alt="Photo of sunset">
+
+            <!-- Text Content -->
+            <div class="card-body mt-4 d-flex flex-column">
+                <p class="card-text justify-self-center align-self-center"><%= song.title %></p>
+                <a title="View Collection" class="justify-self-center align-self-center mt-4 button-submit btn btn-md btn-outline-light rounded-0" role="button" href="<%=song.url%>">Explore <%= song.category %></a>
+            </div>
+        </div>
+        <% }); results.poem_list.forEach(function(poem) { %>
+        <div class="card col-3 border-0 rounded-0">
+            <!-- Image -->
+            <img style="height: 125px; max-width: 125px;" class="rounded-circle mt-5 mx-auto" src="/images/hollywood.jpeg" alt="Photo of sunset">
+
+            <!-- Text Content -->
+            <div class="card-body mt-4 d-flex flex-column">
+                <p class="card-text justify-self-center align-self-center"><%= poem.title %></p>
+                <a title="View Collection" class="justify-self-center align-self-center mt-4 button-submit btn btn-md btn-outline-light rounded-0" role="button" href="<%=poem.url%>">Explore <%= poem.category %></a>
+            </div>
+        </div>
+        <% }); %>
     </div>
 <!--End media container-->
 
