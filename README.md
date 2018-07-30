@@ -1,2 +1,3 @@
 # Charles-John-Quarto
-Introductory website for singer-songwriter Charles John Quarto.
+Website for poet-songwriter Charles John Quarto.
+Website launch anticipated December 2018.
